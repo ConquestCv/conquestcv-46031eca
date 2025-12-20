@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Twitter, Send } from "lucide-react";
+import { Menu, X, Twitter, Send, Moon, Sun } from "lucide-react";
+import { useTheme } from "@/hooks/use-theme";
 
 const navItems = [
   { name: "Home", path: "/" },
@@ -14,6 +15,7 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,22 +33,22 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-background/80 backdrop-blur-lg border-b border-border"
+          ? "bg-background/80 backdrop-blur-lg border-b border-border shadow-sm"
           : "bg-transparent"
       }`}
     >
       <div className="section-container">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link
             to="/"
-            className="text-2xl font-heading font-bold text-foreground hover:text-primary transition-colors"
+            className="text-xl font-heading font-bold text-foreground hover:text-primary transition-colors"
           >
             ConQuest<span className="text-primary">.</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-6">
             {navItems.map((item) => (
               <Link
                 key={item.path}
@@ -61,42 +63,68 @@ const Header = () => {
           </nav>
 
           {/* Desktop CTA & Socials */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-3">
+            {/* Theme Toggle */}
+            <button
+              onClick={toggleTheme}
+              className="theme-toggle"
+              aria-label="Toggle theme"
+            >
+              {theme === "dark" ? (
+                <Sun className="w-4 h-4 text-foreground" />
+              ) : (
+                <Moon className="w-4 h-4 text-foreground" />
+              )}
+            </button>
+
             <a
               href="https://x.com/iamconqwest"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 text-muted-foreground hover:text-primary transition-colors"
+              className="p-2 text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110"
               aria-label="Twitter"
             >
-              <Twitter className="w-5 h-5" />
+              <Twitter className="w-4 h-4" />
             </a>
             <a
               href="https://t.me/BIG_CQ"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 text-muted-foreground hover:text-primary transition-colors"
+              className="p-2 text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110"
               aria-label="Telegram"
             >
-              <Send className="w-5 h-5" />
+              <Send className="w-4 h-4" />
             </a>
-            <Link to="/contact" className="btn-primary text-sm">
+            <Link to="/contact" className="btn-primary">
               Let's Talk
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-foreground"
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
-          </button>
+          <div className="md:hidden flex items-center gap-2">
+            <button
+              onClick={toggleTheme}
+              className="theme-toggle"
+              aria-label="Toggle theme"
+            >
+              {theme === "dark" ? (
+                <Sun className="w-4 h-4 text-foreground" />
+              ) : (
+                <Moon className="w-4 h-4 text-foreground" />
+              )}
+            </button>
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2 text-foreground hover:bg-card/50 rounded-lg transition-colors"
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? (
+                <X className="w-5 h-5" />
+              ) : (
+                <Menu className="w-5 h-5" />
+              )}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -104,25 +132,25 @@ const Header = () => {
       <div
         className={`md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-lg border-b border-border transition-all duration-300 ${
           isMobileMenuOpen
-            ? "opacity-100 visible"
-            : "opacity-0 invisible"
+            ? "opacity-100 visible translate-y-0"
+            : "opacity-0 invisible -translate-y-2"
         }`}
       >
-        <nav className="section-container py-6 flex flex-col gap-4">
+        <nav className="section-container py-4 flex flex-col gap-2">
           {navItems.map((item) => (
             <Link
               key={item.path}
               to={item.path}
-              className={`text-lg font-medium py-2 ${
+              className={`text-sm font-medium py-2 px-3 rounded-lg transition-all ${
                 location.pathname === item.path
-                  ? "text-primary"
-                  : "text-muted-foreground hover:text-foreground"
-              } transition-colors`}
+                  ? "text-primary bg-primary/10"
+                  : "text-muted-foreground hover:text-foreground hover:bg-card/50"
+              }`}
             >
               {item.name}
             </Link>
           ))}
-          <div className="flex items-center gap-4 pt-4 border-t border-border">
+          <div className="flex items-center gap-3 pt-3 border-t border-border mt-2">
             <a
               href="https://x.com/iamconqwest"
               target="_blank"
@@ -130,7 +158,7 @@ const Header = () => {
               className="p-2 text-muted-foreground hover:text-primary transition-colors"
               aria-label="Twitter"
             >
-              <Twitter className="w-5 h-5" />
+              <Twitter className="w-4 h-4" />
             </a>
             <a
               href="https://t.me/BIG_CQ"
@@ -139,7 +167,7 @@ const Header = () => {
               className="p-2 text-muted-foreground hover:text-primary transition-colors"
               aria-label="Telegram"
             >
-              <Send className="w-5 h-5" />
+              <Send className="w-4 h-4" />
             </a>
           </div>
           <Link to="/contact" className="btn-primary text-center mt-2">

@@ -60,7 +60,6 @@ const ContactPage = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
     toast({
@@ -87,17 +86,17 @@ const ContactPage = () => {
       </section>
 
       {/* Main Content */}
-      <section className="pb-24">
+      <section className="pb-20">
         <div className="section-container">
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-8">
             {/* Contact Form */}
-            <div className="glow-card glow-border p-8">
-              <h2 className="text-2xl font-heading font-bold mb-6">Send a Message</h2>
+            <div className="interactive-card !p-6">
+              <h2 className="text-lg font-heading font-bold mb-5">Send a Message</h2>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <label htmlFor="name" className="text-sm font-medium text-foreground">
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid sm:grid-cols-2 gap-3">
+                  <div className="space-y-1.5">
+                    <label htmlFor="name" className="text-xs font-medium text-foreground">
                       Your Name
                     </label>
                     <input
@@ -107,12 +106,12 @@ const ContactPage = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-lg bg-secondary border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors text-foreground placeholder:text-muted-foreground"
+                      className="w-full px-3 py-2 rounded-lg bg-muted/50 border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all text-sm text-foreground placeholder:text-muted-foreground"
                       placeholder="John Doe"
                     />
                   </div>
-                  <div className="space-y-2">
-                    <label htmlFor="email" className="text-sm font-medium text-foreground">
+                  <div className="space-y-1.5">
+                    <label htmlFor="email" className="text-xs font-medium text-foreground">
                       Email Address
                     </label>
                     <input
@@ -122,14 +121,14 @@ const ContactPage = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-lg bg-secondary border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors text-foreground placeholder:text-muted-foreground"
+                      className="w-full px-3 py-2 rounded-lg bg-muted/50 border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all text-sm text-foreground placeholder:text-muted-foreground"
                       placeholder="john@example.com"
                     />
                   </div>
                 </div>
 
-                <div className="space-y-2">
-                  <label htmlFor="subject" className="text-sm font-medium text-foreground">
+                <div className="space-y-1.5">
+                  <label htmlFor="subject" className="text-xs font-medium text-foreground">
                     Subject
                   </label>
                   <select
@@ -138,7 +137,7 @@ const ContactPage = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-secondary border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors text-foreground"
+                    className="w-full px-3 py-2 rounded-lg bg-muted/50 border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all text-sm text-foreground"
                   >
                     <option value="">Select a topic</option>
                     <option value="job">Job Opportunity</option>
@@ -148,8 +147,8 @@ const ContactPage = () => {
                   </select>
                 </div>
 
-                <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium text-foreground">
+                <div className="space-y-1.5">
+                  <label htmlFor="message" className="text-xs font-medium text-foreground">
                     Message
                   </label>
                   <textarea
@@ -158,8 +157,8 @@ const ContactPage = () => {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    rows={5}
-                    className="w-full px-4 py-3 rounded-lg bg-secondary border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors text-foreground placeholder:text-muted-foreground resize-none"
+                    rows={4}
+                    className="w-full px-3 py-2 rounded-lg bg-muted/50 border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all text-sm text-foreground placeholder:text-muted-foreground resize-none"
                     placeholder="Tell me about your project or opportunity..."
                   />
                 </div>
@@ -176,27 +175,27 @@ const ContactPage = () => {
             </div>
 
             {/* Contact Info */}
-            <div className="space-y-8">
+            <div className="space-y-5">
               {/* Direct Contact */}
-              <div className="glow-card p-6 space-y-6">
-                <h3 className="text-xl font-heading font-bold">Direct Contact</h3>
-                <div className="space-y-4">
+              <div className="interactive-card !p-5">
+                <h3 className="text-base font-heading font-bold mb-4">Direct Contact</h3>
+                <div className="space-y-3">
                   {contactInfo.map((info, index) => (
-                    <div key={index} className="flex items-start gap-4">
-                      <div className="p-3 rounded-lg bg-primary/10 text-primary">
-                        <info.icon className="w-5 h-5" />
+                    <div key={index} className="flex items-start gap-3 group">
+                      <div className="icon-container">
+                        <info.icon className="w-4 h-4 text-primary" />
                       </div>
                       <div>
-                        <p className="text-sm text-muted-foreground">{info.label}</p>
+                        <p className="text-xs text-muted-foreground">{info.label}</p>
                         {info.href ? (
                           <a
                             href={info.href}
-                            className="font-medium text-foreground hover:text-primary transition-colors"
+                            className="font-medium text-sm text-foreground hover:text-primary transition-colors"
                           >
                             {info.value}
                           </a>
                         ) : (
-                          <p className="font-medium text-foreground">{info.value}</p>
+                          <p className="font-medium text-sm text-foreground">{info.value}</p>
                         )}
                       </div>
                     </div>
@@ -205,23 +204,23 @@ const ContactPage = () => {
               </div>
 
               {/* Social Links */}
-              <div className="glow-card p-6 space-y-6">
-                <h3 className="text-xl font-heading font-bold">Connect Online</h3>
-                <div className="space-y-4">
+              <div className="interactive-card !p-5">
+                <h3 className="text-base font-heading font-bold mb-4">Connect Online</h3>
+                <div className="space-y-3">
                   {socials.map((social, index) => (
                     <a
                       key={index}
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-4 p-4 rounded-lg bg-secondary/50 border border-border hover:border-primary/50 hover:bg-secondary transition-all"
+                      className="flex items-center gap-3 p-3 rounded-lg bg-muted/30 border border-border hover:border-primary/40 hover:bg-primary/5 transition-all group"
                     >
-                      <div className="p-2 rounded-lg bg-primary/10 text-primary">
-                        <social.icon className="w-5 h-5" />
+                      <div className="icon-container">
+                        <social.icon className="w-4 h-4 text-primary" />
                       </div>
                       <div>
-                        <p className="font-medium text-foreground">{social.name}</p>
-                        <p className="text-sm text-muted-foreground">{social.username}</p>
+                        <p className="font-medium text-sm text-foreground">{social.name}</p>
+                        <p className="text-xs text-muted-foreground">{social.username}</p>
                       </div>
                     </a>
                   ))}
@@ -229,20 +228,19 @@ const ContactPage = () => {
               </div>
 
               {/* Work Preference */}
-              <div className="glow-card glow-border p-6 space-y-4">
-                <h3 className="text-xl font-heading font-bold">Work Preferences</h3>
-                <p className="text-muted-foreground">
-                  I prefer remote roles but am open to full-time, hybrid, or on-site 
-                  positions with relocation support. Currently based in Lagos, Nigeria.
+              <div className="interactive-card !p-5">
+                <h3 className="text-base font-heading font-bold mb-3">Work Preferences</h3>
+                <p className="text-muted-foreground text-sm mb-3">
+                  I prefer remote roles but am open to hybrid or on-site with relocation support.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 text-sm rounded-full bg-primary/20 text-primary border border-primary/30">
+                  <span className="px-2.5 py-1 text-xs rounded-full bg-primary/15 text-primary border border-primary/25">
                     Remote Preferred
                   </span>
-                  <span className="px-3 py-1 text-sm rounded-full bg-secondary text-muted-foreground">
+                  <span className="px-2.5 py-1 text-xs rounded-full bg-muted text-muted-foreground">
                     Open to Hybrid
                   </span>
-                  <span className="px-3 py-1 text-sm rounded-full bg-secondary text-muted-foreground">
+                  <span className="px-2.5 py-1 text-xs rounded-full bg-muted text-muted-foreground">
                     Relocation OK
                   </span>
                 </div>
