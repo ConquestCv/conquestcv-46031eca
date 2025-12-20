@@ -111,37 +111,37 @@ const ExperiencePage = () => {
       </section>
 
       {/* Timeline */}
-      <section className="pb-24">
-        <div className="section-container max-w-4xl">
+      <section className="pb-20">
+        <div className="section-container max-w-3xl">
           <div className="relative">
             {/* Timeline Line */}
-            <div className="absolute left-4 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-primary via-primary/50 to-transparent" />
+            <div className="absolute left-3 md:left-6 top-0 bottom-0 w-px bg-gradient-to-b from-primary via-primary/50 to-transparent" />
 
             {/* Experience Cards */}
-            <div className="space-y-8">
+            <div className="space-y-6">
               {experiences.map((exp, index) => (
                 <div
                   key={index}
-                  className="relative pl-12 md:pl-20 animate-slide-up"
-                  style={{ animationDelay: `${index * 0.1}s` }}
+                  className="relative pl-10 md:pl-16 animate-slide-up"
+                  style={{ animationDelay: `${index * 0.08}s` }}
                 >
                   {/* Timeline Dot */}
-                  <div className="absolute left-2 md:left-6 top-6 w-5 h-5 rounded-full bg-primary border-4 border-background shadow-glow-sm" />
+                  <div className="timeline-dot top-5" />
 
                   {/* Card */}
-                  <div className="glow-card glow-border p-6 space-y-4">
+                  <div className="interactive-card">
                     {/* Header */}
-                    <div className="flex flex-wrap items-start justify-between gap-4">
+                    <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
                       <div>
-                        <h3 className="text-xl font-heading font-bold">{exp.role}</h3>
-                        <p className="text-primary font-medium">{exp.company}</p>
+                        <h3 className="text-lg font-heading font-bold">{exp.role}</h3>
+                        <p className="text-primary font-medium text-sm">{exp.company}</p>
                       </div>
                       <div className="flex flex-wrap gap-2">
-                        <span className="stat-badge text-xs">
+                        <span className="stat-badge">
                           <Calendar className="w-3 h-3" />
                           {exp.period}
                         </span>
-                        <span className="stat-badge text-xs">
+                        <span className="stat-badge">
                           <MapPin className="w-3 h-3" />
                           {exp.type}
                         </span>
@@ -149,15 +149,15 @@ const ExperiencePage = () => {
                     </div>
 
                     {/* Description */}
-                    <p className="text-muted-foreground">{exp.description}</p>
+                    <p className="text-muted-foreground text-sm mb-3">{exp.description}</p>
 
                     {/* Responsibilities */}
-                    <div className="pt-2">
-                      <h4 className="text-sm font-medium text-foreground mb-2">Key Responsibilities:</h4>
-                      <ul className="grid sm:grid-cols-2 gap-2">
+                    <div>
+                      <h4 className="text-xs font-medium text-foreground mb-2">Key Responsibilities:</h4>
+                      <ul className="grid sm:grid-cols-2 gap-1.5">
                         {exp.responsibilities.map((resp, idx) => (
-                          <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
-                            <Briefcase className="w-3 h-3 text-primary mt-1 flex-shrink-0" />
+                          <li key={idx} className="flex items-start gap-2 text-xs text-muted-foreground">
+                            <Briefcase className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
                             {resp}
                           </li>
                         ))}
@@ -170,11 +170,11 @@ const ExperiencePage = () => {
           </div>
 
           {/* CTA */}
-          <div className="text-center mt-16">
-            <p className="text-muted-foreground mb-6">
+          <div className="text-center mt-12">
+            <p className="text-muted-foreground text-sm mb-4">
               Interested in working together?
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-wrap justify-center gap-3">
               <Link to="/contact" className="btn-primary">
                 Get in Touch
                 <ArrowRight className="w-4 h-4" />

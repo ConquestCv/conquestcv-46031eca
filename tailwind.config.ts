@@ -12,9 +12,9 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: "1.5rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "1200px",
       },
     },
     extend: {
@@ -88,14 +88,14 @@ export default {
         },
         float: {
           "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-10px)" },
+          "50%": { transform: "translateY(-8px)" },
         },
         "pulse-glow": {
-          "0%, 100%": { boxShadow: "0 0 20px hsl(270 95% 65% / 0.4)" },
-          "50%": { boxShadow: "0 0 40px hsl(270 95% 65% / 0.6)" },
+          "0%, 100%": { boxShadow: "0 0 16px hsl(265 90% 65% / 0.35)" },
+          "50%": { boxShadow: "0 0 28px hsl(265 90% 65% / 0.55)" },
         },
         "slide-up": {
-          from: { opacity: "0", transform: "translateY(30px)" },
+          from: { opacity: "0", transform: "translateY(20px)" },
           to: { opacity: "1", transform: "translateY(0)" },
         },
         "fade-in": {
@@ -112,21 +112,21 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
         float: "float 6s ease-in-out infinite",
         "pulse-glow": "pulse-glow 2s ease-in-out infinite",
-        "slide-up": "slide-up 0.6s ease-out forwards",
-        "fade-in": "fade-in 0.8s ease-out forwards",
+        "slide-up": "slide-up 0.5s ease-out forwards",
+        "fade-in": "fade-in 0.6s ease-out forwards",
         shimmer: "shimmer 2s linear infinite",
       },
       backgroundImage: {
-        "gradient-purple": "linear-gradient(135deg, hsl(270 95% 65%) 0%, hsl(290 90% 55%) 100%)",
-        "gradient-card": "linear-gradient(180deg, hsl(240 10% 8%) 0%, hsl(240 10% 6%) 100%)",
-        "gradient-hero": "radial-gradient(ellipse at 50% 0%, hsl(270 70% 20% / 0.4) 0%, transparent 60%)",
+        "gradient-purple": "linear-gradient(135deg, hsl(265 90% 65%) 0%, hsl(290 85% 58%) 100%)",
+        "gradient-card": "linear-gradient(180deg, hsl(240 15% 12%) 0%, hsl(240 15% 10%) 100%)",
+        "gradient-hero": "radial-gradient(ellipse at 50% 0%, hsl(265 70% 35% / 0.35) 0%, transparent 55%)",
       },
       boxShadow: {
-        glow: "0 0 60px hsl(270 95% 65% / 0.3)",
-        "glow-sm": "0 0 30px hsl(270 95% 65% / 0.2)",
-        "glow-lg": "0 0 100px hsl(270 95% 65% / 0.4)",
-        card: "0 4px 24px hsl(0 0% 0% / 0.4)",
-        button: "0 4px 20px hsl(270 95% 65% / 0.4)",
+        glow: "0 0 50px hsl(265 90% 65% / 0.25)",
+        "glow-sm": "0 0 24px hsl(265 90% 65% / 0.18)",
+        "glow-lg": "0 0 80px hsl(265 90% 65% / 0.35)",
+        card: "0 2px 16px hsl(0 0% 0% / 0.1)",
+        button: "0 4px 20px hsl(265 90% 65% / 0.3)",
       },
     },
   },
