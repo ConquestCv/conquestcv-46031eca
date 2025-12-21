@@ -143,7 +143,7 @@ const HomePage = () => {
       </section>
 
       {/* Services Preview */}
-      <section className="py-16">
+      <section className="py-16 bg-gradient-to-b from-primary/5 via-primary/3 to-transparent">
         <div className="section-container">
           <div className="text-center mb-10">
             <h2 className="text-2xl md:text-3xl font-heading font-bold mb-2">
@@ -158,14 +158,14 @@ const HomePage = () => {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="interactive-card group"
+                className="interactive-card group !py-4"
               >
-                <div className="icon-container mb-3">
-                  <span className="text-xl">{service.icon}</span>
+                <div className="icon-container mb-2 !w-8 !h-8">
+                  <span className="text-lg">{service.icon}</span>
                 </div>
-                <h3 className="text-base font-heading font-semibold mb-1">{service.title}</h3>
+                <h3 className="text-sm font-heading font-semibold mb-1">{service.title}</h3>
                 <p className="text-xs text-muted-foreground">{service.description}</p>
-                <ChevronRight className="w-4 h-4 text-primary mt-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <ChevronRight className="w-4 h-4 text-primary mt-2 opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
             ))}
           </div>
@@ -211,7 +211,7 @@ const HomePage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 border-t border-border/50">
+      <section className="py-16 bg-gradient-to-r from-primary/10 via-primary/5 to-accent/10 rounded-3xl mx-4 lg:mx-auto lg:max-w-4xl my-8">
         <div className="section-container text-center">
           <div className="max-w-xl mx-auto space-y-4">
             <h2 className="text-2xl md:text-3xl font-heading font-bold">
