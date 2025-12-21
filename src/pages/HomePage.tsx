@@ -104,18 +104,18 @@ const HomePage = () => {
             <div className="relative flex justify-center lg:justify-end animate-fade-in">
               <div className="relative">
                 {/* Glow behind image */}
-                <div className="absolute inset-0 bg-primary/15 blur-3xl rounded-full scale-90" />
+                <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full scale-90" />
                 
                 {/* Image Container */}
-                <div className="relative glow-card glow-border p-1.5 rounded-2xl">
+                <div className="relative glow-card glow-border p-2 rounded-2xl">
                   <img
                     src={profileImage}
                     alt="Aisiri Conquest Samuel - Remote Digital Operations Specialist"
-                    className="w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72 object-cover rounded-xl"
+                    className="w-64 h-80 sm:w-72 sm:h-96 lg:w-80 lg:h-[28rem] object-cover rounded-xl"
                   />
                   
                   {/* Floating Badge */}
-                  <div className="floating-badge animate-pulse-glow text-xs">
+                  <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-4 py-2 rounded-full shadow-lg font-semibold text-sm whitespace-nowrap">
                     3+ Years Experience
                   </div>
                 </div>
