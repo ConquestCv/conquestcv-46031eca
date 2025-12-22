@@ -396,6 +396,17 @@
   to { opacity: 1; }
 }
 
+@keyframes pulse-orb {
+  0%, 100% { 
+    box-shadow: 0 0 6px hsl(265 90% 65% / 0.5);
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: 0 0 12px hsl(265 90% 65% / 0.8);
+    transform: scale(1.1);
+  }
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
