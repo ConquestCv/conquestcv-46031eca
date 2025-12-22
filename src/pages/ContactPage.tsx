@@ -45,7 +45,7 @@ const ContactPage = () => {
     subject: "",
     message: "",
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -56,19 +56,32 @@ const ContactPage = () => {
     });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
+    
+    // Build the email content
+    const subjectText = formData.subject 
+      ? `Portfolio Inquiry: ${formData.subject}` 
+      : "Portfolio Inquiry";
+    
+    const bodyText = `Hi Conquest,
 
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+${formData.message}
 
+---
+From: ${formData.name}
+Email: ${formData.email}
+Subject: ${formData.subject}`;
+
+    // Create mailto link and open it
+    const mailtoLink = `mailto:conquestsammy5@gmail.com?subject=${encodeURIComponent(subjectText)}&body=${encodeURIComponent(bodyText)}`;
+    
+    window.open(mailtoLink, '_self');
+    
     toast({
-      title: "Message Sent!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
+      title: "Opening your email app...",
+      description: "Complete sending the email in your mail application.",
     });
-
-    setFormData({ name: "", email: "", subject: "", message: "" });
-    setIsSubmitting(false);
   };
 
   return (
@@ -165,10 +178,9 @@ const ContactPage = () => {
 
                 <button
                   type="submit"
-                  disabled={isSubmitting}
-                  className="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="btn-primary w-full"
                 >
-                  {isSubmitting ? "Sending..." : "Send Message"}
+                  Send Message
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </form>

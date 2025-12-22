@@ -49,18 +49,18 @@ const skillCategories = [
 ];
 
 const tools = [
-  { name: "Google Workspace", icon: "📧" },
-  { name: "Notion", icon: "📝" },
-  { name: "Trello", icon: "📌" },
-  { name: "Asana", icon: "✅" },
-  { name: "Slack", icon: "💬" },
-  { name: "Discord", icon: "🎮" },
-  { name: "Telegram", icon: "📱" },
-  { name: "Zoom", icon: "🎥" },
-  { name: "Canva", icon: "🎨" },
-  { name: "Microsoft Office", icon: "📊" },
-  { name: "Airtable", icon: "📋" },
-  { name: "Zapier", icon: "⚡" },
+  { name: "Google Workspace", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" },
+  { name: "Notion", logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/notion.svg" },
+  { name: "Trello", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain.svg" },
+  { name: "Slack", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg" },
+  { name: "Discord", logo: "https://cdn.simpleicons.org/discord/5865F2" },
+  { name: "Telegram", logo: "https://cdn.simpleicons.org/telegram/26A5E4" },
+  { name: "Zoom", logo: "https://cdn.simpleicons.org/zoom/2D8CFF" },
+  { name: "Canva", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg" },
+  { name: "Microsoft Office", logo: "https://cdn.simpleicons.org/microsoftoffice/D83B01" },
+  { name: "Figma", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
+  { name: "After Effects", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aftereffects/aftereffects-original.svg" },
+  { name: "OBS Studio", logo: "https://cdn.simpleicons.org/obsstudio/302E31" },
 ];
 
 const web3Skills = [
@@ -103,16 +103,27 @@ const SkillsPage = () => {
 
                 <div className="space-y-3">
                   {category.skills.map((skill, idx) => (
-                    <div key={idx} className="space-y-1">
+                    <div key={idx} className="space-y-1.5">
                       <div className="flex justify-between text-xs">
                         <span className="text-muted-foreground">{skill.name}</span>
                         <span className="text-primary font-medium">{skill.level}%</span>
                       </div>
-                      <div className="skill-bar">
-                        <div
-                          className="skill-bar-fill"
-                          style={{ width: `${skill.level}%` }}
-                        />
+                      {/* Creative circular skill meter */}
+                      <div className="flex items-center gap-1.5">
+                        {[...Array(10)].map((_, i) => (
+                          <div
+                            key={i}
+                            className={`h-2 flex-1 rounded-full transition-all duration-500 ${
+                              i < Math.floor(skill.level / 10)
+                                ? "bg-gradient-to-r from-primary to-accent"
+                                : "bg-muted/50"
+                            }`}
+                            style={{
+                              animationDelay: `${i * 0.05}s`,
+                              opacity: i < Math.floor(skill.level / 10) ? 1 : 0.3,
+                            }}
+                          />
+                        ))}
                       </div>
                     </div>
                   ))}
@@ -135,14 +146,20 @@ const SkillsPage = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-4 sm:grid-cols-6 gap-3 max-w-2xl mx-auto">
+          <div className="grid grid-cols-4 sm:grid-cols-6 gap-4 max-w-3xl mx-auto">
             {tools.map((tool, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center gap-1 p-3 rounded-lg bg-card/50 border border-border hover:border-primary/40 hover:bg-primary/5 transition-all duration-300 text-center group cursor-pointer"
+                className="flex flex-col items-center gap-2 p-4 rounded-xl bg-card/50 border border-border hover:border-primary/40 hover:bg-primary/5 transition-all duration-300 text-center group cursor-pointer hover:-translate-y-1"
               >
-                <span className="text-xl group-hover:scale-110 transition-transform">{tool.icon}</span>
-                <span className="text-[10px] text-muted-foreground">{tool.name}</span>
+                <div className="w-10 h-10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <img 
+                    src={tool.logo} 
+                    alt={tool.name}
+                    className="w-8 h-8 object-contain dark:invert-[0.15]"
+                  />
+                </div>
+                <span className="text-[10px] text-muted-foreground font-medium leading-tight">{tool.name}</span>
               </div>
             ))}
           </div>
