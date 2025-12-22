@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, ClipboardList, BarChart3, MessageCircle, Settings2 } from "lucide-react";
+import LiquidMeter from "@/components/LiquidMeter";
 
 // 3D Icons for each skill category
 const categoryIcons = {
@@ -61,48 +62,19 @@ const skillCategories = [
 ];
 
 const tools = [
-  { name: "Google Workspace", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" },
-  { name: "Notion", logo: "https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png" },
-  { name: "Trello", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain.svg" },
-  { name: "Slack", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg" },
-  { name: "Discord", logo: "https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png" },
-  { name: "Telegram", logo: "https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" },
-  { name: "Zoom", logo: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Zoom_Communications_Logo.svg" },
-  { name: "Canva", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg" },
-  { name: "Microsoft Office", logo: "https://upload.wikimedia.org/wikipedia/commons/5/5f/Microsoft_Office_logo_%282019%E2%80%93present%29.svg" },
-  { name: "Figma", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
-  { name: "After Effects", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aftereffects/aftereffects-original.svg" },
-  { name: "OBS Studio", logo: "https://upload.wikimedia.org/wikipedia/commons/1/14/Open_Broadcaster_Software_Logo.png" },
+  { name: "Google Workspace", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg", isColored: true },
+  { name: "Notion", logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/notion.svg", isColored: false },
+  { name: "Trello", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain.svg", isColored: true },
+  { name: "Slack", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg", isColored: true },
+  { name: "Discord", logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg", isColored: false },
+  { name: "Telegram", logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/telegram.svg", isColored: false },
+  { name: "Zoom", logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/zoom.svg", isColored: false },
+  { name: "Canva", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg", isColored: true },
+  { name: "Microsoft Office", logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/microsoftoffice.svg", isColored: false },
+  { name: "Figma", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg", isColored: true },
+  { name: "After Effects", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aftereffects/aftereffects-original.svg", isColored: true },
+  { name: "OBS Studio", logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/obsstudio.svg", isColored: false },
 ];
-
-// Glowing Orb component for skill meter
-const GlowingOrbs = ({ level }: { level: number }) => {
-  const totalOrbs = 10;
-  const filledOrbs = Math.round(level / 10);
-  
-  return (
-    <div className="flex items-center gap-1.5">
-      {[...Array(totalOrbs)].map((_, i) => (
-        <div
-          key={i}
-          className={`relative w-3 h-3 rounded-full transition-all duration-500 ${
-            i < filledOrbs
-              ? "bg-gradient-to-br from-primary via-accent to-purple-400 shadow-[0_0_8px_hsl(var(--primary)/0.6)]"
-              : "bg-muted/40"
-          }`}
-          style={{
-            animationDelay: `${i * 0.1}s`,
-            animation: i < filledOrbs ? "pulse-orb 2s ease-in-out infinite" : "none",
-          }}
-        >
-          {i < filledOrbs && (
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/40 to-transparent" />
-          )}
-        </div>
-      ))}
-    </div>
-  );
-};
 
 const web3Skills = [
   { name: "Community Management", description: "Discord/Telegram community moderation" },
@@ -151,7 +123,7 @@ const SkillsPage = () => {
                           <span className="text-muted-foreground">{skill.name}</span>
                           <span className="text-primary font-medium">{skill.level}%</span>
                         </div>
-                        <GlowingOrbs level={skill.level} />
+                        <LiquidMeter level={skill.level} />
                       </div>
                     ))}
                   </div>
@@ -184,7 +156,7 @@ const SkillsPage = () => {
                   <img 
                     src={tool.logo} 
                     alt={tool.name}
-                    className="w-8 h-8 object-contain dark:invert-[0.15]"
+                    className={`w-8 h-8 object-contain ${!tool.isColored ? 'dark:invert' : ''}`}
                   />
                 </div>
                 <span className="text-[10px] text-muted-foreground font-medium leading-tight">{tool.name}</span>
