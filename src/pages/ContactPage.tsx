@@ -119,7 +119,8 @@ Subject: ${formData.subject}`;
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-3 py-2 rounded-lg bg-muted/50 border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all text-sm text-foreground placeholder:text-muted-foreground"
+                      autoComplete="name"
+                      className="w-full px-3 py-2 rounded-lg bg-background border border-border focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all text-sm text-foreground placeholder:text-muted-foreground"
                       placeholder="John Doe"
                     />
                   </div>
@@ -134,7 +135,8 @@ Subject: ${formData.subject}`;
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-3 py-2 rounded-lg bg-muted/50 border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all text-sm text-foreground placeholder:text-muted-foreground"
+                      autoComplete="email"
+                      className="w-full px-3 py-2 rounded-lg bg-background border border-border focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all text-sm text-foreground placeholder:text-muted-foreground"
                       placeholder="john@example.com"
                     />
                   </div>
@@ -150,7 +152,7 @@ Subject: ${formData.subject}`;
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-3 py-2 rounded-lg bg-muted/50 border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all text-sm text-foreground"
+                    className="w-full px-3 py-2 rounded-lg bg-background border border-border focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all text-sm text-foreground cursor-pointer"
                   >
                     <option value="">Select a topic</option>
                     <option value="job">Job Opportunity</option>
@@ -171,7 +173,7 @@ Subject: ${formData.subject}`;
                     onChange={handleChange}
                     required
                     rows={4}
-                    className="w-full px-3 py-2 rounded-lg bg-muted/50 border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all text-sm text-foreground placeholder:text-muted-foreground resize-none"
+                    className="w-full px-3 py-2 rounded-lg bg-background border border-border focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all text-sm text-foreground placeholder:text-muted-foreground resize-none"
                     placeholder="Tell me about your project or opportunity..."
                   />
                 </div>

@@ -1,10 +1,19 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ClipboardList, BarChart3, MessageCircle, Settings2 } from "lucide-react";
+
+// 3D Icons for each skill category
+const categoryIcons = {
+  admin: ClipboardList,
+  data: BarChart3,
+  communication: MessageCircle,
+  tools: Settings2,
+};
 
 const skillCategories = [
   {
     title: "Administrative & Operations",
-    icon: "📋",
+    iconKey: "admin" as const,
+    iconColor: "from-violet-500 to-purple-600",
     skills: [
       { name: "Virtual Assistance", level: 95 },
       { name: "Task & Workflow Management", level: 90 },
@@ -15,7 +24,8 @@ const skillCategories = [
   },
   {
     title: "Data Entry & Research",
-    icon: "📊",
+    iconKey: "data" as const,
+    iconColor: "from-cyan-500 to-blue-600",
     skills: [
       { name: "Data Validation & Entry", level: 95 },
       { name: "Spreadsheet Management", level: 90 },
@@ -26,7 +36,8 @@ const skillCategories = [
   },
   {
     title: "Communication & Support",
-    icon: "💬",
+    iconKey: "communication" as const,
+    iconColor: "from-emerald-500 to-teal-600",
     skills: [
       { name: "Customer Support", level: 90 },
       { name: "Email Communication", level: 95 },
@@ -37,7 +48,8 @@ const skillCategories = [
   },
   {
     title: "Digital Tools & Productivity",
-    icon: "⚙️",
+    iconKey: "tools" as const,
+    iconColor: "from-orange-500 to-red-600",
     skills: [
       { name: "Google Workspace", level: 95 },
       { name: "Project Management Tools", level: 90 },
@@ -50,18 +62,47 @@ const skillCategories = [
 
 const tools = [
   { name: "Google Workspace", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" },
-  { name: "Notion", logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/notion.svg" },
+  { name: "Notion", logo: "https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png" },
   { name: "Trello", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain.svg" },
   { name: "Slack", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg" },
-  { name: "Discord", logo: "https://cdn.simpleicons.org/discord/5865F2" },
-  { name: "Telegram", logo: "https://cdn.simpleicons.org/telegram/26A5E4" },
-  { name: "Zoom", logo: "https://cdn.simpleicons.org/zoom/2D8CFF" },
+  { name: "Discord", logo: "https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png" },
+  { name: "Telegram", logo: "https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" },
+  { name: "Zoom", logo: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Zoom_Communications_Logo.svg" },
   { name: "Canva", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg" },
-  { name: "Microsoft Office", logo: "https://cdn.simpleicons.org/microsoftoffice/D83B01" },
+  { name: "Microsoft Office", logo: "https://upload.wikimedia.org/wikipedia/commons/5/5f/Microsoft_Office_logo_%282019%E2%80%93present%29.svg" },
   { name: "Figma", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
   { name: "After Effects", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aftereffects/aftereffects-original.svg" },
-  { name: "OBS Studio", logo: "https://cdn.simpleicons.org/obsstudio/302E31" },
+  { name: "OBS Studio", logo: "https://upload.wikimedia.org/wikipedia/commons/1/14/Open_Broadcaster_Software_Logo.png" },
 ];
+
+// Glowing Orb component for skill meter
+const GlowingOrbs = ({ level }: { level: number }) => {
+  const totalOrbs = 10;
+  const filledOrbs = Math.round(level / 10);
+  
+  return (
+    <div className="flex items-center gap-1.5">
+      {[...Array(totalOrbs)].map((_, i) => (
+        <div
+          key={i}
+          className={`relative w-3 h-3 rounded-full transition-all duration-500 ${
+            i < filledOrbs
+              ? "bg-gradient-to-br from-primary via-accent to-purple-400 shadow-[0_0_8px_hsl(var(--primary)/0.6)]"
+              : "bg-muted/40"
+          }`}
+          style={{
+            animationDelay: `${i * 0.1}s`,
+            animation: i < filledOrbs ? "pulse-orb 2s ease-in-out infinite" : "none",
+          }}
+        >
+          {i < filledOrbs && (
+            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/40 to-transparent" />
+          )}
+        </div>
+      ))}
+    </div>
+  );
+};
 
 const web3Skills = [
   { name: "Community Management", description: "Discord/Telegram community moderation" },
@@ -89,47 +130,34 @@ const SkillsPage = () => {
       <section className="pb-12">
         <div className="section-container">
           <div className="grid md:grid-cols-2 gap-5">
-            {skillCategories.map((category, index) => (
-              <div
-                key={index}
-                className="interactive-card"
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="icon-container">
-                    <span className="text-lg">{category.icon}</span>
-                  </div>
-                  <h3 className="text-base font-heading font-bold">{category.title}</h3>
-                </div>
-
-                <div className="space-y-3">
-                  {category.skills.map((skill, idx) => (
-                    <div key={idx} className="space-y-1.5">
-                      <div className="flex justify-between text-xs">
-                        <span className="text-muted-foreground">{skill.name}</span>
-                        <span className="text-primary font-medium">{skill.level}%</span>
-                      </div>
-                      {/* Creative circular skill meter */}
-                      <div className="flex items-center gap-1.5">
-                        {[...Array(10)].map((_, i) => (
-                          <div
-                            key={i}
-                            className={`h-2 flex-1 rounded-full transition-all duration-500 ${
-                              i < Math.floor(skill.level / 10)
-                                ? "bg-gradient-to-r from-primary to-accent"
-                                : "bg-muted/50"
-                            }`}
-                            style={{
-                              animationDelay: `${i * 0.05}s`,
-                              opacity: i < Math.floor(skill.level / 10) ? 1 : 0.3,
-                            }}
-                          />
-                        ))}
-                      </div>
+            {skillCategories.map((category, index) => {
+              const IconComponent = categoryIcons[category.iconKey];
+              return (
+                <div
+                  key={index}
+                  className="interactive-card"
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${category.iconColor} flex items-center justify-center shadow-lg`}>
+                      <IconComponent className="w-6 h-6 text-white" />
                     </div>
-                  ))}
+                    <h3 className="text-base font-heading font-bold">{category.title}</h3>
+                  </div>
+
+                  <div className="space-y-3">
+                    {category.skills.map((skill, idx) => (
+                      <div key={idx} className="space-y-1.5">
+                        <div className="flex justify-between text-xs">
+                          <span className="text-muted-foreground">{skill.name}</span>
+                          <span className="text-primary font-medium">{skill.level}%</span>
+                        </div>
+                        <GlowingOrbs level={skill.level} />
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
