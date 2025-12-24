@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, GraduationCap, Award, Folder } from "lucide-react";
+import { ArrowRight, GraduationCap, Award, Folder, Heart } from "lucide-react";
 
 const education = [
   {
-    degree: "BSc Mechanical Engineering",
+    degree: "Bachelor of Science (BSc)",
     institution: "University of Lagos (UNILAG)",
     period: "Graduated",
     description: "Developed strong analytical, problem-solving, and systematic thinking skills.",
@@ -23,27 +23,46 @@ const education = [
 ];
 
 const certifications = [
-  { name: "Google Digital Skills for Africa", issuer: "Google", category: "Digital Skills" },
-  { name: "Google Workspace Productivity", issuer: "Google", category: "Productivity" },
-  { name: "Data Entry & Information Management", issuer: "Professional Development", category: "Data Skills" },
+  { name: "Google Digital Skills for Africa", issuer: "Google", category: "Digital Marketing" },
+  { name: "Google Workspace Productivity Training", issuer: "Google", category: "Productivity" },
+  { name: "Data Entry & Information Management Fundamentals", issuer: "Professional Development", category: "Data Skills" },
   { name: "Virtual Assistance Foundations", issuer: "Online Learning", category: "VA Skills" },
-  { name: "Customer Support & Email Handling", issuer: "Professional Training", category: "Communication" },
+  { name: "Customer Support & Email Handling Essentials", issuer: "Professional Training", category: "Communication" },
   { name: "Blockchain Basics", issuer: "Coursera", category: "Web3" },
   { name: "Web3 Fundamentals", issuer: "Alchemy University", category: "Web3" },
   { name: "Video Editing Essentials", issuer: "Udemy", category: "Creative" },
-  { name: "Project Management Basics", issuer: "Online Certification", category: "Management" },
 ];
 
 const projects = [
   {
-    title: "Professional Portfolio Website",
-    description: "Designed and developed a personal portfolio to showcase skills and professional journey.",
+    title: "Personal Portfolio Website",
+    description: "Designed and developed a personal portfolio using HTML, CSS, and JavaScript to showcase skills, experience, and projects with a clean and responsive layout.",
     tags: ["Web Development", "Design", "Branding"],
   },
   {
-    title: "Community Analytics Dashboard",
-    description: "Created tracking systems for community engagement metrics across platforms.",
+    title: "Community Analytics & Reporting System",
+    description: "Independently built a structured analytics and reporting workflow for Discord and Telegram communities using Google Sheets and Forms. Collected engagement data, categorized feedback, and generated weekly insights simulating real client reporting environments.",
     tags: ["Analytics", "Community", "Reporting"],
+  },
+  {
+    title: "Independent Skill Development",
+    description: "Continuous hands-on experimentation with AI tools, content creation, video editing, motion graphics, Web3 systems, automation, and digital workflows.",
+    tags: ["AI Tools", "Automation", "Self-Learning"],
+  },
+];
+
+const volunteerExperience = [
+  {
+    role: "Digital Community Volunteer",
+    period: "Jan 2023 – Dec 2023",
+    type: "Remote",
+    description: "Assisted with community moderation, data organization, and event coordination.",
+  },
+  {
+    role: "Administrative Support Volunteer",
+    period: "Jun 2022 – Dec 2022",
+    type: "Remote",
+    description: "Supported documentation, email handling, and basic reporting for a local NGO.",
   },
 ];
 
@@ -58,7 +77,7 @@ const EducationPage = () => {
           Education & <span className="text-gradient">Certifications</span>
         </h1>
         <p className="page-subtitle">
-          My academic background and professional certifications.
+          My academic background, professional certifications, and projects.
         </p>
       </section>
 
@@ -96,10 +115,10 @@ const EducationPage = () => {
             <div className="icon-container">
               <Award className="w-5 h-5 text-primary" />
             </div>
-            <h2 className="text-xl md:text-2xl font-heading font-bold">Certifications</h2>
+            <h2 className="text-xl md:text-2xl font-heading font-bold">Certifications & Online Training</h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
             {certifications.map((cert, index) => (
               <div key={index} className="interactive-card">
                 <span className="inline-block px-2 py-0.5 text-[10px] font-medium rounded bg-primary/15 text-primary mb-2">
@@ -115,15 +134,15 @@ const EducationPage = () => {
 
       {/* Projects */}
       <section className="py-12">
-        <div className="section-container max-w-3xl">
+        <div className="section-container max-w-4xl">
           <div className="flex items-center gap-2 mb-6">
             <div className="icon-container">
               <Folder className="w-5 h-5 text-primary" />
             </div>
-            <h2 className="text-xl md:text-2xl font-heading font-bold">Projects</h2>
+            <h2 className="text-xl md:text-2xl font-heading font-bold">Projects & Practical Work</h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid md:grid-cols-3 gap-4">
             {projects.map((project, index) => (
               <div key={index} className="interactive-card">
                 <h3 className="text-base font-heading font-bold mb-2">{project.title}</h3>
@@ -138,6 +157,30 @@ const EducationPage = () => {
                     </span>
                   ))}
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Volunteer Experience */}
+      <section className="py-12 border-t border-border/50">
+        <div className="section-container max-w-3xl">
+          <div className="flex items-center gap-2 mb-6">
+            <div className="icon-container">
+              <Heart className="w-5 h-5 text-primary" />
+            </div>
+            <h2 className="text-xl md:text-2xl font-heading font-bold">Volunteer Experience</h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-4">
+            {volunteerExperience.map((vol, index) => (
+              <div key={index} className="interactive-card">
+                <div className="flex flex-wrap items-start justify-between gap-3 mb-2">
+                  <h3 className="text-base font-heading font-bold">{vol.role}</h3>
+                  <span className="stat-badge">{vol.period}</span>
+                </div>
+                <p className="text-muted-foreground text-sm">{vol.description}</p>
               </div>
             ))}
           </div>

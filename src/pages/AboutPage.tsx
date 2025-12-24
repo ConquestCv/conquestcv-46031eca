@@ -3,20 +3,20 @@ import { ArrowRight, CheckCircle } from "lucide-react";
 import profileImage from "@/assets/conquest-profile.jpg";
 
 const valueProps = [
-  "Reliable execution on every task",
-  "Clear and proactive communication",
-  "Organized workflow and documentation",
-  "Adaptable to new tools and processes",
-  "Self-motivated remote work discipline",
+  "Highly independent and self-directed",
+  "Strong attention to detail and execution accuracy",
+  "Comfortable with ambiguity and fast-changing priorities",
+  "Excellent time management in remote environments",
+  "Curious, resourceful, disciplined, and solution-oriented",
 ];
 
 const interests = [
-  { name: "Digital Operations", icon: "⚙️" },
-  { name: "Community Building", icon: "👥" },
   { name: "Web3 & Blockchain", icon: "🔗" },
-  { name: "Tech Trends", icon: "📱" },
-  { name: "Process Optimization", icon: "📈" },
-  { name: "Remote Work Culture", icon: "🌍" },
+  { name: "AI & Digital Productivity", icon: "🤖" },
+  { name: "Remote Work Systems", icon: "🌍" },
+  { name: "Community Building", icon: "👥" },
+  { name: "Content Creation & Media", icon: "🎬" },
+  { name: "Emerging Tech Trends", icon: "📱" },
 ];
 
 const AboutPage = () => {
@@ -30,7 +30,7 @@ const AboutPage = () => {
           About <span className="text-gradient">Me</span>
         </h1>
         <p className="page-subtitle">
-          A dedicated remote professional passionate about helping businesses succeed through reliable operations support.
+          A tech-savvy digital professional passionate about supporting remote operations and building functional systems.
         </p>
       </section>
 
@@ -64,18 +64,18 @@ const AboutPage = () => {
                 <div className="space-y-3 text-muted-foreground leading-relaxed text-sm">
                   <p>
                     I'm <span className="text-foreground font-medium">Aisiri Conquest Samuel</span>, 
-                    a Remote Digital Operations and Virtual Assistance Specialist based in Lagos, Nigeria. 
-                    With over 3 years of experience supporting distributed teams, I bring a combination 
-                    of technical proficiency and strong communication skills to every role.
+                    a Digital Operations Specialist, AI-Powered Virtual Assistant, Content & Community Coordinator, 
+                    and Web3 & Tech Support Professional based in Lagos, Nigeria.
                   </p>
                   <p>
-                    My background spans virtual assistance, data entry, community support, and 
-                    operations coordination across both Web2 and Web3 organizations. I've worked 
-                    with companies like Aptos Labs, Elliptic, Fireblocks, and Anchorage Digital.
+                    With 3+ years of cumulative experience, I've supported remote operations, administrative workflows, 
+                    content systems, community management, and digital coordination across Web2 and Web3 environments. 
+                    I've worked with companies like Aptos Labs, Elliptic, Fireblocks, and Anchorage Digital.
                   </p>
                   <p>
-                    I hold a BSc in Mechanical Engineering from the University of Lagos, which 
-                    has given me strong analytical and problem-solving skills.
+                    I'm experienced in AI-assisted productivity, digital operations, research, reporting, 
+                    content coordination, video editing, motion graphics, graphic design, and community engagement 
+                    for global teams, startups, and blockchain companies.
                   </p>
                 </div>
               </div>
@@ -83,7 +83,7 @@ const AboutPage = () => {
               {/* What I Bring */}
               <div className="space-y-4">
                 <h2 className="text-xl md:text-2xl font-heading font-bold">
-                  What I Bring
+                  Work Style & Strengths
                 </h2>
                 <ul className="space-y-2">
                   {valueProps.map((prop, index) => (
@@ -102,10 +102,9 @@ const AboutPage = () => {
                 </h2>
                 <div className="interactive-card">
                   <p className="text-muted-foreground leading-relaxed text-sm italic">
-                    "I believe in doing work that matters and doing it well. Remote work 
-                    requires discipline, initiative, and clear communication — qualities I 
-                    prioritize in every engagement. When you work with me, you get someone 
-                    who takes ownership and meets deadlines."
+                    "Comfortable working independently in fully remote and asynchronous teams, 
+                    handling ambiguity, managing multiple priorities, and executing tasks with accuracy and consistency. 
+                    I bring a strong blend of operational discipline, creative execution, technical curiosity, and AI literacy."
                   </p>
                 </div>
               </div>
@@ -125,6 +124,19 @@ const AboutPage = () => {
                       <span className="text-muted-foreground text-xs">{interest.name}</span>
                     </div>
                   ))}
+                </div>
+              </div>
+
+              {/* Work Preference */}
+              <div className="space-y-4">
+                <h2 className="text-xl md:text-2xl font-heading font-bold">
+                  Work Preference
+                </h2>
+                <div className="interactive-card">
+                  <p className="text-muted-foreground leading-relaxed text-sm">
+                    Remote roles preferred. Open to full-time, on-site, or hybrid roles with relocation, 
+                    transport, and accommodation support.
+                  </p>
                 </div>
               </div>
 

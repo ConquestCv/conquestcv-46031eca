@@ -4,7 +4,7 @@ import profileImage from "@/assets/conquest-profile.jpg";
 
 const stats = [
   { icon: Clock, label: "3+ Years" },
-  { icon: Briefcase, label: "6+ Roles" },
+  { icon: Briefcase, label: "7+ Roles" },
   { icon: Globe, label: "Remote-Ready" },
 ];
 
@@ -26,23 +26,23 @@ const testimonials = [
 const services = [
   {
     title: "Virtual Assistance",
-    description: "Task management, scheduling, and administrative support.",
+    description: "Inbox, scheduling, and administrative support.",
     icon: "📋",
   },
   {
-    title: "Data Entry",
-    description: "Accurate data validation and documentation.",
-    icon: "📊",
+    title: "AI-Powered Productivity",
+    description: "AI tools for writing, research, and content.",
+    icon: "🤖",
   },
   {
     title: "Community Support",
-    description: "User inquiries, moderation, and engagement.",
+    description: "Discord/Telegram moderation and engagement.",
     icon: "💬",
   },
   {
-    title: "Operations",
-    description: "Workflow optimization and coordination.",
-    icon: "⚙️",
+    title: "Content & Media",
+    description: "Video editing, graphics, and coordination.",
+    icon: "🎬",
   },
 ];
 
@@ -67,15 +67,18 @@ const HomePage = () => {
                   <span className="text-gradient">Samuel</span>
                 </h1>
                 <p className="text-lg md:text-xl text-muted-foreground">
-                  Remote Digital Operations &{" "}
-                  <span className="text-foreground font-medium">Virtual Assistance</span>{" "}
-                  Specialist
+                  Digital Operations Specialist |{" "}
+                  <span className="text-foreground font-medium">AI-Powered Virtual Assistant</span>
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  Content, Community & Media Coordinator | Web3 & Tech Support Professional
                 </p>
               </div>
 
               <p className="text-muted-foreground leading-relaxed text-sm max-w-md">
-                Supporting businesses that need reliability. Execution you can count on.
-                Organized, remote, and ready to help your operations run smoothly.
+                Highly resourceful, tech-savvy, and detail-oriented digital professional with 3+ years 
+                of experience supporting remote operations, administrative workflows, and community management 
+                across Web2 and Web3 environments.
               </p>
 
               {/* Stats */}
@@ -110,7 +113,7 @@ const HomePage = () => {
                 <div className="relative glow-card glow-border p-2 rounded-2xl">
                   <img
                     src={profileImage}
-                    alt="Aisiri Conquest Samuel - Remote Digital Operations Specialist"
+                    alt="Aisiri Conquest Samuel - Digital Operations Specialist"
                     className="w-64 h-80 sm:w-72 sm:h-96 lg:w-80 lg:h-[28rem] object-cover rounded-xl"
                   />
                   
@@ -134,9 +137,10 @@ const HomePage = () => {
               <span className="text-gradient">Virtual Assistant</span>
             </h2>
             <p className="text-muted-foreground leading-relaxed text-sm">
-              I specialize in keeping remote operations running smoothly. From data entry 
-              and documentation to community management and administrative support, 
-              I bring structure, reliability, and clear communication to every project.
+              I specialize in AI-assisted productivity, digital operations, content coordination, 
+              video editing, motion graphics, graphic design, and community engagement for global teams, 
+              startups, and blockchain companies. Proven ability to learn rapidly, adapt quickly, 
+              and build functional systems from scratch.
             </p>
           </div>
         </div>
