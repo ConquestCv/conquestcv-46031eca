@@ -11,12 +11,11 @@ const valueProps = [
 ];
 
 const interests = [
-  { name: "Web3 & Blockchain", icon: "🔗" },
-  { name: "AI & Digital Productivity", icon: "🤖" },
   { name: "Remote Work Systems", icon: "🌍" },
-  { name: "Community Building", icon: "👥" },
-  { name: "Content Creation & Media", icon: "🎬" },
-  { name: "Emerging Tech Trends", icon: "📱" },
+  { name: "Technology & Digital Tools", icon: "💻" },
+  { name: "AI Productivity Tools", icon: "🤖" },
+  { name: "Online Communities", icon: "👥" },
+  { name: "Content & Media Creation", icon: "🎬" },
 ];
 
 const AboutPage = () => {
@@ -64,18 +63,18 @@ const AboutPage = () => {
                 <div className="space-y-3 text-muted-foreground leading-relaxed text-sm">
                   <p>
                     I'm <span className="text-foreground font-medium">Aisiri Conquest Samuel</span>, 
-                    a Digital Operations Specialist, AI-Powered Virtual Assistant, Content & Community Coordinator, 
-                    and Web3 & Tech Support Professional based in Lagos, Nigeria.
+                    a Digital Operations & Virtual Assistance Support professional and Content & Community Assistant
+                    based in Lagos, Nigeria.
                   </p>
                   <p>
-                    With 3+ years of cumulative experience, I've supported remote operations, administrative workflows, 
-                    content systems, community management, and digital coordination across Web2 and Web3 environments. 
-                    I've worked with companies like Aptos Labs, Elliptic, Fireblocks, and Anchorage Digital.
+                    Tech-savvy and highly adaptable remote support professional with hands-on experience gained through 
+                    internships, volunteer-based learning roles, and a recent professional contract, supporting digital 
+                    operations, virtual assistance, content support, and online community management.
                   </p>
                   <p>
-                    I'm experienced in AI-assisted productivity, digital operations, research, reporting, 
-                    content coordination, video editing, motion graphics, graphic design, and community engagement 
-                    for global teams, startups, and blockchain companies.
+                    Skilled in using modern digital tools and AI-assisted productivity to improve efficiency and task execution.
+                    Known for reliability, attention to detail, and a strong willingness to learn, with growing exposure 
+                    to tech-driven and Web3-adjacent environments.
                   </p>
                 </div>
               </div>

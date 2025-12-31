@@ -3,16 +3,10 @@ import { ArrowRight, GraduationCap, Award, Folder, Heart } from "lucide-react";
 
 const education = [
   {
-    degree: "Bachelor of Science (BSc)",
-    institution: "University of Lagos (UNILAG)",
-    period: "Graduated",
-    description: "Developed strong analytical, problem-solving, and systematic thinking skills.",
-  },
-  {
     degree: "Higher National Diploma (HND)",
     institution: "Yaba College of Education",
     period: "Completed",
-    description: "Advanced technical education building on foundational knowledge.",
+    description: "Advanced technical education with focus on practical skills and professional development.",
   },
   {
     degree: "National Diploma (ND)",
@@ -23,46 +17,33 @@ const education = [
 ];
 
 const certifications = [
-  { name: "Google Digital Skills for Africa", issuer: "Google", category: "Digital Marketing" },
+  { name: "Google Digital Skills for Africa — Fundamentals of Digital Marketing", issuer: "Google", category: "Digital Marketing" },
   { name: "Google Workspace Productivity Training", issuer: "Google", category: "Productivity" },
-  { name: "Data Entry & Information Management Fundamentals", issuer: "Professional Development", category: "Data Skills" },
   { name: "Virtual Assistance Foundations", issuer: "Online Learning", category: "VA Skills" },
   { name: "Customer Support & Email Handling Essentials", issuer: "Professional Training", category: "Communication" },
   { name: "Blockchain Basics", issuer: "Coursera", category: "Web3" },
-  { name: "Web3 Fundamentals", issuer: "Alchemy University", category: "Web3" },
   { name: "Video Editing Essentials", issuer: "Udemy", category: "Creative" },
 ];
 
 const projects = [
   {
     title: "Personal Portfolio Website",
-    description: "Designed and developed a personal portfolio using HTML, CSS, and JavaScript to showcase skills, experience, and projects with a clean and responsive layout.",
-    tags: ["Web Development", "Design", "Branding"],
+    description: "Designed and built a personal portfolio website using HTML, CSS, and JavaScript.",
+    tags: ["Web Development", "Design", "HTML/CSS/JS"],
   },
   {
-    title: "Community Analytics & Reporting System",
-    description: "Independently built a structured analytics and reporting workflow for Discord and Telegram communities using Google Sheets and Forms. Collected engagement data, categorized feedback, and generated weekly insights simulating real client reporting environments.",
-    tags: ["Analytics", "Community", "Reporting"],
-  },
-  {
-    title: "Independent Skill Development",
-    description: "Continuous hands-on experimentation with AI tools, content creation, video editing, motion graphics, Web3 systems, automation, and digital workflows.",
-    tags: ["AI Tools", "Automation", "Self-Learning"],
+    title: "Community Reporting Practice Project",
+    description: "Created a basic engagement tracking system using Google Sheets.",
+    tags: ["Analytics", "Google Sheets", "Reporting"],
   },
 ];
 
 const volunteerExperience = [
   {
     role: "Digital Community Volunteer",
-    period: "Jan 2023 – Dec 2023",
+    period: "2023",
     type: "Remote",
-    description: "Assisted with community moderation, data organization, and event coordination.",
-  },
-  {
-    role: "Administrative Support Volunteer",
-    period: "Jun 2022 – Dec 2022",
-    type: "Remote",
-    description: "Supported documentation, email handling, and basic reporting for a local NGO.",
+    description: "Assisted with online community moderation, feedback organization, and coordination support.",
   },
 ];
 

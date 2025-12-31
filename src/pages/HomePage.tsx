@@ -3,8 +3,8 @@ import { ArrowRight, Briefcase, Clock, Globe, ChevronRight } from "lucide-react"
 import profileImage from "@/assets/conquest-profile.jpg";
 
 const stats = [
-  { icon: Clock, label: "3+ Years" },
-  { icon: Briefcase, label: "7+ Roles" },
+  { icon: Clock, label: "2024-Present" },
+  { icon: Briefcase, label: "3+ Roles" },
   { icon: Globe, label: "Remote-Ready" },
 ];
 
@@ -67,18 +67,15 @@ const HomePage = () => {
                   <span className="text-gradient">Samuel</span>
                 </h1>
                 <p className="text-lg md:text-xl text-muted-foreground">
-                  Digital Operations Specialist |{" "}
-                  <span className="text-foreground font-medium">AI-Powered Virtual Assistant</span>
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  Content, Community & Media Coordinator | Web3 & Tech Support Professional
+                  Digital Operations & Virtual Assistance Support |{" "}
+                  <span className="text-foreground font-medium">Content & Community Assistant</span>
                 </p>
               </div>
 
               <p className="text-muted-foreground leading-relaxed text-sm max-w-md">
-                Highly resourceful, tech-savvy, and detail-oriented digital professional with 3+ years 
-                of experience supporting remote operations, administrative workflows, and community management 
-                across Web2 and Web3 environments.
+                Tech-savvy and highly adaptable remote support professional with hands-on experience 
+                supporting digital operations, virtual assistance, content support, and online community management.
+                Known for reliability, attention to detail, and a strong willingness to learn.
               </p>
 
               {/* Stats */}
@@ -119,7 +116,7 @@ const HomePage = () => {
                   
                   {/* Floating Badge */}
                   <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-4 py-2 rounded-full shadow-lg font-semibold text-sm whitespace-nowrap">
-                    3+ Years Experience
+                    Remote-Ready Professional
                   </div>
                 </div>
               </div>
@@ -137,10 +134,9 @@ const HomePage = () => {
               <span className="text-gradient">Virtual Assistant</span>
             </h2>
             <p className="text-muted-foreground leading-relaxed text-sm">
-              I specialize in AI-assisted productivity, digital operations, content coordination, 
-              video editing, motion graphics, graphic design, and community engagement for global teams, 
-              startups, and blockchain companies. Proven ability to learn rapidly, adapt quickly, 
-              and build functional systems from scratch.
+              Skilled in using modern digital tools and AI-assisted productivity to improve efficiency and task execution.
+              Comfortable working in remote environments, handling administrative tasks, organizing information,
+              supporting content workflows, and assisting with community engagement.
             </p>
           </div>
         </div>
