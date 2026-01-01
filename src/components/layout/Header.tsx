@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Twitter, Send, Moon, Sun } from "lucide-react";
 import { useTheme } from "@/hooks/use-theme";
+import PersonaToggle from "@/components/PersonaToggle";
 
 const navItems = [
   { name: "Home", path: "/" },
@@ -47,8 +48,13 @@ const Header = () => {
             ConQuest<span className="text-primary">.</span>
           </Link>
 
+          {/* Persona Toggle - Center */}
+          <div className="hidden md:flex absolute left-1/2 -translate-x-1/2">
+            <PersonaToggle />
+          </div>
+
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden lg:flex items-center gap-6">
             {navItems.map((item) => (
               <Link
                 key={item.path}
@@ -64,7 +70,6 @@ const Header = () => {
 
           {/* Desktop CTA & Socials */}
           <div className="hidden md:flex items-center gap-3">
-            {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
               className="theme-toggle"
@@ -137,6 +142,11 @@ const Header = () => {
         }`}
       >
         <nav className="section-container py-4 flex flex-col gap-2">
+          {/* Mobile Persona Toggle */}
+          <div className="flex justify-center pb-3 border-b border-border mb-2">
+            <PersonaToggle />
+          </div>
+          
           {navItems.map((item) => (
             <Link
               key={item.path}
