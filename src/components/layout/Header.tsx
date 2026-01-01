@@ -39,22 +39,17 @@ const Header = () => {
       }`}
     >
       <div className="section-container">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-16 gap-4">
           {/* Logo */}
           <Link
             to="/"
-            className="text-xl font-heading font-bold text-foreground hover:text-primary transition-colors"
+            className="text-xl font-heading font-bold text-foreground hover:text-primary transition-colors flex-shrink-0"
           >
             ConQuest<span className="text-primary">.</span>
           </Link>
 
-          {/* Persona Toggle - Center */}
-          <div className="hidden md:flex absolute left-1/2 -translate-x-1/2">
-            <PersonaToggle />
-          </div>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-6">
+          {/* Desktop Navigation - Left side */}
+          <nav className="hidden lg:flex items-center gap-4 flex-shrink-0">
             {navItems.map((item) => (
               <Link
                 key={item.path}
@@ -68,8 +63,13 @@ const Header = () => {
             ))}
           </nav>
 
+          {/* Persona Toggle - Center (Desktop) */}
+          <div className="hidden md:flex flex-shrink-0">
+            <PersonaToggle />
+          </div>
+
           {/* Desktop CTA & Socials */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-3 flex-shrink-0">
             <button
               onClick={toggleTheme}
               className="theme-toggle"

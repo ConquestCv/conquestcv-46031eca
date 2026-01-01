@@ -95,7 +95,7 @@ const SkillsPage = () => {
           Skills & <span className="text-gradient">Expertise</span>
         </h1>
         <p className="page-subtitle">
-          A comprehensive overview of my professional skills, tools, and competencies across digital operations, AI, and Web3.
+          A comprehensive overview of my professional skills, tools, and competencies across digital operations and productivity.
         </p>
       </section>
 

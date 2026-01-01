@@ -73,8 +73,7 @@ const AboutPage = () => {
                   </p>
                   <p>
                     Skilled in using modern digital tools and AI-assisted productivity to improve efficiency and task execution.
-                    Known for reliability, attention to detail, and a strong willingness to learn, with growing exposure 
-                    to tech-driven and Web3-adjacent environments.
+                    Known for reliability, attention to detail, and a strong willingness to learn.
                   </p>
                 </div>
               </div>
