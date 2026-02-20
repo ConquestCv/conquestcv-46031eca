@@ -1,8 +1,22 @@
 import { Link } from "react-router-dom";
-import { Twitter, Send, Mail, MapPin } from "lucide-react";
+import { Twitter, Send, Mail, MapPin, ArrowUp } from "lucide-react";
+import { usePersona } from "@/hooks/use-persona";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { persona } = usePersona();
+  const isWeb3 = persona === "web3";
+
+  const accentText = isWeb3 ? "text-emerald-400" : "text-primary";
+  const accentHoverText = isWeb3 ? "hover:text-emerald-400" : "hover:text-primary";
+  const accentBorder = isWeb3 ? "hover:border-emerald-400/40" : "hover:border-primary/40";
+  const badgeClass = isWeb3
+    ? "inline-block px-2.5 py-1 text-[10px] font-medium rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/25"
+    : "inline-block px-2.5 py-1 text-[10px] font-medium rounded-full bg-primary/15 text-primary border border-primary/25";
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <footer className="border-t border-border/50 bg-card/30 backdrop-blur-sm">
@@ -12,21 +26,22 @@ const Footer = () => {
           <div className="space-y-3">
             <Link
               to="/"
-              className="text-xl font-heading font-bold text-foreground hover:text-primary transition-colors"
+              className={`text-xl font-heading font-bold text-foreground ${accentHoverText} transition-colors`}
             >
-              ConQuest<span className="text-primary">.</span>
+              ConQuest<span className={accentText}>.</span>
             </Link>
             <p className="text-muted-foreground text-xs leading-relaxed">
-              Remote Digital Operations & Virtual Assistance Specialist. 
-              Supporting businesses that need reliability and organization.
+              {isWeb3
+                ? "Web3 Operations, Research & Community Specialist. Turning complexity into clarity for decentralized teams."
+                : "Remote Digital Operations & Virtual Assistance Specialist. Supporting businesses that need reliability and organization."}
             </p>
             <div className="flex items-center gap-2">
               <a
                 href="https://x.com/iamconqwest"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-card/50 border border-border text-muted-foreground hover:text-primary hover:border-primary/40 transition-all"
-                aria-label="Twitter"
+                className={`p-2 rounded-lg bg-card/50 border border-border text-muted-foreground ${accentHoverText} ${accentBorder} transition-all`}
+                aria-label="Twitter @iamconqwest"
               >
                 <Twitter className="w-4 h-4" />
               </a>
@@ -34,12 +49,15 @@ const Footer = () => {
                 href="https://t.me/BIG_CQ"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-card/50 border border-border text-muted-foreground hover:text-primary hover:border-primary/40 transition-all"
-                aria-label="Telegram"
+                className={`p-2 rounded-lg bg-card/50 border border-border text-muted-foreground ${accentHoverText} ${accentBorder} transition-all`}
+                aria-label="Telegram @BIG_CQ"
               >
                 <Send className="w-4 h-4" />
               </a>
             </div>
+            <p className="text-muted-foreground text-[10px]">
+              <span className={accentText}>@iamconqwest</span> · t.me/BIG_CQ
+            </p>
           </div>
 
           {/* Quick Links */}
@@ -56,7 +74,7 @@ const Footer = () => {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className="text-muted-foreground hover:text-primary transition-colors text-xs w-fit"
+                  className={`text-muted-foreground ${accentHoverText} transition-colors text-xs w-fit`}
                 >
                   {link.name}
                 </Link>
@@ -70,7 +88,7 @@ const Footer = () => {
             <div className="space-y-2">
               <a
                 href="mailto:conquestsammy5@gmail.com"
-                className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-xs"
+                className={`flex items-center gap-2 text-muted-foreground ${accentHoverText} transition-colors text-xs`}
               >
                 <Mail className="w-3.5 h-3.5" />
                 conquestsammy5@gmail.com
@@ -80,18 +98,25 @@ const Footer = () => {
                 Lagos, Nigeria
               </div>
             </div>
-            <span className="inline-block px-2.5 py-1 text-[10px] font-medium rounded-full bg-primary/15 text-primary border border-primary/25">
-              Remote-Ready
-            </span>
+            <span className={badgeClass}>Remote-Ready</span>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="mt-8 pt-6 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
           <p>© {currentYear} Aisiri Conquest Samuel. All rights reserved.</p>
-          <p className="text-center sm:text-right">
-            Open to full-time, hybrid, or on-site roles.
+          <p className="text-center sm:text-right hidden sm:block">
+            {isWeb3 ? "Open to Web3 remote collaborations & DAO contributions." : "Open to full-time, hybrid, or on-site roles."}
           </p>
+          {/* Back to Top */}
+          <button
+            onClick={scrollToTop}
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-border bg-card/50 text-muted-foreground ${accentHoverText} hover:border-${isWeb3 ? "emerald-400/40" : "primary/40"} transition-all hover:scale-105 text-xs`}
+            aria-label="Back to top"
+          >
+            <ArrowUp className="w-3 h-3" />
+            Back to top
+          </button>
         </div>
       </div>
     </footer>

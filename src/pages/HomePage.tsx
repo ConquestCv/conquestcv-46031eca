@@ -53,7 +53,7 @@ const HomePage = () => {
       <div className="hero-glow" />
 
       {/* Hero Section */}
-      <section className="min-h-[90vh] flex items-center justify-center pt-16">
+      <section className="min-h-[90vh] flex items-center justify-center pt-28 sm:pt-24 pb-16">
         <div className="section-container">
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             {/* Left Content */}
