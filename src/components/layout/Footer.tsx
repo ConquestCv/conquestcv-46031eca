@@ -87,11 +87,11 @@ const Footer = () => {
             <h3 className="font-heading font-semibold text-foreground text-sm">Get in Touch</h3>
             <div className="space-y-2">
               <a
-                href="mailto:conquestsammy5@gmail.com"
+                href="mailto:conquestaisiri@gmail.com"
                 className={`flex items-center gap-2 text-muted-foreground ${accentHoverText} transition-colors text-xs`}
               >
                 <Mail className="w-3.5 h-3.5" />
-                conquestsammy5@gmail.com
+                conquestaisiri@gmail.com
               </a>
               <div className="flex items-center gap-2 text-muted-foreground text-xs">
                 <MapPin className="w-3.5 h-3.5" />

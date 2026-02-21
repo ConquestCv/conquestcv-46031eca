@@ -6,8 +6,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "conquestsammy5@gmail.com",
-    href: "mailto:conquestsammy5@gmail.com",
+    value: "conquestaisiri@gmail.com",
+    href: "mailto:conquestaisiri@gmail.com",
   },
   {
     icon: Phone,
@@ -71,7 +71,7 @@ From: ${formData.name}
 Email: ${formData.email}
 Subject: ${formData.subject}`;
 
-    const mailtoLink = `mailto:conquestsammy5@gmail.com?subject=${encodeURIComponent(subjectText)}&body=${encodeURIComponent(bodyText)}`;
+    const mailtoLink = `mailto:conquestaisiri@gmail.com?subject=${encodeURIComponent(subjectText)}&body=${encodeURIComponent(bodyText)}`;
     
     window.open(mailtoLink, '_self');
     

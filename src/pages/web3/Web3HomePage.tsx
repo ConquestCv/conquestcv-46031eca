@@ -414,7 +414,7 @@ const Web3HomePage = () => {
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
-                href="mailto:conquestsammy5@gmail.com"
+                href="mailto:conquestaisiri@gmail.com"
                 className="btn-secondary"
               >
                 Email Directly

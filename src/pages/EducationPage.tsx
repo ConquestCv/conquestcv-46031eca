@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, GraduationCap, Award, Folder, Heart } from "lucide-react";
+import { ArrowRight, GraduationCap, Award, Folder } from "lucide-react";
 
 const education = [
   {
@@ -17,33 +17,28 @@ const education = [
 ];
 
 const certifications = [
-  { name: "Google Digital Skills for Africa — Fundamentals of Digital Marketing", issuer: "Google", category: "Digital Marketing" },
-  { name: "Google Workspace Productivity Training", issuer: "Google", category: "Productivity" },
-  { name: "Virtual Assistance Foundations", issuer: "Online Learning", category: "VA Skills" },
-  { name: "Customer Support & Email Handling Essentials", issuer: "Professional Training", category: "Communication" },
   { name: "Blockchain Basics", issuer: "Coursera", category: "Web3" },
-  { name: "Video Editing Essentials", issuer: "Udemy", category: "Creative" },
+  { name: "Digital Marketing Fundamentals", issuer: "Google Digital Skills for Africa", category: "Digital Marketing" },
+  { name: "Email Marketing Certificate", issuer: "GAOTek Inc.", category: "Marketing" },
+  { name: "Google Workspace Productivity Training", issuer: "Google", category: "Productivity" },
+  { name: "Virtual Assistance & Customer Support Essentials", issuer: "Professional Training", category: "VA Skills" },
 ];
 
 const projects = [
   {
-    title: "Personal Portfolio Website",
-    description: "Designed and built a personal portfolio website using HTML, CSS, and JavaScript.",
-    tags: ["Web Development", "Design", "HTML/CSS/JS"],
+    title: "Workflow Automation & Logic",
+    description: "Engineered automated trade logic on-chain using API integrations and built semi-automated reporting dashboards to reduce manual data entry by 60%.",
+    tags: ["Automation", "API Integration", "Data Architecture"],
   },
   {
-    title: "Community Reporting Practice Project",
-    description: "Created a basic engagement tracking system using Google Sheets.",
-    tags: ["Analytics", "Google Sheets", "Reporting"],
+    title: "Personal Digital Headquarters",
+    description: "Developed a custom portfolio website using HTML, CSS, and JavaScript to host professional assets and showcase technical capabilities.",
+    tags: ["Web Development", "HTML/CSS/JS", "Design"],
   },
-];
-
-const volunteerExperience = [
   {
-    role: "Digital Community Volunteer",
-    period: "2023",
-    type: "Remote",
-    description: "Assisted with online community moderation, feedback organization, and coordination support.",
+    title: "Independent Market Analysis",
+    description: "Authored detailed studies on liquidity behavior and community traction models within the decentralized finance (DeFi) space.",
+    tags: ["Research", "DeFi", "Analytics"],
   },
 ];
 
@@ -58,7 +53,7 @@ const EducationPage = () => {
           Education & <span className="text-gradient">Certifications</span>
         </h1>
         <p className="page-subtitle">
-          My academic background, professional certifications, and projects.
+          My academic background, professional certifications, and key projects.
         </p>
       </section>
 
@@ -96,10 +91,10 @@ const EducationPage = () => {
             <div className="icon-container">
               <Award className="w-5 h-5 text-primary" />
             </div>
-            <h2 className="text-xl md:text-2xl font-heading font-bold">Certifications & Online Training</h2>
+            <h2 className="text-xl md:text-2xl font-heading font-bold">Certifications & Training</h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {certifications.map((cert, index) => (
               <div key={index} className="interactive-card">
                 <span className="inline-block px-2 py-0.5 text-[10px] font-medium rounded bg-primary/15 text-primary mb-2">
@@ -113,14 +108,14 @@ const EducationPage = () => {
         </div>
       </section>
 
-      {/* Projects */}
+      {/* Key Projects */}
       <section className="py-12">
         <div className="section-container max-w-4xl">
           <div className="flex items-center gap-2 mb-6">
             <div className="icon-container">
               <Folder className="w-5 h-5 text-primary" />
             </div>
-            <h2 className="text-xl md:text-2xl font-heading font-bold">Projects & Practical Work</h2>
+            <h2 className="text-xl md:text-2xl font-heading font-bold">Key Projects & Achievements</h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-4">
@@ -138,30 +133,6 @@ const EducationPage = () => {
                     </span>
                   ))}
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Volunteer Experience */}
-      <section className="py-12 border-t border-border/50">
-        <div className="section-container max-w-3xl">
-          <div className="flex items-center gap-2 mb-6">
-            <div className="icon-container">
-              <Heart className="w-5 h-5 text-primary" />
-            </div>
-            <h2 className="text-xl md:text-2xl font-heading font-bold">Volunteer Experience</h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-4">
-            {volunteerExperience.map((vol, index) => (
-              <div key={index} className="interactive-card">
-                <div className="flex flex-wrap items-start justify-between gap-3 mb-2">
-                  <h3 className="text-base font-heading font-bold">{vol.role}</h3>
-                  <span className="stat-badge">{vol.period}</span>
-                </div>
-                <p className="text-muted-foreground text-sm">{vol.description}</p>
               </div>
             ))}
           </div>

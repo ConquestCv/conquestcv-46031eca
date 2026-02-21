@@ -3,19 +3,28 @@ import { ArrowRight, CheckCircle } from "lucide-react";
 import profileImage from "@/assets/conquest-profile.jpg";
 
 const valueProps = [
-  "Highly independent and self-directed",
+  "Highly independent and self-directed in remote-first environments",
   "Strong attention to detail and execution accuracy",
   "Comfortable with ambiguity and fast-changing priorities",
-  "Excellent time management in remote environments",
+  "Excellent time management across cross-border teams",
   "Curious, resourceful, disciplined, and solution-oriented",
+  "Maintains high-level confidentiality and precision",
+];
+
+const coreExpertise = [
+  { area: "Digital Operations", detail: "Advanced inbox management, executive scheduling, and cross-border team coordination.", icon: "📋" },
+  { area: "Data Architecture", detail: "Building automated reporting dashboards and tracking systems using Google Sheets and logic-based formulas.", icon: "📊" },
+  { area: "Multimedia Production", detail: "High-fidelity video editing (CapCut, After Effects) and live stream management via OBS Studio.", icon: "🎬" },
+  { area: "Technical Support", detail: "Bridging users and complex digital products through clear documentation and empathetic communication.", icon: "🛠️" },
+  { area: "Web3 Integration", detail: "Native understanding of DeFi protocols, wallet security, and DAO governance structures.", icon: "🌐" },
 ];
 
 const interests = [
   { name: "Remote Work Systems", icon: "🌍" },
-  { name: "Technology & Digital Tools", icon: "💻" },
   { name: "AI Productivity Tools", icon: "🤖" },
+  { name: "Multimedia Production", icon: "🎬" },
+  { name: "Data & Automation", icon: "📊" },
   { name: "Online Communities", icon: "👥" },
-  { name: "Content & Media Creation", icon: "🎬" },
 ];
 
 const AboutPage = () => {
@@ -29,7 +38,7 @@ const AboutPage = () => {
           About <span className="text-gradient">Me</span>
         </h1>
         <p className="page-subtitle">
-          A tech-savvy digital professional passionate about supporting remote operations and building functional systems.
+          A highly versatile Operations & Multimedia Specialist with dual-track expertise in traditional digital operations and decentralized ecosystems.
         </p>
       </section>
 
@@ -63,22 +72,38 @@ const AboutPage = () => {
                 <div className="space-y-3 text-muted-foreground leading-relaxed text-sm">
                   <p>
                     I'm <span className="text-foreground font-medium">Aisiri Conquest Samuel</span>, 
-                    a Digital Operations & Virtual Assistance Support professional and Content & Community Assistant
-                    based in Lagos, Nigeria.
+                    a highly versatile Operations & Multimedia Specialist based in Lagos, Nigeria, with over 3 years 
+                    of experience navigating digital tools, AI-assisted productivity, and community architecture.
                   </p>
                   <p>
-                    Tech-savvy and highly adaptable remote support professional with hands-on experience gained through 
-                    internships, volunteer-based learning roles, and a recent professional contract, supporting digital 
-                    operations, virtual assistance, content support, and online community management.
-                  </p>
-                  <p>
-                    Skilled in using modern digital tools and AI-assisted productivity to improve efficiency and task execution.
-                    Known for reliability, attention to detail, and a strong willingness to learn.
+                    I bridge the gap between "Real World" corporate administration and the Web3 frontier. 
+                    I'm recognized for implementing structured workflows that reduce manual overhead and for 
+                    maintaining high-level confidentiality and precision in fast-paced, remote-first environments.
                   </p>
                 </div>
               </div>
 
-              {/* What I Bring */}
+              {/* Core Areas of Expertise */}
+              <div className="space-y-4">
+                <h2 className="text-xl md:text-2xl font-heading font-bold">
+                  Core Areas of Expertise
+                </h2>
+                <div className="space-y-3">
+                  {coreExpertise.map((item, index) => (
+                    <div key={index} className="interactive-card !py-3 !px-4">
+                      <div className="flex items-start gap-3">
+                        <span className="text-lg mt-0.5">{item.icon}</span>
+                        <div>
+                          <h4 className="font-heading font-semibold text-sm text-foreground">{item.area}</h4>
+                          <p className="text-xs text-muted-foreground mt-0.5">{item.detail}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Work Style & Strengths */}
               <div className="space-y-4">
                 <h2 className="text-xl md:text-2xl font-heading font-bold">
                   Work Style & Strengths
