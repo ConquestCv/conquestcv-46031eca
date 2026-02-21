@@ -3,8 +3,8 @@ import { ArrowRight, Briefcase, Clock, Globe, ChevronRight } from "lucide-react"
 import profileImage from "@/assets/conquest-profile.jpg";
 
 const stats = [
-  { icon: Clock, label: "2024-Present" },
-  { icon: Briefcase, label: "3+ Roles" },
+  { icon: Clock, label: "3+ Years Experience" },
+  { icon: Briefcase, label: "Operations & Multimedia" },
   { icon: Globe, label: "Remote-Ready" },
 ];
 
@@ -25,24 +25,24 @@ const testimonials = [
 
 const services = [
   {
-    title: "Virtual Assistance",
-    description: "Inbox, scheduling, and administrative support.",
+    title: "Digital Operations",
+    description: "Advanced inbox management, executive scheduling, and cross-border team coordination.",
     icon: "📋",
   },
   {
-    title: "AI-Powered Productivity",
-    description: "AI tools for writing, research, and content.",
-    icon: "🤖",
+    title: "Data Architecture",
+    description: "Automated reporting dashboards and tracking systems using Google Sheets and logic-based formulas.",
+    icon: "📊",
   },
   {
-    title: "Community Support",
-    description: "Discord/Telegram moderation and engagement.",
-    icon: "💬",
-  },
-  {
-    title: "Content & Media",
-    description: "Video editing, graphics, and coordination.",
+    title: "Multimedia Production",
+    description: "High-fidelity video editing (CapCut, After Effects) and live stream management via OBS Studio.",
     icon: "🎬",
+  },
+  {
+    title: "Technical Support",
+    description: "Bridging users and complex digital products through clear documentation and empathetic communication.",
+    icon: "💬",
   },
 ];
 
@@ -67,15 +67,16 @@ const HomePage = () => {
                   <span className="text-gradient">Samuel</span>
                 </h1>
                 <p className="text-lg md:text-xl text-muted-foreground">
-                  Digital Operations & Virtual Assistance Support |{" "}
-                  <span className="text-foreground font-medium">Content & Community Assistant</span>
+                  Operations & Multimedia Specialist |{" "}
+                  <span className="text-foreground font-medium">Digital Operations & Web3 Integration</span>
                 </p>
               </div>
 
               <p className="text-muted-foreground leading-relaxed text-sm max-w-md">
-                Tech-savvy and highly adaptable remote support professional with hands-on experience 
-                supporting digital operations, virtual assistance, content support, and online community management.
-                Known for reliability, attention to detail, and a strong willingness to learn.
+                A highly versatile Operations & Multimedia Specialist with over 3 years of experience
+                navigating digital tools, AI-assisted productivity, and community architecture. Recognized for 
+                implementing structured workflows that reduce manual overhead and maintaining high-level 
+                confidentiality and precision in fast-paced, remote-first environments.
               </p>
 
               {/* Stats */}
@@ -130,13 +131,13 @@ const HomePage = () => {
         <div className="section-container">
           <div className="text-center max-w-3xl mx-auto space-y-4">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold">
-              More Than Just a{" "}
-              <span className="text-gradient">Virtual Assistant</span>
+              Bridging{" "}
+              <span className="text-gradient">Corporate & Decentralized</span>
             </h2>
             <p className="text-muted-foreground leading-relaxed text-sm">
-              Skilled in using modern digital tools and AI-assisted productivity to improve efficiency and task execution.
-              Comfortable working in remote environments, handling administrative tasks, organizing information,
-              supporting content workflows, and assisting with community engagement.
+              With dual-track expertise in traditional digital operations and decentralized ecosystems, 
+              I bridge the gap between "Real World" corporate administration and the Web3 frontier — 
+              building automated workflows, managing multimedia production, and delivering clear technical documentation.
             </p>
           </div>
         </div>
@@ -226,7 +227,7 @@ const HomePage = () => {
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <a
-                href="mailto:conquestsammy5@gmail.com"
+                href="mailto:conquestaisiri@gmail.com"
                 className="btn-secondary"
               >
                 Email Me Directly

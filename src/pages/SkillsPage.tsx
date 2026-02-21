@@ -2,71 +2,82 @@ import { Link } from "react-router-dom";
 import { ArrowRight, ClipboardList, BarChart3, MessageCircle, Settings2, Sparkles, Code } from "lucide-react";
 import LiquidMeter from "@/components/LiquidMeter";
 
-// Icons for each skill category
 const categoryIcons = {
-  admin: ClipboardList,
-  ai: Sparkles,
-  content: BarChart3,
+  productivity: ClipboardList,
+  multimedia: Sparkles,
+  data: BarChart3,
   communication: MessageCircle,
-  tech: Code,
-  tools: Settings2,
+  dev: Code,
+  web3: Settings2,
 };
 
 const skillCategories = [
   {
-    title: "Virtual Assistance & Admin Support",
-    iconKey: "admin" as const,
+    title: "Productivity & Operations",
+    iconKey: "productivity" as const,
     iconColor: "from-violet-500 to-purple-600",
     skills: [
-      { name: "Inbox & Scheduling Management", level: 90 },
-      { name: "Data Entry & Documentation", level: 92 },
-      { name: "Information Organization", level: 88 },
-      { name: "Task Follow-ups", level: 85 },
-      { name: "Online Research & Reporting", level: 88 },
+      { name: "Google Workspace (Docs, Sheets, Forms, Drive)", level: 92 },
+      { name: "Notion", level: 88 },
+      { name: "Trello", level: 85 },
+      { name: "Executive Scheduling & Inbox Management", level: 90 },
+      { name: "Cross-Border Team Coordination", level: 85 },
     ],
   },
   {
-    title: "AI-Assisted Productivity",
-    iconKey: "ai" as const,
+    title: "Multimedia Production",
+    iconKey: "multimedia" as const,
     iconColor: "from-pink-500 to-rose-600",
     skills: [
-      { name: "AI-Assisted Writing", level: 85 },
-      { name: "AI Productivity Tools", level: 82 },
-      { name: "Content Proofreading", level: 88 },
-      { name: "Research & Summarization", level: 85 },
+      { name: "After Effects", level: 78 },
+      { name: "CapCut", level: 88 },
+      { name: "Canva", level: 90 },
+      { name: "OBS Studio (Live Streaming)", level: 82 },
+      { name: "Figma", level: 75 },
     ],
   },
   {
-    title: "Content & Media Support",
-    iconKey: "content" as const,
+    title: "Data Architecture & Reporting",
+    iconKey: "data" as const,
     iconColor: "from-cyan-500 to-blue-600",
     skills: [
-      { name: "Content Coordination", level: 85 },
-      { name: "Content Formatting", level: 88 },
-      { name: "Basic Video Editing", level: 75 },
-      { name: "Basic Design Support", level: 72 },
+      { name: "Google Sheets (Dashboards & Formulas)", level: 90 },
+      { name: "Automated Reporting Systems", level: 85 },
+      { name: "Engagement Tracking Dashboards", level: 88 },
+      { name: "Data Entry & Documentation", level: 92 },
     ],
   },
   {
-    title: "Community & Customer Support",
+    title: "Communication & Support",
     iconKey: "communication" as const,
     iconColor: "from-emerald-500 to-teal-600",
     skills: [
-      { name: "Discord/Telegram Moderation", level: 85 },
-      { name: "Customer Support (Chat/Email)", level: 88 },
-      { name: "Community Engagement", level: 82 },
-      { name: "Clear Written Communication", level: 90 },
+      { name: "Discord (Admin/Mod)", level: 88 },
+      { name: "Telegram (Admin/Mod)", level: 88 },
+      { name: "Slack", level: 85 },
+      { name: "Technical Documentation", level: 85 },
+      { name: "Customer Support (Chat/Email)", level: 90 },
     ],
   },
   {
-    title: "Tech & Web Skills",
-    iconKey: "tech" as const,
+    title: "Development Fundamentals",
+    iconKey: "dev" as const,
     iconColor: "from-amber-500 to-orange-600",
     skills: [
-      { name: "HTML, CSS, JavaScript (Basic)", level: 70 },
-      { name: "Google Sheets (Tracking/Reports)", level: 85 },
-      { name: "Time Management", level: 88 },
-      { name: "Independent Work", level: 90 },
+      { name: "HTML5", level: 78 },
+      { name: "CSS3", level: 75 },
+      { name: "JavaScript (Core Fundamentals)", level: 70 },
+    ],
+  },
+  {
+    title: "Web3 / Crypto",
+    iconKey: "web3" as const,
+    iconColor: "from-indigo-500 to-blue-600",
+    skills: [
+      { name: "Wallet Management (MetaMask/Trust)", level: 85 },
+      { name: "Blockchain Explorers", level: 82 },
+      { name: "CEX/DEX UI Navigation", level: 80 },
+      { name: "DeFi Protocols & DAO Governance", level: 78 },
     ],
   },
 ];
@@ -77,11 +88,13 @@ const tools = [
   { name: "Trello", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain.svg", isColored: true },
   { name: "Discord", logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg", isColored: false },
   { name: "Telegram", logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/telegram.svg", isColored: false },
-  { name: "Canva", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg", isColored: true },
+  { name: "Slack", logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/slack.svg", isColored: false },
+  { name: "After Effects", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aftereffects/aftereffects-original.svg", isColored: true },
   { name: "CapCut", logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/capcut.svg", isColored: false },
-  { name: "Figma", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg", isColored: true },
+  { name: "Canva", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg", isColored: true },
   { name: "OBS Studio", logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/obsstudio.svg", isColored: false },
-  { name: "Google Sheets", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg", isColored: true },
+  { name: "Figma", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg", isColored: true },
+  { name: "MetaMask", logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/metamask.svg", isColored: false },
 ];
 
 const SkillsPage = () => {
@@ -89,13 +102,12 @@ const SkillsPage = () => {
     <div className="relative">
       <div className="hero-glow" />
 
-      {/* Header */}
       <section className="page-header">
         <h1 className="page-title">
-          Skills & <span className="text-gradient">Expertise</span>
+          Skills & <span className="text-gradient">Technical Toolkit</span>
         </h1>
         <p className="page-subtitle">
-          A comprehensive overview of my professional skills, tools, and competencies across digital operations and productivity.
+          A comprehensive overview of my professional skills across digital operations, multimedia production, data architecture, and Web3 integration.
         </p>
       </section>
 
@@ -106,17 +118,13 @@ const SkillsPage = () => {
             {skillCategories.map((category, index) => {
               const IconComponent = categoryIcons[category.iconKey];
               return (
-                <div
-                  key={index}
-                  className="interactive-card"
-                >
+                <div key={index} className="interactive-card">
                   <div className="flex items-center gap-3 mb-4">
                     <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${category.iconColor} flex items-center justify-center shadow-lg`}>
                       <IconComponent className="w-6 h-6 text-white" />
                     </div>
                     <h3 className="text-sm font-heading font-bold">{category.title}</h3>
                   </div>
-
                   <div className="space-y-3">
                     {category.skills.map((skill, idx) => (
                       <div key={idx} className="space-y-1.5">
@@ -174,7 +182,7 @@ const SkillsPage = () => {
             Ready to Put These Skills to Work?
           </h2>
           <p className="text-muted-foreground text-sm mb-6 max-w-md mx-auto">
-            I'm available for remote roles in virtual assistance, digital operations, community support, and more.
+            I'm available for remote roles in digital operations, multimedia production, data architecture, and more.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <Link to="/contact" className="btn-primary">

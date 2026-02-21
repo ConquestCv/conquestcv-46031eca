@@ -7,52 +7,38 @@ const experiences = [
     role: "Digital Operations Assistant",
     period: "Feb 2025 – Mar 2025",
     type: "Remote",
-    description: "Provided operational and administrative support for a remote team.",
+    description: "Acted as the central point for remote team coordination, managing complex task delegation and internal communication channels.",
     responsibilities: [
-      "Managed inboxes, scheduling, and task coordination",
-      "Assisted with data entry, documentation, and reporting",
-      "Supported content coordination and workflow execution",
-      "Provided operational support for distributed team",
+      "Managed complex task delegation and internal communication channels across remote teams",
+      "Overhauled reporting and documentation workflows for executive review",
+      "Ensured all digital records were organized and accessible",
+      "Coordinated cross-border team scheduling and inbox management",
     ],
   },
   {
-    company: "Learning Role",
-    role: "Community & Content Support Intern",
-    period: "May 2024 – Aug 2024",
-    type: "Remote (Volunteer-Based)",
-    description: "Volunteer-based learning role focused on community and content support.",
+    company: "Freelance",
+    role: "Web3 Community & Research Specialist",
+    period: "Aug 2024 – Jan 2025",
+    type: "Remote (Freelance)",
+    description: "Conducted ecosystem monitoring and community architecture for decentralized projects.",
     responsibilities: [
-      "Assisted with moderation of online communities on Discord and Telegram",
-      "Responded to basic user questions and support messages",
-      "Helped format content for community updates",
-      "Assisted with engagement tracking using Google Sheets",
-      "Supported announcements and coordination tasks",
+      "Conducted deep-dive research into tokenomics models and emerging blockchain projects",
+      "Managed high-velocity Discord and Telegram environments with bot logic and moderation",
+      "Developed engagement tracking dashboards using Google Sheets for community growth and sentiment",
+      "Provided actionable market intelligence from ecosystem monitoring",
     ],
   },
   {
-    company: "Learning Role",
-    role: "Operations & Virtual Assistance Intern",
-    period: "Jan 2024 – Apr 2024",
-    type: "Remote (Volunteer-Based)",
-    description: "Volunteer-based learning role for operations and virtual assistance.",
+    company: "Self-Employed",
+    role: "Freelance Operations & Virtual Assistant",
+    period: "2023 – Present",
+    type: "Remote",
+    description: "Comprehensive administrative backing for digital entrepreneurs, from scheduling to content management.",
     responsibilities: [
-      "Supported daily administrative and digital operations tasks",
-      "Assisted with inbox management, scheduling, and task follow-ups",
-      "Performed data entry, documentation, and information organization",
-      "Conducted online research and summarized findings",
-      "Learned practical use of Google Workspace, Notion, and Trello",
-    ],
-  },
-  {
-    company: "Remote",
-    role: "Digital Community Volunteer",
-    period: "2023",
-    type: "Remote (Volunteer)",
-    description: "Assisted with online community moderation, feedback organization, and coordination support.",
-    responsibilities: [
-      "Assisted with community moderation",
-      "Organized feedback and user data",
-      "Supported coordination and event activities",
+      "Provide comprehensive administrative support including scheduling and stakeholder follow-ups",
+      "Transform raw data into structured reports through meticulous online research",
+      "Support end-to-end content workflows from formatting and proofreading to final publishing",
+      "Manage information organization and summarization for digital entrepreneurs",
     ],
   },
 ];
@@ -68,7 +54,7 @@ const ExperiencePage = () => {
           Work <span className="text-gradient">Experience</span>
         </h1>
         <p className="page-subtitle">
-          A timeline of my professional journey across remote operations, virtual assistance, and community support roles.
+          A timeline of my professional journey across digital operations, multimedia production, and community coordination.
         </p>
       </section>
 
