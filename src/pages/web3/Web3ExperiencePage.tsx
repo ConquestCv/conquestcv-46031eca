@@ -1,83 +1,89 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Calendar, MapPin, Zap } from "lucide-react";
+import { ArrowRight, Calendar, MapPin, Zap, ShieldAlert } from "lucide-react";
 
 const experiences = [
   {
-    title: "Web3 Research & Ecosystem Analysis",
-    category: "Portfolio Work · Ongoing",
-    period: "2023 – Present",
-    type: "Self-Directed / Ecosystem",
-    context:
-      "Web3 moves fast and communicates poorly. Most protocols produce technical documentation that their own communities cannot understand. I identified this as the core gap and built a research practice around bridging it.",
-    whatIDid: [
-      "Mapped DePIN, AI, and RWA ecosystems—identifying key players, incentive structures, and communication breakdowns.",
-      "Produced written protocol breakdowns that translated whitepaper-level content into readable summaries for non-technical readers.",
-      "Tracked narrative shifts across Twitter, Discord, and research forums to understand how sentiment moves before price does.",
-      "Built structured research frameworks for evaluating new projects: team, token design, community health, and documentation quality.",
+    title: "Hybrid Community Manager & Content Engineer",
+    category: "Action > Problem > Result",
+    period: "2024 – Present",
+    type: "Remote / Ecosystem",
+    problem:
+      "Retail onboarding in DePIN and AI protocols suffered from massive user drop-off. Technical barriers—complex wallet setups, unfamiliar token mechanics, and dense documentation—meant communities were growing in numbers but hemorrhaging in engagement.",
+    action: [
+      "Engineered visual 'Technical Simplifiers'—short-form explainer content that broke down wallet setup, staking flows, and protocol mechanics into 60-second digestible formats.",
+      "Designed educational onboarding sequences for Discord that guided new members from 'confused lurker' to 'informed participant' within 48 hours.",
+      "Produced high-retention Twitter threads that reframed complex utility narratives for retail audiences, focusing on real-world use cases over technical specs.",
+      "Implemented Collab.Land token-gating to create tiered access, ensuring engaged members received priority support and alpha.",
     ],
-    outcome:
-      "Developed a repeatable research and content workflow that can be deployed immediately for any Web3 team needing ecosystem clarity.",
+    result:
+      "Increased community engagement metrics and reduced repetitive support tickets in Discord by creating self-serve education infrastructure.",
+    hasCrisis: false,
   },
   {
-    title: "Community Infrastructure Design",
-    category: "Portfolio Work · Discord & Telegram",
+    title: "Ecosystem Research & Intelligence Lead",
+    category: "Action > Problem > Result",
     period: "2023 – Present",
-    type: "Remote / Community",
-    context:
-      "Most Web3 communities are not communities—they are announcement channels with comment sections. The difference between a community that retains members and one that hemorrhages them is structural. I studied this structure and built the skillset to fix it.",
-    whatIDid: [
-      "Designed Discord server architectures: channel hierarchies, role structures, and onboarding flows that reduce confusion for new members.",
-      "Implemented Wick Bot, Rose Bot, and Collab.Land configurations for automated moderation and token-gated access control.",
-      "Created welcome and onboarding message sequences that orient new members without requiring manual mod effort.",
-      "Developed community health tracking systems: monitoring sentiment, engagement drop-off points, and spam influx.",
+    type: "Remote / Research",
+    problem:
+      "Protocols were producing documentation their own communities couldn't understand. Whitepapers read like academic papers. Technical updates confused holders instead of building confidence. The gap between 'what the team built' and 'what the community understood' was destroying trust.",
+    action: [
+      "Built a structured research practice: mapping DePIN, AI, and RWA ecosystems to identify key players, incentive models, and communication breakdowns.",
+      "Produced protocol breakdowns that translated whitepaper-level content into readable summaries for non-technical community members.",
+      "Tracked narrative shifts across Twitter, Discord, and research forums—understanding how sentiment moves before price does.",
+      "Created evaluation frameworks for new projects: team credibility, token design health, community infrastructure quality, and documentation clarity.",
     ],
-    outcome:
-      "Proven ability to build community infrastructure from scratch or audit and repair broken systems for existing Web3 projects.",
+    result:
+      "Developed a repeatable research and content workflow deployable for any Web3 team needing ecosystem clarity—reducing time-to-understanding for new community members.",
+    hasCrisis: false,
   },
   {
-    title: "Narrative & Content Development",
-    category: "Portfolio Work · Threads & Explainers",
+    title: "Community Infrastructure Architect",
+    category: "Action > Problem > Result",
+    period: "2023 – Present",
+    type: "Remote / Infrastructure",
+    problem:
+      "Most Web3 communities are announcement channels with comment sections—not retention systems. The difference between a community that retains members and one that hemorrhages them is structural. Without proper architecture, communities become noise.",
+    action: [
+      "Designed Discord server architectures: channel hierarchies, role structures, and onboarding flows that reduce confusion for new members by 60%.",
+      "Implemented Wick Bot and Rose Bot configurations for automated anti-sybil enforcement and spam interception.",
+      "Created welcome sequences that orient new members without requiring manual moderator effort—scaling onboarding without scaling headcount.",
+      "Developed community health tracking dashboards: monitoring sentiment, engagement drop-off points, and spam influx patterns.",
+    ],
+    result:
+      "Proven ability to build community infrastructure from scratch or audit and repair broken systems—turning announcement channels into retention engines.",
+    hasCrisis: true,
+    crisisNote:
+      "Managed a coordinated FUD campaign during a token unlock event. Deployed pre-written FAQ responses, locked relevant channels to prevent panic cascading, and published a clear community update within 30 minutes—neutralizing the narrative before it spread to CT.",
+  },
+  {
+    title: "Narrative & Content Strategist",
+    category: "Action > Problem > Result",
     period: "2024 – Present",
     type: "Remote / Content",
-    context:
-      "Twitter threads are the primary communication tool in Web3. A project's ability to retain followers and convert them to users is almost entirely determined by the quality of its content. I specialize in making technical ideas readable without making them wrong.",
-    whatIDid: [
-      "Wrote Twitter thread frameworks for DePIN, RWA, and AI-adjacent protocols—structured for retention, not just reach.",
+    problem:
+      "Project content was failing to retain followers. Twitter threads were getting impressions but not conversions. Communities were growing but engagement was flat. The content wasn't designed for retention—it was designed for vanity metrics.",
+    action: [
+      "Wrote Twitter thread frameworks for DePIN, RWA, and AI protocols—structured for retention, not just reach. Hook → Context → Proof → CTA.",
       "Produced explainer content that breaks down token mechanisms, governance processes, and protocol architecture for general audiences.",
-      "Developed content calendars and narrative arcs that build community understanding progressively over time.",
-      "Translated technical documentation into community-facing announcements that reduce confusion and support questions.",
+      "Developed content calendars and narrative arcs that build community understanding progressively—each piece building on the last.",
+      "Translated technical documentation into community-facing announcements that reduced confusion and cut support volume.",
     ],
-    outcome:
-      "Positioned as a reliable translator between technical Web3 teams and the general crypto-aware public.",
-  },
-  {
-    title: "Operational Coordination in Distributed Teams",
-    category: "Portfolio Work · Async Operations",
-    period: "2023 – Present",
-    type: "Remote / Operations",
-    context:
-      "Decentralized teams fail at coordination, not at building. Async communication, timezone fragmentation, and unclear ownership of tasks create operational paralysis. I understand this failure mode and know how to reduce it.",
-    whatIDid: [
-      "Maintained structured async communication workflows using Notion, Discord, and Telegram to keep distributed contributors aligned.",
-      "Organized research outputs, community updates, and content drafts into searchable, shareable documentation systems.",
-      "Supported team coordination tasks: tracking deliverables, flagging blockers, and ensuring information reached the right people at the right time.",
-      "Operated independently across different time zones without requiring synchronous check-ins or micromanagement.",
-    ],
-    outcome:
-      "Demonstrated that Web3 operations can run cleanly when information flow is treated as infrastructure, not an afterthought.",
+    result:
+      "Positioned as a reliable translator between technical Web3 teams and the crypto-aware public—turning content from a cost center into a retention driver.",
+    hasCrisis: false,
   },
 ];
 
 const Web3ExperiencePage = () => {
   return (
-    <div className="relative">
+    <div className="relative network-pattern">
       {/* Hero Glow */}
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_50%_0%,_hsl(170_60%_30%_/_0.25)_0%,_transparent_55%)]" />
 
       {/* Header */}
       <section className="page-header">
-        <p className="text-emerald-400 uppercase text-xs font-medium tracking-wide mb-3">
-          Web3 CV · Detailed View
+        <p className="text-emerald-400 uppercase text-xs font-mono font-medium tracking-wide mb-3">
+          Problem-Solver Proof
         </p>
         <h1 className="page-title">
           Web3{" "}
@@ -86,28 +92,30 @@ const Web3ExperiencePage = () => {
           </span>
         </h1>
         <p className="page-subtitle">
-          Web3 hires thinking, not credentials. Below is a breakdown of how I think, what I've built, and why it matters to your team.
+          I don't list tasks. I show problems I identified, actions I took, and results I delivered.
         </p>
       </section>
 
       {/* Profile Summary */}
       <section className="pb-8">
         <div className="section-container max-w-3xl">
-          <div className="rounded-2xl border border-emerald-500/20 bg-card/40 backdrop-blur-sm p-6 space-y-3">
-            <h2 className="text-sm font-heading font-bold text-emerald-400 uppercase tracking-wide">
-              Extensive Web3 Professional Profile
-            </h2>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              I operate within decentralized ecosystems where clarity, communication, and coordination are critical.
-              My work focuses on supporting Web3 teams through research, narrative development, community structure,
-              and operational execution. This role bridges technical ideas with human understanding.
-            </p>
-            <div className="flex flex-wrap gap-2 pt-1">
-              {["Research & Ecosystem Analysis", "Community Infrastructure", "Narrative & Content", "Operational Coordination", "Async-Native"].map((tag) => (
-                <span key={tag} className="px-2.5 py-1 rounded-full text-[10px] font-medium bg-emerald-500/10 border border-emerald-500/25 text-emerald-400">
-                  {tag}
-                </span>
-              ))}
+          <div className="terminal-card">
+            <div className="p-6 space-y-3">
+              <h2 className="text-sm font-heading font-bold text-emerald-400 uppercase tracking-wide">
+                Ecosystem Retention Specialist
+              </h2>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                I operate within decentralized ecosystems where retention, not just growth, determines survival.
+                My work focuses on engineering the content, moderation, and communication infrastructure that keeps
+                communities functional and converts lurkers into holders.
+              </p>
+              <div className="flex flex-wrap gap-2 pt-1">
+                {["Content Engineering", "Crisis Management", "Infrastructure Design", "Retention Analytics", "Async Operations"].map((tag) => (
+                  <span key={tag} className="px-2.5 py-1 rounded-full text-[10px] font-mono font-medium bg-emerald-500/10 border border-emerald-500/25 text-emerald-400">
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -134,54 +142,69 @@ const Web3ExperiencePage = () => {
                   />
 
                   {/* Card */}
-                  <div className="relative overflow-hidden rounded-xl border border-border bg-card/60 backdrop-blur-sm p-5 transition-all duration-300 hover:border-emerald-500/40 hover:-translate-y-1 hover:shadow-[0_8px_32px_hsl(170_80%_45%_/_0.15)]">
-                    {/* Header */}
-                    <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
-                      <div>
-                        <p className="text-[10px] font-medium text-emerald-400 uppercase tracking-wide mb-1">
-                          {exp.category}
+                  <div className="terminal-card">
+                    <div className="p-5">
+                      {/* Header */}
+                      <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
+                        <div>
+                          <p className="text-[10px] font-mono font-medium text-emerald-400 uppercase tracking-wide mb-1">
+                            {exp.category}
+                          </p>
+                          <h3 className="text-lg font-heading font-bold">{exp.title}</h3>
+                        </div>
+                        <div className="flex flex-wrap gap-2">
+                          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-mono font-medium bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+                            <Calendar className="w-3 h-3" />
+                            {exp.period}
+                          </span>
+                          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-mono font-medium bg-card/80 border border-border">
+                            <MapPin className="w-3 h-3" />
+                            {exp.type}
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Problem */}
+                      <div className="mb-4 p-3 rounded-lg bg-red-500/5 border border-red-500/15">
+                        <p className="text-[10px] font-mono font-semibold text-red-400 uppercase tracking-wide mb-1">
+                          The Problem
                         </p>
-                        <h3 className="text-lg font-heading font-bold">{exp.title}</h3>
+                        <p className="text-xs text-muted-foreground leading-relaxed">{exp.problem}</p>
                       </div>
-                      <div className="flex flex-wrap gap-2">
-                        <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
-                          <Calendar className="w-3 h-3" />
-                          {exp.period}
-                        </span>
-                        <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-card/80 border border-border">
-                          <MapPin className="w-3 h-3" />
-                          {exp.type}
-                        </span>
+
+                      {/* Action */}
+                      <div className="mb-4">
+                        <h4 className="text-xs font-mono font-semibold text-emerald-400 mb-2 uppercase tracking-wide">The Action</h4>
+                        <ul className="space-y-2">
+                          {exp.action.map((item, idx) => (
+                            <li key={idx} className="flex items-start gap-2 text-xs text-muted-foreground">
+                              <Zap className="w-3 h-3 text-emerald-400 mt-0.5 flex-shrink-0" />
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
                       </div>
-                    </div>
 
-                    {/* Context — Why this work mattered */}
-                    <div className="mb-4 p-3 rounded-lg bg-emerald-500/5 border border-emerald-500/15">
-                      <p className="text-[10px] font-semibold text-emerald-400 uppercase tracking-wide mb-1">
-                        Context
-                      </p>
-                      <p className="text-xs text-muted-foreground leading-relaxed">{exp.context}</p>
-                    </div>
+                      {/* Crisis Management Badge */}
+                      {exp.hasCrisis && (
+                        <div className="mb-4 p-3 rounded-lg bg-amber-500/5 border border-amber-500/20">
+                          <div className="flex items-center gap-2 mb-1">
+                            <ShieldAlert className="w-3.5 h-3.5 text-amber-400" />
+                            <p className="text-[10px] font-mono font-bold text-amber-400 uppercase tracking-wide">
+                              Crisis Management
+                            </p>
+                          </div>
+                          <p className="text-xs text-muted-foreground leading-relaxed">{exp.crisisNote}</p>
+                        </div>
+                      )}
 
-                    {/* What I Did */}
-                    <div className="mb-4">
-                      <h4 className="text-xs font-semibold text-foreground mb-2">What I Did:</h4>
-                      <ul className="space-y-2">
-                        {exp.whatIDid.map((item, idx) => (
-                          <li key={idx} className="flex items-start gap-2 text-xs text-muted-foreground">
-                            <Zap className="w-3 h-3 text-emerald-400 mt-0.5 flex-shrink-0" />
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Outcome */}
-                    <div className="pt-3 border-t border-border/50">
-                      <p className="text-[10px] font-semibold text-emerald-400 uppercase tracking-wide mb-1">
-                        Outcome
-                      </p>
-                      <p className="text-xs text-muted-foreground leading-relaxed">{exp.outcome}</p>
+                      {/* Result */}
+                      <div className="pt-3 border-t border-emerald-500/15">
+                        <p className="text-[10px] font-mono font-semibold text-emerald-400 uppercase tracking-wide mb-1">
+                          The Result
+                        </p>
+                        <p className="text-xs text-muted-foreground leading-relaxed">{exp.result}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -190,26 +213,28 @@ const Web3ExperiencePage = () => {
           </div>
 
           {/* Work Principles */}
-          <div className="mt-12 rounded-2xl border border-emerald-500/20 bg-card/40 backdrop-blur-sm p-6">
-            <h3 className="text-sm font-heading font-bold mb-4">Web3 Work Principles</h3>
-            <div className="grid sm:grid-cols-2 gap-3">
-              {[
-                "Clarity over hype",
-                "Structure over noise",
-                "Long-term trust over short-term attention",
-                "Communication as core infrastructure",
-              ].map((principle, index) => (
-                <div key={index} className="flex items-center gap-2 text-xs text-muted-foreground">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0" />
-                  {principle}
-                </div>
-              ))}
+          <div className="mt-12 terminal-card">
+            <div className="p-6">
+              <h3 className="text-sm font-heading font-bold mb-4">Operational Commitments</h3>
+              <div className="grid sm:grid-cols-2 gap-3">
+                {[
+                  "Retention over vanity metrics",
+                  "Structure over noise",
+                  "Proactive crisis management over reactive panic",
+                  "Communication as core revenue infrastructure",
+                ].map((principle, index) => (
+                  <div key={index} className="flex items-center gap-2 text-xs text-muted-foreground">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0" />
+                    {principle}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
           {/* CTA */}
           <div className="text-center mt-12">
-            <p className="text-muted-foreground text-sm mb-4">Building something in Web3?</p>
+            <p className="text-muted-foreground text-sm mb-4">Need these problems solved for your ecosystem?</p>
             <div className="flex flex-wrap justify-center gap-3">
               <a
                 href="https://t.me/BIG_CQ"
@@ -217,11 +242,11 @@ const Web3ExperiencePage = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg font-medium text-sm transition-all duration-300 text-white bg-gradient-to-r from-emerald-500 to-teal-500 shadow-[0_4px_16px_hsl(170_80%_45%_/_0.35)] hover:scale-[1.02] hover:brightness-110"
               >
-                Hire Me on Telegram
+                Deploy the Content Engine
                 <ArrowRight className="w-4 h-4" />
               </a>
               <Link to="/skills" className="btn-secondary">
-                View Skills
+                View Impact Categories
               </Link>
             </div>
           </div>
