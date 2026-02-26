@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Twitter, Send, Moon, Sun } from "lucide-react";
+import { Menu, X, Twitter, Send, Moon, Sun, Zap } from "lucide-react";
 import { useTheme } from "@/hooks/use-theme";
 import { usePersona } from "@/hooks/use-persona";
 import PersonaToggle from "@/components/PersonaToggle";
 
-const navItems = [
+const baseNavItems = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
   { name: "Experience", path: "/experience" },
@@ -21,6 +21,10 @@ const Header = () => {
   const { persona } = usePersona();
 
   const isWeb3 = persona === "web3";
+
+  const navItems = isWeb3
+    ? [...baseNavItems, { name: "Audits", path: "/audits" }]
+    : baseNavItems;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -207,6 +211,18 @@ const Header = () => {
           </Link>
         </nav>
       </div>
+      {/* Floating "Hire Conquest" button - Web3 only, desktop only */}
+      {isWeb3 && isScrolled && (
+        <a
+          href="https://t.me/BIG_CQ"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden md:inline-flex fixed bottom-6 left-6 z-50 items-center gap-2 px-4 py-2.5 rounded-full font-medium text-sm transition-all duration-300 text-white bg-gradient-to-r from-emerald-500 to-teal-500 shadow-[0_4px_20px_hsl(170_80%_45%_/_0.4)] hover:scale-105 hover:brightness-110 font-mono animate-fade-in"
+        >
+          <Zap className="w-4 h-4" />
+          Hire Conquest
+        </a>
+      )}
     </header>
   );
 };

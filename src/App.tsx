@@ -23,6 +23,7 @@ import Web3ExperiencePage from "./pages/web3/Web3ExperiencePage";
 import Web3SkillsPage from "./pages/web3/Web3SkillsPage";
 import Web3EducationPage from "./pages/web3/Web3EducationPage";
 import Web3ContactPage from "./pages/web3/Web3ContactPage";
+import Web3AuditsPage from "./pages/web3/Web3AuditsPage";
 
 import NotFound from "./pages/NotFound";
 
@@ -51,6 +52,7 @@ const PersonaRoutes = () => {
             <Route path="/skills" element={<Web3SkillsPage />} />
             <Route path="/education" element={<Web3EducationPage />} />
             <Route path="/contact" element={<Web3ContactPage />} />
+            <Route path="/audits" element={<Web3AuditsPage />} />
           </>
         )}
         <Route path="*" element={<NotFound />} />
