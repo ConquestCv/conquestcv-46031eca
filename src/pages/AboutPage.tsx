@@ -1,30 +1,23 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle, Phone, Shield, Target, BarChart3, Database, Scale, Wifi, Clock } from "lucide-react";
 import profileImage from "@/assets/conquest-profile.jpg";
 
-const valueProps = [
-  "Highly independent and self-directed in remote-first environments",
-  "Strong attention to detail and execution accuracy",
-  "Comfortable with ambiguity and fast-changing priorities",
-  "Excellent time management across cross-border teams",
-  "Curious, resourceful, disciplined, and solution-oriented",
-  "Maintains high-level confidentiality and precision",
+const coreCompetencies = [
+  { area: "High-Volume Call Control", detail: "Mastery of maintaining authoritative yet empathetic communication throughout 200+ daily outbound dials.", icon: Phone },
+  { area: "US-Market Eligibility Verification", detail: "Expert-level verification of sensitive consumer profiles, ensuring alignment with state-approved insurance and financial criteria.", icon: Shield },
+  { area: "Strategic Rebuttals & Pacing", detail: "Specialized in the 'Memory Pivot' and 'Inflation Gap' techniques to re-engage skeptical leads on past-dated enquiries.", icon: Target },
+  { area: "Tonality Management", detail: "Advanced use of Descending Tonality to establish instant expert authority and bypass 'gatekeeper' resistance.", icon: BarChart3 },
+  { area: "CRM & Data Hygiene", detail: "Proficient in real-time data entry and lead management using Salesforce, Zendesk, and HubSpot.", icon: Database },
+  { area: "Performance Metrics (KPIs)", detail: "Focused on optimizing Average Handle Time (AHT), Transfer Success Rates (TSR), and First Call Resolution (FCR).", icon: BarChart3 },
+  { area: "Compliance & TCPA Standards", detail: "Deep understanding of US telemarketing regulations and professional disclosure and recording protocols.", icon: Scale },
+  { area: "Remote Operational Excellence", detail: "Proven ability to maintain 100% uptime with high-speed fiber-optic infrastructure and professional-grade audio hardware.", icon: Wifi },
 ];
 
-const coreExpertise = [
-  { area: "Digital Operations", detail: "Advanced inbox management, executive scheduling, and cross-border team coordination.", icon: "📋" },
-  { area: "Data Architecture", detail: "Building automated reporting dashboards and tracking systems using Google Sheets and logic-based formulas.", icon: "📊" },
-  { area: "Multimedia Production", detail: "High-fidelity video editing (CapCut, After Effects) and live stream management via OBS Studio.", icon: "🎬" },
-  { area: "Technical Support", detail: "Bridging users and complex digital products through clear documentation and empathetic communication.", icon: "🛠️" },
-  { area: "Web3 Integration", detail: "Native understanding of DeFi protocols, wallet security, and DAO governance structures.", icon: "🌐" },
-];
-
-const interests = [
-  { name: "Remote Work Systems", icon: "🌍" },
-  { name: "AI Productivity Tools", icon: "🤖" },
-  { name: "Multimedia Production", icon: "🎬" },
-  { name: "Data & Automation", icon: "📊" },
-  { name: "Online Communities", icon: "👥" },
+const strengths = [
+  { label: "Punctuality", detail: "100% record of log-in adherence for early-morning EST shifts" },
+  { label: "Resilience", detail: "Maintains a positive, persuasive tone even after high volumes of rejection" },
+  { label: "Coachability", detail: "Actively seeks feedback from QA managers to sharpen rebuttals and tonality" },
+  { label: "Self-Starter", detail: "Fully equipped with quiet home office, noise-canceling USB headset, and high-fiber internet" },
 ];
 
 const AboutPage = () => {
@@ -32,21 +25,18 @@ const AboutPage = () => {
     <div className="relative">
       <div className="hero-glow" />
 
-      {/* Header */}
       <section className="page-header">
         <h1 className="page-title">
           About <span className="text-gradient">Me</span>
         </h1>
         <p className="page-subtitle">
-          A highly versatile Operations & Multimedia Specialist with dual-track expertise in traditional digital operations and decentralized ecosystems.
+          Results-oriented Lead Qualification Specialist with proven expertise in high-volume BPO operations and US-market outbound campaigns.
         </p>
       </section>
 
-      {/* Main Content */}
       <section className="pb-20">
         <div className="section-container">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* Image Side */}
             <div className="relative">
               <div className="sticky top-28">
                 <div className="relative">
@@ -62,37 +52,35 @@ const AboutPage = () => {
               </div>
             </div>
 
-            {/* Content Side */}
             <div className="space-y-8">
-              {/* Who I Am */}
               <div className="space-y-4">
                 <h2 className="text-xl md:text-2xl font-heading font-bold">
-                  Who I Am
+                  Professional Summary
                 </h2>
                 <div className="space-y-3 text-muted-foreground leading-relaxed text-sm">
                   <p>
-                    I'm <span className="text-foreground font-medium">Aisiri Conquest Samuel</span>, 
-                    a highly versatile Operations & Multimedia Specialist based in Lagos, Nigeria, with over 3 years 
-                    of experience navigating digital tools, AI-assisted productivity, and community architecture.
+                    I'm <span className="text-foreground font-medium">Aisiri Conquest Samuel</span>, a highly disciplined and results-oriented Lead Qualification Specialist with a proven track record in high-volume outbound sales environments and international BPO operations.
                   </p>
                   <p>
-                    I bridge the gap between "Real World" corporate administration and the Web3 frontier. 
-                    I'm recognized for implementing structured workflows that reduce manual overhead and for 
-                    maintaining high-level confidentiality and precision in fast-paced, remote-first environments.
+                    I possess native-level mastery of American English verbal communication, specializing in Descending Tonality, psychological rapport-building, and advanced objection-handling frameworks specifically tailored for the North American market.
+                  </p>
+                  <p>
+                    Expert at managing the end-to-end "Cold-to-Warm" lead transition, ensuring absolute data integrity through thorough eligibility checks prior to senior-level hand-offs. Recognized for maintaining elite energy levels and a consistent 99% QA score across demanding 12-hour shifts.
                   </p>
                 </div>
               </div>
 
-              {/* Core Areas of Expertise */}
               <div className="space-y-4">
                 <h2 className="text-xl md:text-2xl font-heading font-bold">
-                  Core Areas of Expertise
+                  Core Competencies
                 </h2>
                 <div className="space-y-3">
-                  {coreExpertise.map((item, index) => (
+                  {coreCompetencies.map((item, index) => (
                     <div key={index} className="interactive-card !py-3 !px-4">
                       <div className="flex items-start gap-3">
-                        <span className="text-lg mt-0.5">{item.icon}</span>
+                        <div className="icon-container !w-8 !h-8 flex-shrink-0 mt-0.5">
+                          <item.icon className="w-4 h-4 text-primary" />
+                        </div>
                         <div>
                           <h4 className="font-heading font-semibold text-sm text-foreground">{item.area}</h4>
                           <p className="text-xs text-muted-foreground mt-0.5">{item.detail}</p>
@@ -103,67 +91,34 @@ const AboutPage = () => {
                 </div>
               </div>
 
-              {/* Work Style & Strengths */}
               <div className="space-y-4">
                 <h2 className="text-xl md:text-2xl font-heading font-bold">
-                  Work Style & Strengths
+                  Personal Attributes
                 </h2>
-                <ul className="space-y-2">
-                  {valueProps.map((prop, index) => (
-                    <li key={index} className="flex items-center gap-2 group">
-                      <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 group-hover:scale-110 transition-transform" />
-                      <span className="text-muted-foreground text-sm">{prop}</span>
+                <ul className="space-y-3">
+                  {strengths.map((item, index) => (
+                    <li key={index} className="flex items-start gap-2 group">
+                      <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                      <div>
+                        <span className="text-foreground font-medium text-sm">{item.label}</span>
+                        <span className="text-muted-foreground text-sm"> — {item.detail}</span>
+                      </div>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              {/* Work Philosophy */}
               <div className="space-y-4">
                 <h2 className="text-xl md:text-2xl font-heading font-bold">
                   Work Philosophy
                 </h2>
                 <div className="interactive-card">
                   <p className="text-muted-foreground leading-relaxed text-sm italic">
-                    "Comfortable working independently in fully remote and asynchronous teams, 
-                    handling ambiguity, managing multiple priorities, and executing tasks with accuracy and consistency. 
-                    I bring a strong blend of operational discipline, creative execution, technical curiosity, and AI literacy."
+                    "Tech-savvy professional proficient in CRM hygiene, automated workflow documentation, and strategic follow-up protocols aimed at maximizing lead retention and minimizing user churn. KPI-driven, EST-synced, and compliance-focused."
                   </p>
                 </div>
               </div>
 
-              {/* Interests */}
-              <div className="space-y-4">
-                <h2 className="text-xl md:text-2xl font-heading font-bold">
-                  Interests & Focus Areas
-                </h2>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                  {interests.map((interest, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center gap-2 px-3 py-2 rounded-lg bg-card/50 border border-border hover:border-primary/40 hover:bg-primary/5 transition-all cursor-pointer text-sm"
-                    >
-                      <span>{interest.icon}</span>
-                      <span className="text-muted-foreground text-xs">{interest.name}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Work Preference */}
-              <div className="space-y-4">
-                <h2 className="text-xl md:text-2xl font-heading font-bold">
-                  Work Preference
-                </h2>
-                <div className="interactive-card">
-                  <p className="text-muted-foreground leading-relaxed text-sm">
-                    Remote roles preferred. Open to full-time, on-site, or hybrid roles with relocation, 
-                    transport, and accommodation support.
-                  </p>
-                </div>
-              </div>
-
-              {/* CTA */}
               <div className="flex flex-wrap gap-3 pt-4">
                 <Link to="/experience" className="btn-primary">
                   View My Experience

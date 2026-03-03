@@ -17,27 +17,28 @@ const education = [
 ];
 
 const certifications = [
-  { name: "Blockchain Basics", issuer: "Coursera", category: "Web3" },
-  { name: "Digital Marketing Fundamentals", issuer: "Google Digital Skills for Africa", category: "Digital Marketing" },
-  { name: "Email Marketing Certificate", issuer: "GAOTek Inc.", category: "Marketing" },
+  { name: "Customer Support & Email Handling Essentials", issuer: "Professional Training (Distinction)", category: "Support" },
   { name: "Google Workspace Productivity Training", issuer: "Google", category: "Productivity" },
-  { name: "Virtual Assistance & Customer Support Essentials", issuer: "Professional Training", category: "VA Skills" },
+  { name: "Virtual Assistance Foundations", issuer: "Remote Work Optimization", category: "VA Skills" },
+  { name: "Digital Marketing Specialist", issuer: "Google Digital Skills for Africa", category: "Marketing" },
+  { name: "Email Marketing Certificate", issuer: "Advanced Outreach Strategies", category: "Marketing" },
+  { name: "Blockchain Basics", issuer: "Coursera (Financial Technology Foundation)", category: "FinTech" },
 ];
 
 const projects = [
   {
-    title: "Workflow Automation & Logic",
-    description: "Engineered automated trade logic on-chain using API integrations and built semi-automated reporting dashboards to reduce manual data entry by 60%.",
-    tags: ["Automation", "API Integration", "Data Architecture"],
+    title: "KPI-Driven Performance Systems & Script Engineering",
+    description: "Engineered logic-based reporting systems that transformed raw call data into actionable performance insights. Built a comprehensive 'Library of Rebuttals' for training junior qualifiers and deployed task-tracking dashboards using complex Google Sheets formulas.",
+    tags: ["Automation", "Script Engineering", "KPI Reporting"],
   },
   {
-    title: "Personal Digital Headquarters",
-    description: "Developed a custom portfolio website using HTML, CSS, and JavaScript to host professional assets and showcase technical capabilities.",
-    tags: ["Web Development", "HTML/CSS/JS", "Design"],
+    title: "Advanced Full-Stack Professional Portfolio",
+    description: "Independently engineered a professional web presence using HTML, CSS, and JavaScript to showcase digital literacy and the ability to troubleshoot technical platforms.",
+    tags: ["Web Development", "HTML/CSS/JS", "Technical Literacy"],
   },
   {
     title: "Independent Market Analysis",
-    description: "Authored detailed studies on liquidity behavior and community traction models within the decentralized finance (DeFi) space.",
+    description: "Authored detailed studies on liquidity behavior and community traction models within the decentralized finance (DeFi) space, supporting executive-level sales strategies.",
     tags: ["Research", "DeFi", "Analytics"],
   },
 ];
@@ -47,13 +48,12 @@ const EducationPage = () => {
     <div className="relative">
       <div className="hero-glow" />
 
-      {/* Header */}
       <section className="page-header">
         <h1 className="page-title">
           Education & <span className="text-gradient">Certifications</span>
         </h1>
         <p className="page-subtitle">
-          My academic background, professional certifications, and key projects.
+          Academic background, professional certifications, and strategic project initiatives.
         </p>
       </section>
 
@@ -91,7 +91,7 @@ const EducationPage = () => {
             <div className="icon-container">
               <Award className="w-5 h-5 text-primary" />
             </div>
-            <h2 className="text-xl md:text-2xl font-heading font-bold">Certifications & Training</h2>
+            <h2 className="text-xl md:text-2xl font-heading font-bold">Certifications & Specialized Training</h2>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -115,7 +115,7 @@ const EducationPage = () => {
             <div className="icon-container">
               <Folder className="w-5 h-5 text-primary" />
             </div>
-            <h2 className="text-xl md:text-2xl font-heading font-bold">Key Projects & Achievements</h2>
+            <h2 className="text-xl md:text-2xl font-heading font-bold">Strategic Projects & Initiatives</h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-4">

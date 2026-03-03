@@ -33,7 +33,7 @@ const Footer = () => {
             <p className="text-muted-foreground text-xs leading-relaxed">
               {isWeb3
                 ? "Web3 Operations, Research & Community Specialist. Turning complexity into clarity for decentralized teams."
-                : "Remote Digital Operations & Virtual Assistance Specialist. Supporting businesses that need reliability and organization."}
+                : "Senior Lead Discovery & Qualification Expert. Specializing in high-volume outbound operations for US-market insurance and financial services."}
             </p>
             <div className="flex items-center gap-2">
               <a
@@ -106,7 +106,7 @@ const Footer = () => {
         <div className="mt-8 pt-6 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
           <p>© {currentYear} Aisiri Conquest Samuel. All rights reserved.</p>
           <p className="text-center sm:text-right hidden sm:block">
-            {isWeb3 ? "Open to Web3 remote collaborations & DAO contributions." : "Open to full-time, hybrid, or on-site roles."}
+            {isWeb3 ? "Open to Web3 remote collaborations & DAO contributions." : "Ready to bring veteran-level qualification to your next campaign."}
           </p>
           {/* Back to Top */}
           <button

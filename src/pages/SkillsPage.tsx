@@ -1,100 +1,92 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, ClipboardList, BarChart3, MessageCircle, Settings2, Sparkles, Code } from "lucide-react";
+import { ArrowRight, Phone, Database, MessageCircle, Settings2, Sparkles } from "lucide-react";
 import LiquidMeter from "@/components/LiquidMeter";
 
 const categoryIcons = {
-  productivity: ClipboardList,
-  multimedia: Sparkles,
-  data: BarChart3,
+  voip: Phone,
+  crm: Database,
   communication: MessageCircle,
-  dev: Code,
-  web3: Settings2,
+  productivity: Settings2,
+  media: Sparkles,
 };
 
 const skillCategories = [
   {
-    title: "Productivity & Operations",
-    iconKey: "productivity" as const,
+    title: "VOIP & Dialers",
+    iconKey: "voip" as const,
     iconColor: "from-violet-500 to-purple-600",
     skills: [
-      { name: "Google Workspace (Docs, Sheets, Forms, Drive)", level: 92 },
-      { name: "Notion", level: 88 },
-      { name: "Trello", level: 85 },
-      { name: "Executive Scheduling & Inbox Management", level: 90 },
-      { name: "Cross-Border Team Coordination", level: 85 },
+      { name: "Five9", level: 90 },
+      { name: "RingCentral", level: 88 },
+      { name: "8x8", level: 82 },
+      { name: "Mojo Dialer", level: 80 },
     ],
   },
   {
-    title: "Multimedia Production",
-    iconKey: "multimedia" as const,
-    iconColor: "from-pink-500 to-rose-600",
-    skills: [
-      { name: "After Effects", level: 78 },
-      { name: "CapCut", level: 88 },
-      { name: "Canva", level: 90 },
-      { name: "OBS Studio (Live Streaming)", level: 82 },
-      { name: "Figma", level: 75 },
-    ],
-  },
-  {
-    title: "Data Architecture & Reporting",
-    iconKey: "data" as const,
+    title: "CRM Systems",
+    iconKey: "crm" as const,
     iconColor: "from-cyan-500 to-blue-600",
     skills: [
-      { name: "Google Sheets (Dashboards & Formulas)", level: 90 },
-      { name: "Automated Reporting Systems", level: 85 },
-      { name: "Engagement Tracking Dashboards", level: 88 },
-      { name: "Data Entry & Documentation", level: 92 },
+      { name: "Salesforce (Power User)", level: 92 },
+      { name: "Zendesk", level: 88 },
+      { name: "HubSpot", level: 85 },
+      { name: "Microsoft Dynamics", level: 78 },
     ],
   },
   {
-    title: "Communication & Support",
+    title: "Communication Platforms",
     iconKey: "communication" as const,
     iconColor: "from-emerald-500 to-teal-600",
     skills: [
-      { name: "Discord (Admin/Mod)", level: 88 },
-      { name: "Telegram (Admin/Mod)", level: 88 },
-      { name: "Slack", level: 85 },
-      { name: "Technical Documentation", level: 85 },
-      { name: "Customer Support (Chat/Email)", level: 90 },
+      { name: "Microsoft Teams", level: 90 },
+      { name: "Slack", level: 88 },
+      { name: "Zoom", level: 90 },
+      { name: "Discord", level: 85 },
+      { name: "Telegram", level: 85 },
     ],
   },
   {
-    title: "Development Fundamentals",
-    iconKey: "dev" as const,
+    title: "Operational Productivity",
+    iconKey: "productivity" as const,
     iconColor: "from-amber-500 to-orange-600",
     skills: [
-      { name: "HTML5", level: 78 },
-      { name: "CSS3", level: 75 },
-      { name: "JavaScript (Core Fundamentals)", level: 70 },
+      { name: "Google Workspace (Expert)", level: 95 },
+      { name: "Notion", level: 88 },
+      { name: "Trello", level: 85 },
+      { name: "Microsoft Excel (Logic/Formulas)", level: 82 },
     ],
   },
   {
-    title: "Web3 / Crypto",
-    iconKey: "web3" as const,
-    iconColor: "from-indigo-500 to-blue-600",
+    title: "AI & Media",
+    iconKey: "media" as const,
+    iconColor: "from-pink-500 to-rose-600",
     skills: [
-      { name: "Wallet Management (MetaMask/Trust)", level: 85 },
-      { name: "Blockchain Explorers", level: 82 },
-      { name: "CEX/DEX UI Navigation", level: 80 },
-      { name: "DeFi Protocols & DAO Governance", level: 78 },
+      { name: "AI-Assisted Productivity (Gemini/ChatGPT)", level: 90 },
+      { name: "OBS Studio", level: 82 },
+      { name: "Canva", level: 88 },
+      { name: "CapCut", level: 85 },
     ],
   },
 ];
 
+const performanceMetrics = [
+  { label: "QA Score", value: "99%", description: "Consistent quality assurance across all shifts" },
+  { label: "TSR Increase", value: "25%", description: "Transfer Success Rate improvement" },
+  { label: "Log-in Adherence", value: "100%", description: "Perfect punctuality record for EST shifts" },
+  { label: "Daily Dials", value: "200+", description: "High-volume outbound call capacity" },
+];
+
 const tools = [
+  { name: "Salesforce", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/salesforce/salesforce-original.svg", isColored: true },
   { name: "Google Workspace", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg", isColored: true },
+  { name: "HubSpot", logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/hubspot.svg", isColored: false },
   { name: "Notion", logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/notion.svg", isColored: false },
+  { name: "Slack", logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/slack.svg", isColored: false },
+  { name: "Zoom", logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/zoom.svg", isColored: false },
   { name: "Trello", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain.svg", isColored: true },
   { name: "Discord", logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg", isColored: false },
-  { name: "Telegram", logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/telegram.svg", isColored: false },
-  { name: "Slack", logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/slack.svg", isColored: false },
-  { name: "After Effects", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aftereffects/aftereffects-original.svg", isColored: true },
-  { name: "CapCut", logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/capcut.svg", isColored: false },
   { name: "Canva", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg", isColored: true },
   { name: "OBS Studio", logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/obsstudio.svg", isColored: false },
-  { name: "Figma", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg", isColored: true },
-  { name: "MetaMask", logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/metamask.svg", isColored: false },
 ];
 
 const SkillsPage = () => {
@@ -104,10 +96,10 @@ const SkillsPage = () => {
 
       <section className="page-header">
         <h1 className="page-title">
-          Skills & <span className="text-gradient">Technical Toolkit</span>
+          Technical <span className="text-gradient">Toolkit</span>
         </h1>
         <p className="page-subtitle">
-          A comprehensive overview of my professional skills across digital operations, multimedia production, data architecture, and Web3 integration.
+          Industry-standard software proficiency across VOIP, CRM, communication, and productivity platforms.
         </p>
       </section>
 
@@ -143,8 +135,32 @@ const SkillsPage = () => {
         </div>
       </section>
 
-      {/* Tools Grid */}
+      {/* Performance Metrics */}
       <section className="py-12 border-y border-border/50">
+        <div className="section-container">
+          <div className="text-center mb-8">
+            <h2 className="text-xl md:text-2xl font-heading font-bold mb-2">
+              Performance <span className="text-gradient">Metrics</span>
+            </h2>
+            <p className="text-muted-foreground text-sm">
+              Quantified results from high-volume BPO operations
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-3xl mx-auto">
+            {performanceMetrics.map((metric, index) => (
+              <div key={index} className="interactive-card text-center !py-5">
+                <p className="text-2xl md:text-3xl font-heading font-bold text-primary mb-1">{metric.value}</p>
+                <p className="text-sm font-medium text-foreground mb-1">{metric.label}</p>
+                <p className="text-[10px] text-muted-foreground">{metric.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Tools Grid */}
+      <section className="py-12">
         <div className="section-container">
           <div className="text-center mb-8">
             <h2 className="text-xl md:text-2xl font-heading font-bold mb-2">
@@ -155,7 +171,7 @@ const SkillsPage = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-4 sm:grid-cols-6 gap-4 max-w-3xl mx-auto">
+          <div className="grid grid-cols-5 sm:grid-cols-5 gap-4 max-w-2xl mx-auto">
             {tools.map((tool, index) => (
               <div
                 key={index}
@@ -182,7 +198,7 @@ const SkillsPage = () => {
             Ready to Put These Skills to Work?
           </h2>
           <p className="text-muted-foreground text-sm mb-6 max-w-md mx-auto">
-            I'm available for remote roles in digital operations, multimedia production, data architecture, and more.
+            Available for immediate placement in lead qualification, BPO operations, and outbound sales roles.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <Link to="/contact" className="btn-primary">
