@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, Phone, MapPin, Twitter, Send, ArrowRight } from "lucide-react";
+import { Mail, Phone, MapPin, Twitter, Send, ArrowRight, MessageCircle } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 
 const contactInfo = [
@@ -36,6 +36,12 @@ const socials = [
     href: "https://t.me/BIG_CQ",
     username: "@BIG_CQ",
   },
+  {
+    name: "WhatsApp",
+    icon: MessageCircle,
+    href: "https://wa.me/2347049163089",
+    username: "+234 704 916 3089",
+  },
 ];
 
 const ContactPage = () => {
@@ -45,7 +51,6 @@ const ContactPage = () => {
     subject: "",
     message: "",
   });
-  
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -59,7 +64,6 @@ const ContactPage = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Build the email content
     const subjectText = formData.subject 
       ? `Portfolio Inquiry: ${formData.subject}` 
       : "Portfolio Inquiry";
@@ -73,7 +77,6 @@ From: ${formData.name}
 Email: ${formData.email}
 Subject: ${formData.subject}`;
 
-    // Create mailto link and open it
     const mailtoLink = `mailto:conquestaisiri@gmail.com?subject=${encodeURIComponent(subjectText)}&body=${encodeURIComponent(bodyText)}`;
     
     window.open(mailtoLink, '_self');
@@ -88,17 +91,15 @@ Subject: ${formData.subject}`;
     <div className="relative">
       <div className="hero-glow" />
 
-      {/* Header */}
       <section className="page-header">
         <h1 className="page-title">
           Get in <span className="text-gradient">Touch</span>
         </h1>
         <p className="page-subtitle">
-          I'm available for remote opportunities. Let's discuss how I can support your team.
+          Ready to bring veteran-level qualification to your next campaign. Let's connect.
         </p>
       </section>
 
-      {/* Main Content */}
       <section className="pb-20">
         <div className="section-container">
           <div className="grid lg:grid-cols-2 gap-8">
@@ -156,7 +157,7 @@ Subject: ${formData.subject}`;
                   >
                     <option value="">Select a topic</option>
                     <option value="job">Job Opportunity</option>
-                    <option value="project">Project Collaboration</option>
+                    <option value="bpo">BPO / Call Center Role</option>
                     <option value="freelance">Freelance Work</option>
                     <option value="general">General Inquiry</option>
                   </select>
@@ -174,7 +175,7 @@ Subject: ${formData.subject}`;
                     required
                     rows={4}
                     className="w-full px-3 py-2 rounded-lg bg-background border border-border focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all text-sm text-foreground placeholder:text-muted-foreground resize-none"
-                    placeholder="Tell me about your project or opportunity..."
+                    placeholder="Tell me about the role or opportunity..."
                   />
                 </div>
 
@@ -190,7 +191,6 @@ Subject: ${formData.subject}`;
 
             {/* Contact Info */}
             <div className="space-y-5">
-              {/* Direct Contact */}
               <div className="interactive-card !p-5">
                 <h3 className="text-base font-heading font-bold mb-4">Direct Contact</h3>
                 <div className="space-y-3">
@@ -217,7 +217,6 @@ Subject: ${formData.subject}`;
                 </div>
               </div>
 
-              {/* Social Links */}
               <div className="interactive-card !p-5">
                 <h3 className="text-base font-heading font-bold mb-4">Connect Online</h3>
                 <div className="space-y-3">
@@ -241,11 +240,10 @@ Subject: ${formData.subject}`;
                 </div>
               </div>
 
-              {/* Work Preference */}
               <div className="interactive-card !p-5">
                 <h3 className="text-base font-heading font-bold mb-3">Work Preferences</h3>
                 <p className="text-muted-foreground text-sm mb-3">
-                  I prefer remote roles but am open to hybrid or on-site with relocation support.
+                  Remote roles preferred. Open to full-time, on-site, or hybrid roles with relocation support.
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <span className="px-2.5 py-1 text-xs rounded-full bg-primary/15 text-primary border border-primary/25">

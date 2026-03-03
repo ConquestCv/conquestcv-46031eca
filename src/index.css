@@ -371,40 +371,62 @@
 
   /* Glassmorphism card */
   .glass-card {
-    @apply relative overflow-hidden rounded-xl backdrop-blur-xl border transition-all duration-300;
-    background: hsl(170 40% 12% / 0.4);
+    @apply relative overflow-hidden rounded-xl backdrop-blur-xl border border-border bg-card/80 transition-all duration-300;
+    box-shadow: 0 8px 32px hsl(var(--border) / 0.15);
+  }
+
+  .dark .glass-card {
     border-color: hsl(170 60% 40% / 0.2);
     box-shadow: 0 8px 32px hsl(170 80% 30% / 0.12), inset 0 1px 0 hsl(170 60% 60% / 0.08);
   }
 
   .glass-card:hover {
+    @apply border-primary/40;
+    box-shadow: 0 12px 48px hsl(var(--border) / 0.2);
+    transform: translateY(-4px);
+  }
+
+  .dark .glass-card:hover {
     border-color: hsl(170 60% 45% / 0.4);
     box-shadow: 0 12px 48px hsl(170 80% 40% / 0.2), inset 0 1px 0 hsl(170 60% 60% / 0.12);
-    transform: translateY(-4px);
   }
 
   /* Terminal card */
   .terminal-card {
-    @apply relative overflow-hidden rounded-xl border transition-all duration-300 font-mono;
+    @apply relative overflow-hidden rounded-xl border border-border bg-card transition-all duration-300 font-mono;
+  }
+
+  .dark .terminal-card {
     background: hsl(220 20% 8% / 0.9);
     border-color: hsl(170 50% 35% / 0.25);
   }
 
   .terminal-card::before {
     content: '● ● ●';
-    @apply block text-[8px] tracking-[4px] px-4 pt-3 pb-2 border-b;
+    @apply block text-[8px] tracking-[4px] px-4 pt-3 pb-2 border-b border-border;
+    color: hsl(var(--muted-foreground));
+  }
+
+  .dark .terminal-card::before {
     color: hsl(170 50% 40% / 0.5);
     border-color: hsl(170 50% 35% / 0.15);
   }
 
   .terminal-card:hover {
+    @apply border-primary/40;
+  }
+
+  .dark .terminal-card:hover {
     border-color: hsl(170 60% 45% / 0.4);
     box-shadow: 0 0 24px hsl(170 80% 40% / 0.15);
   }
 
   /* Stats bar */
   .stats-bar {
-    @apply flex flex-wrap items-center gap-3 px-4 py-2.5 rounded-b-xl border-t text-[10px] font-mono;
+    @apply flex flex-wrap items-center gap-3 px-4 py-2.5 rounded-b-xl border-t border-border text-[10px] font-mono bg-muted/50 text-muted-foreground;
+  }
+
+  .dark .stats-bar {
     background: hsl(220 20% 6% / 0.6);
     border-color: hsl(170 50% 35% / 0.15);
     color: hsl(170 50% 55%);
@@ -416,11 +438,19 @@
 
   .stats-bar span::before {
     content: '[';
-    color: hsl(170 40% 35%);
+    @apply text-muted-foreground/60;
   }
 
   .stats-bar span::after {
     content: ']';
+    @apply text-muted-foreground/60;
+  }
+
+  .dark .stats-bar span::before {
+    color: hsl(170 40% 35%);
+  }
+
+  .dark .stats-bar span::after {
     color: hsl(170 40% 35%);
   }
 
