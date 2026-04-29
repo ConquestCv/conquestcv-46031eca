@@ -68,7 +68,7 @@ const EducationPage = () => {
         <div className="section-container">
           <div className="flex items-center gap-2 mb-6">
             <GraduationCap className="w-4 h-4 text-accent" />
-            <span className="eyebrow !before:hidden">Education</span>
+            <span className="text-xs font-mono uppercase tracking-[0.14em] text-muted-foreground">Education</span>
           </div>
 
           <div className="grid md:grid-cols-3 gap-4">
@@ -92,7 +92,7 @@ const EducationPage = () => {
         <div className="section-container">
           <div className="flex items-center gap-2 mb-6">
             <Award className="w-4 h-4 text-accent" />
-            <span className="eyebrow !before:hidden">Certifications</span>
+            <span className="text-xs font-mono uppercase tracking-[0.14em] text-muted-foreground">Certifications</span>
           </div>
 
           <div className="grid sm:grid-cols-3 gap-px bg-border rounded-lg overflow-hidden border border-border">
@@ -113,7 +113,7 @@ const EducationPage = () => {
         <div className="section-container">
           <div className="flex items-center gap-2 mb-6">
             <FolderGit2 className="w-4 h-4 text-accent" />
-            <span className="eyebrow !before:hidden">Key Projects</span>
+            <span className="text-xs font-mono uppercase tracking-[0.14em] text-muted-foreground">Key Projects</span>
           </div>
 
           <div className="grid md:grid-cols-3 gap-5">
