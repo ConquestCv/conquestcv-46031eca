@@ -1,190 +1,125 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Phone, Database, MessageCircle, Settings2, Sparkles } from "lucide-react";
-import LiquidMeter from "@/components/LiquidMeter";
+import { ArrowRight } from "lucide-react";
 
-const categoryIcons = {
-  voip: Phone,
-  crm: Database,
-  communication: MessageCircle,
-  productivity: Settings2,
-  media: Sparkles,
-};
-
-const skillCategories = [
+const skillGroups = [
   {
-    title: "VOIP & Dialers",
-    iconKey: "voip" as const,
-    iconColor: "from-violet-500 to-purple-600",
-    skills: [
-      { name: "Five9", level: 90 },
-      { name: "RingCentral", level: 88 },
-      { name: "8x8", level: 82 },
-      { name: "Mojo Dialer", level: 80 },
+    label: "Support Platforms",
+    items: [
+      { name: "Zendesk", note: "Macros · SOPs · Triggers · QA reporting" },
+      { name: "Salesforce CRM", note: "Cases · pipeline notes · 95%+ data accuracy" },
+      { name: "Intercom", note: "Inbox routing · saved replies" },
+      { name: "Marketplace tools", note: "Multi-region context handling" },
     ],
   },
   {
-    title: "CRM Systems",
-    iconKey: "crm" as const,
-    iconColor: "from-cyan-500 to-blue-600",
-    skills: [
-      { name: "Salesforce (Power User)", level: 92 },
-      { name: "Zendesk", level: 88 },
-      { name: "HubSpot", level: 85 },
-      { name: "Microsoft Dynamics", level: 78 },
+    label: "Communication",
+    items: [
+      { name: "Live Chat", note: "Concurrent ticket handling" },
+      { name: "Voice", note: "De-escalation · clear US/UK tone" },
+      { name: "Email", note: "Structured · QA-graded responses" },
+      { name: "Slack", note: "Cross-team escalations · shift handovers" },
     ],
   },
   {
-    title: "Communication Platforms",
-    iconKey: "communication" as const,
-    iconColor: "from-emerald-500 to-teal-600",
-    skills: [
-      { name: "Microsoft Teams", level: 90 },
-      { name: "Slack", level: 88 },
-      { name: "Zoom", level: 90 },
-      { name: "Discord", level: 85 },
-      { name: "Telegram", level: 85 },
+    label: "Productivity",
+    items: [
+      { name: "Google Workspace", note: "Sheets dashboards · Docs SOPs" },
+      { name: "Notion", note: "Knowledge base ownership" },
+      { name: "Trello", note: "Sprint visibility · ticket tracking" },
+      { name: "Microsoft Excel", note: "Reporting · pivot logic" },
     ],
   },
   {
-    title: "Operational Productivity",
-    iconKey: "productivity" as const,
-    iconColor: "from-amber-500 to-orange-600",
-    skills: [
-      { name: "Google Workspace (Expert)", level: 95 },
-      { name: "Notion", level: 88 },
-      { name: "Trello", level: 85 },
-      { name: "Microsoft Excel (Logic/Formulas)", level: 82 },
-    ],
-  },
-  {
-    title: "AI & Media",
-    iconKey: "media" as const,
-    iconColor: "from-pink-500 to-rose-600",
-    skills: [
-      { name: "AI-Assisted Productivity (Gemini/ChatGPT)", level: 90 },
-      { name: "OBS Studio", level: 82 },
-      { name: "Canva", level: 88 },
-      { name: "CapCut", level: 85 },
+    label: "CX Practices",
+    items: [
+      { name: "FCR Optimisation", note: "Reducing repeat contacts" },
+      { name: "AHT Reduction", note: "−12% achieved at Turing" },
+      { name: "CSAT / NPS", note: "Survey-conscious phrasing" },
+      { name: "De-escalation", note: "Structured empathy frameworks" },
     ],
   },
 ];
 
-const performanceMetrics = [
-  { label: "QA Score", value: "99%", description: "Consistent quality assurance across all shifts" },
-  { label: "TSR Increase", value: "25%", description: "Transfer Success Rate improvement" },
-  { label: "Log-in Adherence", value: "100%", description: "Perfect punctuality record for EST shifts" },
-  { label: "Daily Dials", value: "200+", description: "High-volume outbound call capacity" },
-];
-
-const tools = [
-  { name: "Salesforce", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/salesforce/salesforce-original.svg", isColored: true },
-  { name: "Google Workspace", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg", isColored: true },
-  { name: "HubSpot", logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/hubspot.svg", isColored: false },
-  { name: "Notion", logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/notion.svg", isColored: false },
-  { name: "Slack", logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/slack.svg", isColored: false },
-  { name: "Zoom", logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/zoom.svg", isColored: false },
-  { name: "Trello", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain.svg", isColored: true },
-  { name: "Discord", logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg", isColored: false },
-  { name: "Canva", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg", isColored: true },
-  { name: "OBS Studio", logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/obsstudio.svg", isColored: false },
+const metrics = [
+  { value: "95%+", label: "QA score" },
+  { value: "−20%", label: "Escalations" },
+  { value: "−12%", label: "AHT" },
+  { value: "+25%", label: "Task visibility" },
 ];
 
 const SkillsPage = () => {
   return (
-    <div className="relative">
-      <div className="hero-glow" />
-
+    <div>
       <section className="page-header">
-        <h1 className="page-title">
-          Technical <span className="text-gradient">Toolkit</span>
-        </h1>
-        <p className="page-subtitle">
-          Industry-standard software proficiency across VOIP, CRM, communication, and productivity platforms.
-        </p>
-      </section>
-
-      {/* Skill Categories */}
-      <section className="pb-12">
         <div className="section-container">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {skillCategories.map((category, index) => {
-              const IconComponent = categoryIcons[category.iconKey];
-              return (
-                <div key={index} className="interactive-card">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${category.iconColor} flex items-center justify-center shadow-lg`}>
-                      <IconComponent className="w-6 h-6 text-white" />
-                    </div>
-                    <h3 className="text-sm font-heading font-bold">{category.title}</h3>
-                  </div>
-                  <div className="space-y-3">
-                    {category.skills.map((skill, idx) => (
-                      <div key={idx} className="space-y-1.5">
-                        <div className="flex justify-between text-xs">
-                          <span className="text-muted-foreground">{skill.name}</span>
-                          <span className="text-primary font-medium">{skill.level}%</span>
-                        </div>
-                        <LiquidMeter level={skill.level} />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+          <span className="eyebrow mb-4">Capabilities</span>
+          <h1 className="page-title mt-4">
+            The toolkit behind the
+            <br />
+            <span className="text-muted-foreground font-normal">
+              QA scores.
+            </span>
+          </h1>
+          <p className="page-subtitle mt-4">
+            Platforms, channels and CX practices used daily across Outsource
+            Global, Turing and Flutterwave engagements.
+          </p>
         </div>
       </section>
 
-      {/* Performance Metrics */}
-      <section className="py-12 border-y border-border/50">
+      {/* Metrics strip */}
+      <section className="border-y border-border bg-secondary/40">
         <div className="section-container">
-          <div className="text-center mb-8">
-            <h2 className="text-xl md:text-2xl font-heading font-bold mb-2">
-              Performance <span className="text-gradient">Metrics</span>
-            </h2>
-            <p className="text-muted-foreground text-sm">
-              Quantified results from high-volume BPO operations
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-3xl mx-auto">
-            {performanceMetrics.map((metric, index) => (
-              <div key={index} className="interactive-card text-center !py-5">
-                <p className="text-2xl md:text-3xl font-heading font-bold text-primary mb-1">{metric.value}</p>
-                <p className="text-sm font-medium text-foreground mb-1">{metric.label}</p>
-                <p className="text-[10px] text-muted-foreground">{metric.description}</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-border">
+            {metrics.map((m, i) => (
+              <div
+                key={m.label}
+                className={`px-5 py-7 ${i === 0 ? "border-l border-border" : ""}`}
+              >
+                <div className="stat-value text-foreground">{m.value}</div>
+                <div className="text-xs font-mono uppercase tracking-[0.14em] text-muted-foreground mt-2">
+                  {m.label}
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Tools Grid */}
-      <section className="py-12">
+      {/* Skill groups */}
+      <section className="py-20">
         <div className="section-container">
-          <div className="text-center mb-8">
-            <h2 className="text-xl md:text-2xl font-heading font-bold mb-2">
-              Tools & Platforms
-            </h2>
-            <p className="text-muted-foreground text-sm">
-              Software I use daily to deliver results
-            </p>
-          </div>
-
-          <div className="grid grid-cols-5 sm:grid-cols-5 gap-4 max-w-2xl mx-auto">
-            {tools.map((tool, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-center gap-2 p-4 rounded-xl bg-card/50 border border-border hover:border-primary/40 hover:bg-primary/5 transition-all duration-300 text-center group cursor-pointer hover:-translate-y-1"
-              >
-                <div className="w-10 h-10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <img 
-                    src={tool.logo} 
-                    alt={tool.name}
-                    className={`w-8 h-8 object-contain ${!tool.isColored ? 'dark:invert' : ''}`}
-                  />
+          <div className="grid md:grid-cols-2 gap-5">
+            {skillGroups.map((group) => (
+              <div key={group.label} className="card-flat p-6">
+                <div className="flex items-center justify-between mb-5 pb-3 border-b border-border">
+                  <h3 className="text-base font-semibold">{group.label}</h3>
+                  <span className="text-xs font-mono text-muted-foreground">
+                    {String(group.items.length).padStart(2, "0")} items
+                  </span>
                 </div>
-                <span className="text-[10px] text-muted-foreground font-medium leading-tight">{tool.name}</span>
+                <ul className="space-y-3.5">
+                  {group.items.map((item) => (
+                    <li
+                      key={item.name}
+                      className="flex items-start justify-between gap-4"
+                    >
+                      <div className="flex items-start gap-3 min-w-0">
+                        <span className="font-mono text-[10px] text-accent mt-1.5 flex-shrink-0">
+                          ▸
+                        </span>
+                        <div className="min-w-0">
+                          <div className="text-sm font-medium text-foreground">
+                            {item.name}
+                          </div>
+                          <div className="text-xs text-muted-foreground mt-0.5">
+                            {item.note}
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
@@ -192,17 +127,17 @@ const SkillsPage = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-12">
-        <div className="section-container text-center">
-          <h2 className="text-xl md:text-2xl font-heading font-bold mb-2">
-            Ready to Put These Skills to Work?
+      <section className="py-16 border-t border-border">
+        <div className="section-container text-center max-w-2xl">
+          <h2 className="text-2xl font-bold mb-3">
+            Looking for a steady operator?
           </h2>
-          <p className="text-muted-foreground text-sm mb-6 max-w-md mx-auto">
-            Available for immediate placement in lead qualification, BPO operations, and outbound sales roles.
+          <p className="text-muted-foreground text-sm mb-6">
+            Available for immediate placement — full-time, contract or shift-based.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <Link to="/contact" className="btn-primary">
-              Let's Connect
+              Let's Talk
               <ArrowRight className="w-4 h-4" />
             </Link>
             <Link to="/experience" className="btn-secondary">

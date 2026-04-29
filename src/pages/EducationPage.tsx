@@ -1,83 +1,86 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, GraduationCap, Award, Folder } from "lucide-react";
+import { ArrowRight, GraduationCap, Award, FolderGit2 } from "lucide-react";
 
 const education = [
   {
-    degree: "Higher National Diploma (HND)",
-    institution: "Yaba College of Education",
-    period: "Completed",
-    description: "Advanced technical education with focus on practical skills and professional development.",
+    degree: "BSc, Mass Communication",
+    institution: "Lagos State University (LASU)",
+    note: "Communication theory, media systems, professional writing.",
   },
   {
-    degree: "National Diploma (ND)",
+    degree: "HND, Mass Communication",
+    institution: "Yaba College of Technology",
+    note: "Production, editorial workflow and applied communication.",
+  },
+  {
+    degree: "ND, Mass Communication",
     institution: "Lagos State Polytechnic",
-    period: "Completed",
-    description: "Foundation in technical education with practical application emphasis.",
+    note: "Foundations in journalism, public relations and broadcasting.",
   },
 ];
 
 const certifications = [
-  { name: "Customer Support & Email Handling Essentials", issuer: "Professional Training (Distinction)", category: "Support" },
-  { name: "Google Workspace Productivity Training", issuer: "Google", category: "Productivity" },
-  { name: "Virtual Assistance Foundations", issuer: "Remote Work Optimization", category: "VA Skills" },
-  { name: "Digital Marketing Specialist", issuer: "Google Digital Skills for Africa", category: "Marketing" },
-  { name: "Email Marketing Certificate", issuer: "Advanced Outreach Strategies", category: "Marketing" },
-  { name: "Blockchain Basics", issuer: "Coursera (Financial Technology Foundation)", category: "FinTech" },
+  { name: "Google Workspace Productivity", issuer: "Google" },
+  { name: "Customer Support Essentials", issuer: "Professional Training" },
+  { name: "Virtual Assistance Foundations", issuer: "Remote Work Track" },
 ];
 
 const projects = [
   {
-    title: "KPI-Driven Performance Systems & Script Engineering",
-    description: "Engineered logic-based reporting systems that transformed raw call data into actionable performance insights. Built a comprehensive 'Library of Rebuttals' for training junior qualifiers and deployed task-tracking dashboards using complex Google Sheets formulas.",
-    tags: ["Automation", "Script Engineering", "KPI Reporting"],
+    name: "RIIRS — Issue Intelligence System",
+    desc: "An internal system to track recurring customer issues across channels and surface resolution paths — reducing repeat tickets and shortening resolution loops for the team.",
+    tags: ["Operations", "Internal Tool", "Pattern Recognition"],
   },
   {
-    title: "Advanced Full-Stack Professional Portfolio",
-    description: "Independently engineered a professional web presence using HTML, CSS, and JavaScript to showcase digital literacy and the ability to troubleshoot technical platforms.",
-    tags: ["Web Development", "HTML/CSS/JS", "Technical Literacy"],
+    name: "Support Quality Framework",
+    desc: "A structured interaction and QA tracking system used to maintain 95%+ performance across high-volume queues — built around Zendesk reporting and SOP-aligned scoring.",
+    tags: ["QA", "SOPs", "Process Design"],
   },
   {
-    title: "Independent Market Analysis",
-    description: "Authored detailed studies on liquidity behavior and community traction models within the decentralized finance (DeFi) space, supporting executive-level sales strategies.",
-    tags: ["Research", "DeFi", "Analytics"],
+    name: "Personal Portfolio",
+    desc: "Designed and deployed a personal portfolio site using HTML/CSS and Netlify — demonstrating digital fluency and ownership across the build-to-deploy stack.",
+    tags: ["HTML/CSS", "Netlify", "Self-Directed"],
   },
 ];
 
 const EducationPage = () => {
   return (
-    <div className="relative">
-      <div className="hero-glow" />
-
+    <div>
       <section className="page-header">
-        <h1 className="page-title">
-          Education & <span className="text-gradient">Certifications</span>
-        </h1>
-        <p className="page-subtitle">
-          Academic background, professional certifications, and strategic project initiatives.
-        </p>
+        <div className="section-container">
+          <span className="eyebrow mb-4">Education & Projects</span>
+          <h1 className="page-title mt-4">
+            Where the foundation
+            <br />
+            <span className="text-muted-foreground font-normal">
+              came from.
+            </span>
+          </h1>
+          <p className="page-subtitle mt-4">
+            A communications background, professional certifications, and
+            self-initiated projects built around customer-experience operations.
+          </p>
+        </div>
       </section>
 
       {/* Education */}
-      <section className="pb-12">
-        <div className="section-container max-w-3xl">
+      <section className="pb-16">
+        <div className="section-container">
           <div className="flex items-center gap-2 mb-6">
-            <div className="icon-container">
-              <GraduationCap className="w-5 h-5 text-primary" />
-            </div>
-            <h2 className="text-xl md:text-2xl font-heading font-bold">Education</h2>
+            <GraduationCap className="w-4 h-4 text-accent" />
+            <span className="text-xs font-mono uppercase tracking-[0.14em] text-muted-foreground">Education</span>
           </div>
 
-          <div className="space-y-4">
-            {education.map((edu, index) => (
-              <div key={index} className="interactive-card">
-                <div className="flex flex-wrap items-start justify-between gap-3 mb-2">
-                  <div>
-                    <h3 className="text-base font-heading font-bold">{edu.degree}</h3>
-                    <p className="text-primary font-medium text-sm">{edu.institution}</p>
-                  </div>
-                  <span className="stat-badge">{edu.period}</span>
-                </div>
-                <p className="text-muted-foreground text-sm">{edu.description}</p>
+          <div className="grid md:grid-cols-3 gap-4">
+            {education.map((e) => (
+              <div key={e.degree} className="card-flat p-6">
+                <h3 className="text-base font-semibold mb-1">{e.degree}</h3>
+                <p className="text-sm text-accent font-medium mb-3">
+                  {e.institution}
+                </p>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  {e.note}
+                </p>
               </div>
             ))}
           </div>
@@ -85,51 +88,46 @@ const EducationPage = () => {
       </section>
 
       {/* Certifications */}
-      <section className="py-12 border-y border-border/50">
+      <section className="py-16 border-t border-border">
         <div className="section-container">
           <div className="flex items-center gap-2 mb-6">
-            <div className="icon-container">
-              <Award className="w-5 h-5 text-primary" />
-            </div>
-            <h2 className="text-xl md:text-2xl font-heading font-bold">Certifications & Specialized Training</h2>
+            <Award className="w-4 h-4 text-accent" />
+            <span className="text-xs font-mono uppercase tracking-[0.14em] text-muted-foreground">Certifications</span>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {certifications.map((cert, index) => (
-              <div key={index} className="interactive-card">
-                <span className="inline-block px-2 py-0.5 text-[10px] font-medium rounded bg-primary/15 text-primary mb-2">
-                  {cert.category}
-                </span>
-                <h4 className="font-heading font-semibold text-sm mb-1">{cert.name}</h4>
-                <p className="text-xs text-muted-foreground">{cert.issuer}</p>
+          <div className="grid sm:grid-cols-3 gap-px bg-border rounded-lg overflow-hidden border border-border">
+            {certifications.map((c) => (
+              <div key={c.name} className="bg-card p-5">
+                <h4 className="text-sm font-semibold text-foreground mb-1">
+                  {c.name}
+                </h4>
+                <p className="text-xs text-muted-foreground">{c.issuer}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Key Projects */}
-      <section className="py-12">
-        <div className="section-container max-w-4xl">
+      {/* Projects */}
+      <section className="py-16 border-t border-border">
+        <div className="section-container">
           <div className="flex items-center gap-2 mb-6">
-            <div className="icon-container">
-              <Folder className="w-5 h-5 text-primary" />
-            </div>
-            <h2 className="text-xl md:text-2xl font-heading font-bold">Strategic Projects & Initiatives</h2>
+            <FolderGit2 className="w-4 h-4 text-accent" />
+            <span className="text-xs font-mono uppercase tracking-[0.14em] text-muted-foreground">Key Projects</span>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-4">
-            {projects.map((project, index) => (
-              <div key={index} className="interactive-card">
-                <h3 className="text-base font-heading font-bold mb-2">{project.title}</h3>
-                <p className="text-muted-foreground text-sm mb-3">{project.description}</p>
-                <div className="flex flex-wrap gap-1.5">
-                  {project.tags.map((tag, idx) => (
-                    <span
-                      key={idx}
-                      className="px-2 py-0.5 text-[10px] rounded-full bg-muted text-muted-foreground"
-                    >
-                      {tag}
+          <div className="grid md:grid-cols-3 gap-5">
+            {projects.map((p, i) => (
+              <div key={p.name} className="card-interactive">
+                <div className="num-marker mb-3">0{i + 1}.</div>
+                <h3 className="text-base font-semibold mb-2">{p.name}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                  {p.desc}
+                </p>
+                <div className="flex flex-wrap gap-1.5 pt-3 border-t border-border">
+                  {p.tags.map((t) => (
+                    <span key={t} className="mono-pill">
+                      {t}
                     </span>
                   ))}
                 </div>
@@ -140,13 +138,13 @@ const EducationPage = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-12 border-t border-border/50">
-        <div className="section-container text-center">
-          <h2 className="text-xl md:text-2xl font-heading font-bold mb-2">
-            Want to Know More?
+      <section className="py-16 border-t border-border">
+        <div className="section-container text-center max-w-2xl">
+          <h2 className="text-2xl font-bold mb-3">
+            Want to dig deeper?
           </h2>
-          <p className="text-muted-foreground text-sm mb-6 max-w-md mx-auto">
-            Explore my experience or get in touch to discuss how I can contribute to your team.
+          <p className="text-muted-foreground text-sm mb-6">
+            Happy to walk through any of these projects or share the full CV.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <Link to="/contact" className="btn-primary">

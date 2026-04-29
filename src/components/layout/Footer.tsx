@@ -1,69 +1,45 @@
 import { Link } from "react-router-dom";
-import { Twitter, Send, Mail, MapPin, ArrowUp } from "lucide-react";
-import { usePersona } from "@/hooks/use-persona";
+import { Mail, MapPin, ArrowUp, Linkedin, Send } from "lucide-react";
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-  const { persona } = usePersona();
-  const isWeb3 = persona === "web3";
+  const year = new Date().getFullYear();
 
-  const accentText = isWeb3 ? "text-emerald-400" : "text-primary";
-  const accentHoverText = isWeb3 ? "hover:text-emerald-400" : "hover:text-primary";
-  const accentBorder = isWeb3 ? "hover:border-emerald-400/40" : "hover:border-primary/40";
-  const badgeClass = isWeb3
-    ? "inline-block px-2.5 py-1 text-[10px] font-medium rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/25"
-    : "inline-block px-2.5 py-1 text-[10px] font-medium rounded-full bg-primary/15 text-primary border border-primary/25";
-
-  const scrollToTop = () => {
+  const scrollToTop = () =>
     window.scrollTo({ top: 0, behavior: "smooth" });
-  };
 
   return (
-    <footer className="border-t border-border/50 bg-card/30 backdrop-blur-sm">
-      <div className="section-container py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer className="border-t border-border mt-16">
+      <div className="section-container py-14">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
           {/* Brand */}
-          <div className="space-y-3">
-            <Link
-              to="/"
-              className={`text-xl font-heading font-bold text-foreground ${accentHoverText} transition-colors`}
-            >
-              ConQuest<span className={accentText}>.</span>
+          <div className="md:col-span-5 space-y-4">
+            <Link to="/" className="flex items-center gap-2">
+              <span className="w-7 h-7 rounded-md bg-foreground text-background flex items-center justify-center font-mono text-xs font-bold">
+                CQ
+              </span>
+              <span className="text-sm font-heading font-semibold text-foreground">
+                Aisiri Conquest Samuel
+              </span>
             </Link>
-            <p className="text-muted-foreground text-xs leading-relaxed">
-              {isWeb3
-                ? "Web3 Operations, Research & Community Specialist. Turning complexity into clarity for decentralized teams."
-                : "Senior Lead Discovery & Qualification Expert. Specializing in high-volume outbound operations for US-market insurance and financial services."}
+            <p className="text-sm text-muted-foreground leading-relaxed max-w-sm">
+              Customer Experience Specialist focused on resolution-first support,
+              QA-grade documentation, and reducing escalations across high-volume
+              omnichannel operations.
             </p>
             <div className="flex items-center gap-2">
-              <a
-                href="https://x.com/iamconqwest"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`p-2 rounded-lg bg-card/50 border border-border text-muted-foreground ${accentHoverText} ${accentBorder} transition-all`}
-                aria-label="Twitter @iamconqwest"
-              >
-                <Twitter className="w-4 h-4" />
-              </a>
-              <a
-                href="https://t.me/BIG_CQ"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`p-2 rounded-lg bg-card/50 border border-border text-muted-foreground ${accentHoverText} ${accentBorder} transition-all`}
-                aria-label="Telegram @BIG_CQ"
-              >
-                <Send className="w-4 h-4" />
-              </a>
+              <span className="badge-success">
+                <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse-dot" />
+                Available 24/7 shifts
+              </span>
             </div>
-            <p className="text-muted-foreground text-[10px]">
-              <span className={accentText}>@iamconqwest</span> · t.me/BIG_CQ
-            </p>
           </div>
 
-          {/* Quick Links */}
-          <div className="space-y-3">
-            <h3 className="font-heading font-semibold text-foreground text-sm">Quick Links</h3>
-            <nav className="flex flex-col gap-1.5">
+          {/* Sitemap */}
+          <div className="md:col-span-3 space-y-3">
+            <h3 className="text-xs font-mono uppercase tracking-[0.14em] text-muted-foreground">
+              Sitemap
+            </h3>
+            <nav className="flex flex-col gap-2">
               {[
                 { name: "About", path: "/about" },
                 { name: "Experience", path: "/experience" },
@@ -74,7 +50,7 @@ const Footer = () => {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`text-muted-foreground ${accentHoverText} transition-colors text-xs w-fit`}
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors w-fit"
                 >
                   {link.name}
                 </Link>
@@ -82,40 +58,57 @@ const Footer = () => {
             </nav>
           </div>
 
-          {/* Contact Info */}
-          <div className="space-y-3">
-            <h3 className="font-heading font-semibold text-foreground text-sm">Get in Touch</h3>
+          {/* Contact */}
+          <div className="md:col-span-4 space-y-3">
+            <h3 className="text-xs font-mono uppercase tracking-[0.14em] text-muted-foreground">
+              Contact
+            </h3>
             <div className="space-y-2">
               <a
                 href="mailto:conquestaisiri@gmail.com"
-                className={`flex items-center gap-2 text-muted-foreground ${accentHoverText} transition-colors text-xs`}
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Mail className="w-3.5 h-3.5" />
                 conquestaisiri@gmail.com
               </a>
-              <div className="flex items-center gap-2 text-muted-foreground text-xs">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <MapPin className="w-3.5 h-3.5" />
-                Lagos, Nigeria
+                Lagos, Nigeria · Remote-Ready
+              </div>
+              <div className="flex items-center gap-2 pt-1">
+                <a
+                  href="https://wa.me/2347049163089"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="theme-toggle"
+                  aria-label="WhatsApp"
+                >
+                  <Send className="w-3.5 h-3.5" />
+                </a>
+                <a
+                  href="https://linkedin.com/in/aisiri-conquest"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="theme-toggle"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="w-3.5 h-3.5" />
+                </a>
               </div>
             </div>
-            <span className={badgeClass}>Remote-Ready</span>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-8 pt-6 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
-          <p>© {currentYear} Aisiri Conquest Samuel. All rights reserved.</p>
-          <p className="text-center sm:text-right hidden sm:block">
-            {isWeb3 ? "Open to Web3 remote collaborations & DAO contributions." : "Ready to bring veteran-level qualification to your next campaign."}
+        {/* Bottom */}
+        <div className="mt-12 pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-xs text-muted-foreground font-mono">
+            © {year} Aisiri Conquest Samuel — All rights reserved.
           </p>
-          {/* Back to Top */}
           <button
             onClick={scrollToTop}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-border bg-card/50 text-muted-foreground ${accentHoverText} hover:border-${isWeb3 ? "emerald-400/40" : "primary/40"} transition-all hover:scale-105 text-xs`}
-            aria-label="Back to top"
+            className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors font-mono"
           >
-            <ArrowUp className="w-3 h-3" />
-            Back to top
+            <ArrowUp className="w-3 h-3" /> Back to top
           </button>
         </div>
       </div>
