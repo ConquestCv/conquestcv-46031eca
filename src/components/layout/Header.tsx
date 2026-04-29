@@ -1,16 +1,14 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Twitter, Send, Moon, Sun, Zap } from "lucide-react";
+import { Menu, X, Moon, Sun, Mail } from "lucide-react";
 import { useTheme } from "@/hooks/use-theme";
-import { usePersona } from "@/hooks/use-persona";
-import PersonaToggle from "@/components/PersonaToggle";
 
-const baseNavItems = [
-  { name: "Home", path: "/" },
+const navItems = [
   { name: "About", path: "/about" },
   { name: "Experience", path: "/experience" },
   { name: "Skills", path: "/skills" },
   { name: "Education", path: "/education" },
+  { name: "Contact", path: "/contact" },
 ];
 
 const Header = () => {
@@ -18,18 +16,9 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   const { theme, toggleTheme } = useTheme();
-  const { persona } = usePersona();
-
-  const isWeb3 = persona === "web3";
-
-  const navItems = isWeb3
-    ? [...baseNavItems, { name: "Audits", path: "/audits" }]
-    : baseNavItems;
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 8);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -38,191 +27,110 @@ const Header = () => {
     setIsMobileMenuOpen(false);
   }, [location.pathname]);
 
-  const accentHover = isWeb3
-    ? "hover:text-emerald-400"
-    : "hover:text-primary";
-
-  const activeNavClass = isWeb3
-    ? "text-foreground [&::after]:bg-emerald-400"
-    : "text-foreground";
-
-  const ctaClass = isWeb3
-    ? "inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg font-medium text-sm transition-all duration-300 text-white bg-gradient-to-r from-emerald-500 to-teal-500 shadow-[0_4px_16px_hsl(170_80%_45%_/_0.35)] hover:scale-[1.02] hover:brightness-110"
-    : "btn-primary";
-
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
         isScrolled
-          ? "bg-background/80 backdrop-blur-lg border-b border-border shadow-sm"
-          : "bg-transparent"
+          ? "bg-background/85 backdrop-blur-md border-b border-border"
+          : "bg-transparent border-b border-transparent"
       }`}
     >
-      {/* Row 1: Logo | Toggle (center) | Actions */}
       <div className="section-container">
-        <div className="flex items-center justify-between h-14 gap-4">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link
             to="/"
-            className={`text-xl font-heading font-bold text-foreground ${accentHover} transition-colors flex-shrink-0`}
+            className="flex items-center gap-2 group"
+            aria-label="Home"
           >
-            ConQuest<span className={isWeb3 ? "text-emerald-400" : "text-primary"}>.</span>
+            <span className="w-7 h-7 rounded-md bg-foreground text-background flex items-center justify-center font-mono text-xs font-bold">
+              CQ
+            </span>
+            <span className="text-sm font-heading font-semibold text-foreground hidden sm:inline">
+              Aisiri Conquest
+            </span>
           </Link>
 
-          {/* Persona Toggle — absolute center on desktop */}
-          <div className="hidden md:flex absolute left-1/2 -translate-x-1/2">
-            <PersonaToggle />
-          </div>
-
-          {/* Desktop Actions */}
-          <div className="hidden md:flex items-center gap-3 flex-shrink-0">
-            <button
-              onClick={toggleTheme}
-              className="theme-toggle"
-              aria-label="Toggle theme"
-            >
-              {theme === "dark" ? (
-                <Sun className="w-4 h-4 text-foreground" />
-              ) : (
-                <Moon className="w-4 h-4 text-foreground" />
-              )}
-            </button>
-
-            <a
-              href="https://x.com/iamconqwest"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`p-2 text-muted-foreground ${accentHover} transition-all duration-300 hover:scale-110`}
-              aria-label="Twitter"
-            >
-              <Twitter className="w-4 h-4" />
-            </a>
-            <a
-              href="https://t.me/BIG_CQ"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`p-2 text-muted-foreground ${accentHover} transition-all duration-300 hover:scale-110`}
-              aria-label="Telegram"
-            >
-              <Send className="w-4 h-4" />
-            </a>
-            <Link to="/contact" className={ctaClass}>
-              Let's Talk
-            </Link>
-          </div>
-
-          {/* Mobile Controls */}
-          <div className="md:hidden flex items-center gap-2">
-            <button
-              onClick={toggleTheme}
-              className="theme-toggle"
-              aria-label="Toggle theme"
-            >
-              {theme === "dark" ? (
-                <Sun className="w-4 h-4 text-foreground" />
-              ) : (
-                <Moon className="w-4 h-4 text-foreground" />
-              )}
-            </button>
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 text-foreground hover:bg-card/50 rounded-lg transition-colors"
-              aria-label="Toggle menu"
-            >
-              {isMobileMenuOpen ? (
-                <X className="w-5 h-5" />
-              ) : (
-                <Menu className="w-5 h-5" />
-              )}
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Row 2: Desktop Nav Links — centered below the top row */}
-      <div className="hidden md:block border-t border-border/40">
-        <div className="section-container">
-          <nav className="flex items-center justify-center gap-6 h-10">
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center gap-7">
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
                 className={`nav-link ${
-                  location.pathname === item.path
-                    ? `active ${activeNavClass}`
-                    : ""
-                } ${isWeb3 ? "[&::after]:bg-emerald-400 hover:text-foreground" : ""}`}
+                  location.pathname === item.path ? "active" : ""
+                }`}
               >
                 {item.name}
               </Link>
             ))}
           </nav>
+
+          {/* Actions */}
+          <div className="flex items-center gap-2">
+            <button
+              onClick={toggleTheme}
+              className="theme-toggle"
+              aria-label="Toggle theme"
+            >
+              {theme === "dark" ? (
+                <Sun className="w-4 h-4" />
+              ) : (
+                <Moon className="w-4 h-4" />
+              )}
+            </button>
+
+            <Link
+              to="/contact"
+              className="hidden sm:inline-flex btn-primary !py-2 !px-4 !text-xs"
+            >
+              <Mail className="w-3.5 h-3.5" />
+              Hire Me
+            </Link>
+
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="md:hidden theme-toggle"
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? (
+                <X className="w-4 h-4" />
+              ) : (
+                <Menu className="w-4 h-4" />
+              )}
+            </button>
+          </div>
         </div>
       </div>
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-lg border-b border-border transition-all duration-300 ${
+        className={`md:hidden absolute top-full left-0 right-0 bg-background border-b border-border transition-all duration-200 ${
           isMobileMenuOpen
             ? "opacity-100 visible translate-y-0"
             : "opacity-0 invisible -translate-y-2"
         }`}
       >
-        <nav className="section-container py-4 flex flex-col gap-2">
+        <nav className="section-container py-4 flex flex-col gap-1">
           {navItems.map((item) => (
             <Link
               key={item.path}
               to={item.path}
-              className={`text-sm font-medium py-2 px-3 rounded-lg transition-all ${
+              className={`text-sm font-medium py-2.5 px-3 rounded-md transition-colors ${
                 location.pathname === item.path
-                  ? isWeb3
-                    ? "text-emerald-400 bg-emerald-500/10"
-                    : "text-primary bg-primary/10"
-                  : isWeb3
-                  ? "text-muted-foreground hover:text-emerald-400 hover:bg-emerald-500/10"
-                  : "text-muted-foreground hover:text-foreground hover:bg-card/50"
+                  ? "text-foreground bg-secondary"
+                  : "text-muted-foreground hover:text-foreground hover:bg-secondary/60"
               }`}
             >
               {item.name}
             </Link>
           ))}
-          <div className="flex items-center gap-3 pt-3 border-t border-border mt-2">
-            <a
-              href="https://x.com/iamconqwest"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`p-2 text-muted-foreground ${accentHover} transition-colors`}
-              aria-label="Twitter"
-            >
-              <Twitter className="w-4 h-4" />
-            </a>
-            <a
-              href="https://t.me/BIG_CQ"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`p-2 text-muted-foreground ${accentHover} transition-colors`}
-              aria-label="Telegram"
-            >
-              <Send className="w-4 h-4" />
-            </a>
-          </div>
-          <Link to="/contact" className={`${ctaClass} text-center mt-2`}>
-            Let's Talk
+          <Link to="/contact" className="btn-primary mt-3">
+            <Mail className="w-3.5 h-3.5" />
+            Hire Me
           </Link>
         </nav>
       </div>
-      {/* Floating "Hire Conquest" button - Web3 only, desktop only */}
-      {isWeb3 && isScrolled && (
-        <a
-          href="https://t.me/BIG_CQ"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden md:inline-flex fixed bottom-6 left-6 z-50 items-center gap-2 px-4 py-2.5 rounded-full font-medium text-sm transition-all duration-300 text-white bg-gradient-to-r from-emerald-500 to-teal-500 shadow-[0_4px_20px_hsl(170_80%_45%_/_0.4)] hover:scale-105 hover:brightness-110 font-mono animate-fade-in"
-        >
-          <Zap className="w-4 h-4" />
-          Hire Conquest
-        </a>
-      )}
     </header>
   );
 };
