@@ -56,8 +56,8 @@ const EducationPage = () => {
             </span>
           </h1>
           <p className="page-subtitle mt-4">
-            A communications background, professional certifications, and
-            self-initiated projects built around customer-experience operations.
+            Academic foundation, professional certifications, and self-initiated
+            projects built around customer-experience operations.
           </p>
         </div>
       </section>
