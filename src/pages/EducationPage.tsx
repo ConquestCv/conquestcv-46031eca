@@ -74,11 +74,8 @@ const EducationPage = () => {
             {education.map((e) => (
               <div key={e.degree} className="card-flat p-6">
                 <h3 className="text-base font-semibold mb-1">{e.degree}</h3>
-                <p className="text-sm text-accent font-medium mb-3">
+                <p className="text-sm text-accent font-medium">
                   {e.institution}
-                </p>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  {e.note}
                 </p>
               </div>
             ))}
