@@ -3,26 +3,25 @@ import { ArrowRight, GraduationCap, Award, FolderGit2 } from "lucide-react";
 
 const education = [
   {
-    degree: "BSc, Mass Communication",
+    degree: "Bachelor's Degree",
     institution: "Lagos State University (LASU)",
-    note: "Communication theory, media systems, professional writing.",
   },
   {
-    degree: "HND, Mass Communication",
-    institution: "Yaba College of Technology",
-    note: "Production, editorial workflow and applied communication.",
+    degree: "Higher National Diploma (HND)",
+    institution: "Yaba College of Education",
   },
   {
-    degree: "ND, Mass Communication",
+    degree: "National Diploma (ND)",
     institution: "Lagos State Polytechnic",
-    note: "Foundations in journalism, public relations and broadcasting.",
   },
 ];
 
 const certifications = [
-  { name: "Google Workspace Productivity", issuer: "Google" },
-  { name: "Customer Support Essentials", issuer: "Professional Training" },
-  { name: "Virtual Assistance Foundations", issuer: "Remote Work Track" },
+  { name: "Blockchain Basics", issuer: "Coursera" },
+  { name: "Digital Marketing Fundamentals", issuer: "Google Digital Skills for Africa" },
+  { name: "Email Marketing Certificate", issuer: "GAOTek Inc." },
+  { name: "Google Workspace Productivity Training", issuer: "Google" },
+  { name: "Virtual Assistance & Customer Support Essentials", issuer: "Professional Training" },
 ];
 
 const projects = [
@@ -57,8 +56,8 @@ const EducationPage = () => {
             </span>
           </h1>
           <p className="page-subtitle mt-4">
-            A communications background, professional certifications, and
-            self-initiated projects built around customer-experience operations.
+            Academic foundation, professional certifications, and self-initiated
+            projects built around customer-experience operations.
           </p>
         </div>
       </section>
@@ -75,11 +74,8 @@ const EducationPage = () => {
             {education.map((e) => (
               <div key={e.degree} className="card-flat p-6">
                 <h3 className="text-base font-semibold mb-1">{e.degree}</h3>
-                <p className="text-sm text-accent font-medium mb-3">
+                <p className="text-sm text-accent font-medium">
                   {e.institution}
-                </p>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  {e.note}
                 </p>
               </div>
             ))}
@@ -95,7 +91,7 @@ const EducationPage = () => {
             <span className="text-xs font-mono uppercase tracking-[0.14em] text-muted-foreground">Certifications</span>
           </div>
 
-          <div className="grid sm:grid-cols-3 gap-px bg-border rounded-lg overflow-hidden border border-border">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-lg overflow-hidden border border-border">
             {certifications.map((c) => (
               <div key={c.name} className="bg-card p-5">
                 <h4 className="text-sm font-semibold text-foreground mb-1">
