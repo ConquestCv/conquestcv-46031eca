@@ -91,7 +91,7 @@ const EducationPage = () => {
             <span className="text-xs font-mono uppercase tracking-[0.14em] text-muted-foreground">Certifications</span>
           </div>
 
-          <div className="grid sm:grid-cols-3 gap-px bg-border rounded-lg overflow-hidden border border-border">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-lg overflow-hidden border border-border">
             {certifications.map((c) => (
               <div key={c.name} className="bg-card p-5">
                 <h4 className="text-sm font-semibold text-foreground mb-1">
