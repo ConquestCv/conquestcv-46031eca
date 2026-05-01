@@ -3,26 +3,25 @@ import { ArrowRight, GraduationCap, Award, FolderGit2 } from "lucide-react";
 
 const education = [
   {
-    degree: "BSc, Mass Communication",
+    degree: "Bachelor's Degree",
     institution: "Lagos State University (LASU)",
-    note: "Communication theory, media systems, professional writing.",
   },
   {
-    degree: "HND, Mass Communication",
-    institution: "Yaba College of Technology",
-    note: "Production, editorial workflow and applied communication.",
+    degree: "Higher National Diploma (HND)",
+    institution: "Yaba College of Education",
   },
   {
-    degree: "ND, Mass Communication",
+    degree: "National Diploma (ND)",
     institution: "Lagos State Polytechnic",
-    note: "Foundations in journalism, public relations and broadcasting.",
   },
 ];
 
 const certifications = [
-  { name: "Google Workspace Productivity", issuer: "Google" },
-  { name: "Customer Support Essentials", issuer: "Professional Training" },
-  { name: "Virtual Assistance Foundations", issuer: "Remote Work Track" },
+  { name: "Blockchain Basics", issuer: "Coursera" },
+  { name: "Digital Marketing Fundamentals", issuer: "Google Digital Skills for Africa" },
+  { name: "Email Marketing Certificate", issuer: "GAOTek Inc." },
+  { name: "Google Workspace Productivity Training", issuer: "Google" },
+  { name: "Virtual Assistance & Customer Support Essentials", issuer: "Professional Training" },
 ];
 
 const projects = [
