@@ -1,172 +1,96 @@
-# Real World Overhaul + Web3 Glass Card Fix
+# Virtual Executive Assistant Re-Tailor
 
-## Two Main Goals
-
-1. **Web3 Fix (Small):** Revert glass-card and terminal-card styles so they look good in both light and dark mode -- replace the dark hardcoded backgrounds with theme-aware styling that uses the existing `interactive-card` approach with emerald accents.
-2. **Real World Overhaul (Large):** Transform the Web2/Real World persona from a generic "Operations & Multimedia" portfolio into a **Senior Lead Discovery & Qualification Expert** professional service landing page targeting BPO recruiters and insurance firms, using the new CV data.
+Pivot the whole public site (the Web2/Real-World side — Web3 stays hidden) from the **Customer Experience Specialist** narrative to the new **Virtual Executive Assistant / EA-to-CEO** positioning from the uploaded CV. Only edit what needs editing — layout, design system, animations, components, structure all stay.
 
 ---
 
-## Web3 Glass Card Fix
+## 1. Header logo swap
+`src/components/layout/Header.tsx`
+- Replace the `CQ` text badge with a small circular avatar using the existing `src/assets/conquest-profile.jpg`.
+- Keep the same size (~28px), rounded-full, object-cover, with a thin border so it reads as a logo mark.
+- Wordmark next to it stays "Aisiri Conquest".
 
-**File: `src/index.css**`
+## 2. HomePage — `src/pages/HomePage.tsx`
+- **Eyebrow / availability badge:** "Available now · Aligned to PST / MST / EST / CST"
+- **H1:** `Virtual Executive Assistant.` + sub-line `Calm ops for busy founders.`
+- **Sub-paragraph:** rewrite around: 2–3 yrs supporting executives — calendar & inbox triage, call-note synthesis, action-item tracking, client/coaching follow-ups, and clean documentation. Discreet, organized, deadline-driven.
+- **Channels strip → "Support Stack" strip:** Calendar & Inbox · Notes & Action Items · CRM & Trackers
+- **Stats (4):**
+  - `60–80+` Daily Records Handled
+  - `2–3 yrs` Executive Support
+  - `100%` Deadline Visibility
+  - `4 TZ` PST · MST · EST · CST
+- **Floating KPI card on profile:** Inbox triage, Action items captured, Deadlines tracked.
+- **Pillars (3) rewrite:**
+  1. *Priorities, protected.* — calendar discipline, inbox triage, meeting prep so the CEO's focus stays on high-leverage work.
+  2. *Notes → action items.* — call transcripts, coaching sessions and webinars turned into tracked next steps, owners and deadlines.
+  3. *Operational clarity.* — Google Drive hygiene, CRM updates, SOP-aligned trackers so nothing slips between people or weeks.
+- **Tech setup strip:** keep the hardware/connection/power rows; update Availability to "Full or part-time · PST/MST/EST/CST aligned" and Workspace copy to "Private home office · executive-grade discretion".
+- **CTA section:** copy refit ("Need a steady second brain for your week?" / "Send a brief — calendar load, inbox volume, tooling — I'll come back with a clear support plan.").
 
-The `.glass-card` and `.terminal-card` classes currently use hardcoded dark HSL backgrounds (`hsl(170 40% 12% / 0.4)` and `hsl(220 20% 8% / 0.9)`) that look invisible/broken in light mode. Fix:
+## 3. AboutPage — `src/pages/AboutPage.tsx`
+Rewrite narrative around the EA story: structured, discreet, deadline-driven; experience supporting executive ops, client/coaching workflows, and webinar/event follow-ups. Update any "support agent / QA score" language to EA-flavored equivalents (accuracy, follow-through, discretion). Preserve sections, cards, layout.
 
-- `.glass-card`: Use theme-aware colors -- `bg-card/80 backdrop-blur-xl` with emerald border tints that work in both modes. In dark mode the frosted glass effect is visible; in light mode the card has a clean white/slate background with emerald-tinted borders.
-- `.terminal-card`: Same approach -- use `bg-card` base with a dark override only in `.dark` class scope. The `::before` dot decoration stays.
+## 4. ExperiencePage — `src/pages/ExperiencePage.tsx`
+Replace the three roles with CV versions, keeping the same card structure, tag pills, and timeline:
 
-No changes to any Web3 page files -- only the CSS class definitions change.
+1. **Outsource Global — Virtual Assistant & Remote Operations Support** · Nov 2024 – Mar 2026 · Remote
+   - Executive calendar/inbox support, document prep, spreadsheet updates, task tracking.
+   - Synthesized messages/notes into action items + pending priorities for managers.
+   - 60–80+ daily records across CRM and shared workspaces with strong data accuracy.
+   - Built reports, trackers, meeting notes & workflow summaries in Sheets/Excel.
+   - Coordinated reminders & follow-ups so deadlines and client requests didn't slip.
+   - Tags: `Calendar & Inbox`, `Action Items`, `Sheets/Excel`, `CRM`
 
----
+2. **Turing — Customer Service Rep · Account Documentation Support** · Sept 2023 – Jul 2024 · Remote
+   - Documented client interactions, updated CRM, escalated cleanly.
+   - Verified customer details and maintained accurate interaction histories.
+   - Built response templates and resolution notes for consistency.
+   - Tags: `CRM Hygiene`, `Documentation`, `Templates`
 
-## Real World Overhaul -- Section by Section
+3. **Flutterwave — Operations & Administrative Support Intern (Paid)** · Jan 2023 – Jul 2023 · Remote · Internship
+   - Data entry, online research, digital file organization, task tracking, basic reporting.
+   - Built Sheets trackers for clients, workflow progress, follow-ups.
+   - Prepared meeting notes & internal summaries for cross-team visibility.
+   - Tags: `Operations`, `Sheets`, `Documentation`
 
-### 1. `src/pages/HomePage.tsx` -- Complete Rewrite
+Page header copy updates accordingly ("Two-plus years supporting executives and remote ops…").
 
-**Hero Section:**
+## 5. SkillsPage — `src/pages/SkillsPage.tsx`
+Rebuild skill categories to map to the CV's Core Skills:
+- **Executive Support** — Calendar Mgmt, Inbox Prioritization, Meeting Prep, Action-Item Tracking, Reminders & Follow-ups
+- **CEO Operations** — Call/Transcript Review, Note Synthesis, Deadline Tracking, Strategic Task Visibility
+- **Client & Coaching Support** — Coaching-Call Notes, Client Updates, Webinar/Masterclass Follow-ups, Lead Nurturing, Professional Correspondence
+- **Digital Organization** — Google Drive, Document Control, CRM Updates, Spreadsheet Trackers, SOP Compliance, Reporting
+- **Tools & Platforms** — Google Workspace, Microsoft Excel, Zoom, Slack, Trello, Notion, Salesforce, HubSpot, Zendesk, AI productivity tools
+Update the LiquidMeter / proficiency values to sensible EA levels (e.g., Calendar/Inbox 95, Notes/Action Items 95, CRM 90, Sheets/Excel 90, etc.). Replace any "voice / AHT / FCR" copy.
 
-- Headline: "Senior Lead Discovery & Qualification Expert"
-- Sub-headline: "Bridging the Gap Between Cold Outreach and High-Value Conversions Through Mastery of Tonality, Rapport, and Meticulous Data Verification."
-- Availability badge: Green dot + "AVAILABLE FOR IMMEDIATE PLACEMENT"
-- CTAs: "Download Comprehensive CV" (link to PDF) + "View My Experience" (internal link)
-- Keep profile image
+## 6. EducationPage — `src/pages/EducationPage.tsx`
+- Education: `BSc — Lasustech (In Progress)`, `HND — Yaba College of Technology, Lagos`, `ND — Lagos State Polytechnic`.
+- Certifications (replace with CV list):
+  - Remote Operations & Virtual Assistance Mastery
+  - Digital Workplace Productivity & CRM Essentials
+  - Advanced Administrative Support Foundations
+  - Customer Support & Email Handling Essentials
 
-**"Why Me" Section (3 columns replacing current "What I Bring"):**
+## 7. ContactPage — `src/pages/ContactPage.tsx`
+- Update headline/sub copy to EA tone ("Bring on a calm, discreet second brain…").
+- Phone numbers from CV: `+234 704 916 3089`, `+234 707 985 2097`. Email stays `conquestaisiri@gmail.com`.
+- Reframe any "support shifts" mention as "Aligned to PST / MST / EST / CST business hours".
 
-1. Tonality Architecture -- Descending Tonality to bypass gatekeeper resistance
-2. Lead Integrity -- "0% Waste" philosophy, vetting Address, DOB, Banking Status
-3. Cross-Border Fluency -- Cultural nuances in American/International markets, neutral accent
+## 8. Footer + global meta
+- `src/components/layout/Footer.tsx`: tagline → "Virtual Executive Assistant · Lagos → Remote-first".
+- `index.html`: update `<meta name="description">`, OG & Twitter titles/descriptions to the new VA positioning. Keep `<title>` as `Conquest CV`.
 
-**"Bulletproof Infrastructure" Section (replacing current tagline section):**
-
-- Power Redundancy: 24/7 Uptime via Dedicated Inverter & Generator
-- Network Stability: Dual-ISP (Fiber Primary + 5G Backup)
-- Hardware: Noise-Canceling USB-C Headset & Quiet Home Office
-- Availability: Synced to 9AM-9PM EST
-
-**Testimonials -- Updated quotes:**
-
-- Focus on resilience, coachability, clean transfers, and QA performance (from CV personal attributes)
-
-**Bottom CTA:** "Ready to bring veteran-level qualification to your next campaign."
-
-### 2. `src/pages/AboutPage.tsx` -- Professional Rewrite
-
-- "Who I Am" rewritten using CV professional summary: Results-oriented Lead Qualification Specialist, BPO operations, American English mastery, Descending Tonality, Cold-to-Warm transition expert
-- Core Competencies (replacing current expertise cards):
-  - High-Volume Call Control (200+ daily outbound dials)
-  - US-Market Eligibility Verification
-  - Strategic Rebuttals & Pacing (Memory Pivot, Inflation Gap)
-  - Tonality Management
-  - CRM & Data Hygiene (Salesforce, Zendesk, HubSpot)
-  - Performance Metrics (AHT, TSR, FCR)
-  - Compliance & TCPA Standards
-  - Remote Operational Excellence
-- Strengths updated: Punctuality (100% log-in adherence), Resilience, Coachability, Self-Starter
-- Work Philosophy updated to reflect KPI-driven, EST-synced, compliance-focused mindset
-
-### 3. `src/pages/ExperiencePage.tsx` -- Achievement-Focused Timeline
-
-Replace all 3 entries with CV data using achievement framing:
-
-**Entry 1: Technical Support & Communication Specialist -- Tek Experts**
-
-- Sept 2024 - Nov 2025
-- Key achievements: Strategic Stakeholder Management, Operational Reporting, Data Integrity (15% error reduction), Systems Proficiency, Process Optimization (20% workflow improvement), top-tier QA rankings
-
-**Entry 2: Lead Qualification Specialist (US Insurance) -- Teleperformance**
-
-- Jan 2024 - Aug 2024
-- Key achievements: High-volume outbound dialing (US Final Expense/Fintech), 25% increase in Warm Transfers, eligibility deep-dives, script engineering, cold-to-warm conversion, exceeded transfer quotas by 15%
-
-**Entry 3: Digital Operations & Sales Support Intern -- Global Remote Hub**
-
-- Jan 2023 - Dec 2023
-- Key achievements: US/UK communication standards training, workflow automation (30% efficiency improvement), market research, executive inbox management, technical dashboarding
-
-### 4. `src/pages/SkillsPage.tsx` -- Technical Toolkit Grid
-
-Replace current 6 categories with CV-aligned categories:
-
-**Category 1: VOIP & Dialers** -- Five9, RingCentral, 8x8, Mojo Dialer
-**Category 2: CRM Systems** -- Salesforce (Power User), Zendesk, HubSpot, Microsoft Dynamics
-**Category 3: Communication Platforms** -- Microsoft Teams, Slack, Zoom, Discord, Telegram
-**Category 4: Operational Productivity** -- Google Workspace (Expert), Notion, Trello, Microsoft Excel
-**Category 5: AI & Media** -- AI-Assisted Productivity (Gemini/ChatGPT), OBS Studio, Canva, CapCut
-
-**Performance Metrics Grid (new sub-section):**
-
-- 99% QA Score
-- 25% TSR Increase
-- 100% Log-in Adherence
-- 200+ Daily Dials
-
-Tools grid updated to match (Salesforce, Five9, HubSpot, etc.)
-
-### 5. `src/pages/EducationPage.tsx` -- Updated Projects
-
-Education stays the same (HND Yaba, ND Lagos State Poly).
-
-Certifications updated from CV:
-
-- Customer Support & Email Handling Essentials (Distinction)
-- Google Workspace Productivity Training
-- Virtual Assistance Foundations (Remote Work Optimization)
-- Google Digital Skills for Africa -- Digital Marketing Specialist
-- Email Marketing Certificate -- Advanced Outreach Strategies
-- Blockchain Basics -- Coursera (Financial Technology Foundation)
-
-Projects updated from CV:
-
-1. KPI-Driven Performance Systems & Script Engineering -- logic-based reporting, "Library of Rebuttals," task-tracking dashboards
-2. Advanced Full-Stack Professional Portfolio -- HTML/CSS/JS website
-3. (Keep existing Market Analysis project)
-
-### 6. `src/pages/ContactPage.tsx` -- Minor Updates
-
-- Phone numbers updated: +234 704 916 3089 | +234 707 985 2097 (already correct)
-- Add WhatsApp direct link alongside Telegram
-- Footer sign-off: "Ready to bring veteran-level qualification to your next campaign."
-- Add LinkedIn if available (or keep current socials)
-
-### 7. `src/components/layout/Footer.tsx` -- Copy Update
-
-- Update footer description for Real World persona: "Senior Lead Discovery & Qualification Expert. Specializing in high-volume outbound operations for US-market insurance and financial services."
-- Add "Resume/CV" link in Quick Links
-
-### 8. `index.html` -- SEO Update
-
-- Title: "Conquest | Senior Lead Discovery & Qualification Expert"
-- Meta description: "Portfolio of Aisiri Conquest Samuel: A results-oriented Lead Qualification Specialist with expertise in US-market outbound operations, BPO environments, and CRM management."
+## 9. Out of scope (explicitly)
+- No layout, design-token, color, animation, or routing changes.
+- Web3 routes stay hidden exactly as they are now.
+- No backend, no new dependencies.
+- Static HTML mirror in `public/HTML Website/` not touched unless you ask.
 
 ---
 
-## Execution Order
-
-```text
-Step 1: index.css -- Fix glass-card & terminal-card for light/dark mode
-Step 2: index.html -- SEO metadata update
-Step 3: HomePage.tsx -- Full rewrite with new hero, Why Me, Infrastructure, testimonials
-Step 4: AboutPage.tsx -- Professional summary, core competencies, strengths
-Step 5: ExperiencePage.tsx -- Achievement-focused timeline with real CV data
-Step 6: SkillsPage.tsx -- VOIP/CRM/Comms categories + metrics grid
-Step 7: EducationPage.tsx -- Updated certs and projects
-Step 8: ContactPage.tsx + Footer.tsx -- Minor copy updates
-```
-
-## Key Design Decisions
-
-- The "Authority Palette" colors (Midnight Navy, Slate Gray, Electric Cyan) from the prompt will NOT replace the existing theme system, as it would break the Web3 side. Instead, these tones will be achieved through the existing light/dark mode variables which already use similar slate/professional colors.
-- The glass-card fix uses CSS `@apply` with `.dark &` scoping so it adapts per theme without JavaScript changes.
-- No Web3 page content is touched -- only the shared CSS classes are fixed.
-- Voice demo section is included as a placeholder with audio player UI (actual audio files can be added later).  
-  
-  
-
-  lovable please note this one:  
-    
-  Rewrite the Availability section to emphasize Global Flexibility. Replace the specific '9-9 EST' mention with a 'Time-Zone Agnostic' approach. Use the text: 'Global Operations Ready: Infrastructure and schedule optimized for seamless synchronization with International Business Hours (EST, GMT, AEST).' This ensures the portfolio remains evergreen and applicable to any international lead qualification contract.  
-    
-    
-  THAT IS ALL, THE REST ABOVE IT IS GOOD TO GO.
+### Technical notes
+- All edits are localized to the files listed above — search-and-replace style, not rewrites.
+- Profile image reused from existing `@/assets/conquest-profile.jpg`; no new asset upload needed.
+- Numbers in the floating KPI card and stats bar are grounded in the CV (60–80+ records, 2–3 yrs, TZ coverage) — no inflated metrics.
