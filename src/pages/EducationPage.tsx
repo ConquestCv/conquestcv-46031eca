@@ -3,12 +3,12 @@ import { ArrowRight, GraduationCap, Award, FolderGit2 } from "lucide-react";
 
 const education = [
   {
-    degree: "Bachelor's Degree",
-    institution: "Lagos State University (LASU)",
+    degree: "Bachelor's Degree (In Progress)",
+    institution: "Lagos State University of Science & Technology (LASUSTECH)",
   },
   {
     degree: "Higher National Diploma (HND)",
-    institution: "Yaba College of Education",
+    institution: "Yaba College of Technology, Lagos",
   },
   {
     degree: "National Diploma (ND)",
@@ -17,28 +17,29 @@ const education = [
 ];
 
 const certifications = [
-  { name: "Blockchain Basics", issuer: "Coursera" },
-  { name: "Digital Marketing Fundamentals", issuer: "Google Digital Skills for Africa" },
-  { name: "Email Marketing Certificate", issuer: "GAOTek Inc." },
+  { name: "Remote Operations & Virtual Assistance Mastery", issuer: "Professional Training" },
+  { name: "Digital Workplace Productivity & CRM Essentials", issuer: "Professional Training" },
+  { name: "Advanced Administrative Support Foundations", issuer: "Professional Training" },
+  { name: "Customer Support & Email Handling Essentials", issuer: "Professional Training" },
   { name: "Google Workspace Productivity Training", issuer: "Google" },
-  { name: "Virtual Assistance & Customer Support Essentials", issuer: "Professional Training" },
+  { name: "Digital Marketing Fundamentals", issuer: "Google Digital Skills for Africa" },
 ];
 
 const projects = [
   {
-    name: "RIIRS — Issue Intelligence System",
-    desc: "An internal system to track recurring customer issues across channels and surface resolution paths — reducing repeat tickets and shortening resolution loops for the team.",
-    tags: ["Operations", "Internal Tool", "Pattern Recognition"],
+    name: "Executive Workflow Tracker",
+    desc: "A Google Sheets-based weekly tracker for executive priorities, action items and deadlines — surfacing what's owed, by whom, and when, in a single CEO-facing view.",
+    tags: ["Sheets", "Executive Ops", "Tracking"],
   },
   {
-    name: "Support Quality Framework",
-    desc: "A structured interaction and QA tracking system used to maintain 95%+ performance across high-volume queues — built around Zendesk reporting and SOP-aligned scoring.",
-    tags: ["QA", "SOPs", "Process Design"],
+    name: "Documentation & Response Template System",
+    desc: "A library of structured response templates and SOPs for executive correspondence, client follow-ups and recurring workflows — used to keep tone, accuracy and turnaround consistent.",
+    tags: ["SOPs", "Templates", "Correspondence"],
   },
   {
-    name: "Personal Portfolio",
-    desc: "Designed and deployed a personal portfolio site using HTML/CSS and Netlify — demonstrating digital fluency and ownership across the build-to-deploy stack.",
-    tags: ["HTML/CSS", "Netlify", "Self-Directed"],
+    name: "Event & Webinar Support Workflow",
+    desc: "An end-to-end workflow for coaching calls, masterclasses and webinars — covering pre-event prep, live note-taking, attendee follow-ups and post-event action-item tracking.",
+    tags: ["Events", "Follow-ups", "Notes"],
   },
 ];
 
@@ -56,8 +57,8 @@ const EducationPage = () => {
             </span>
           </h1>
           <p className="page-subtitle mt-4">
-            Academic foundation, professional certifications, and self-initiated
-            projects built around customer-experience operations.
+            Academic foundation, professional certifications and self-initiated
+            projects built around executive support and remote operations.
           </p>
         </div>
       </section>

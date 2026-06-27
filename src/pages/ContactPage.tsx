@@ -24,6 +24,12 @@ const contactInfo = [
     href: "tel:+2347049163089",
   },
   {
+    icon: Phone,
+    label: "Alt. Phone",
+    value: "+234 707 985 2097",
+    href: "tel:+2347079852097",
+  },
+  {
     icon: MapPin,
     label: "Location",
     value: "Lagos, Nigeria · Remote-Ready",
@@ -32,7 +38,7 @@ const contactInfo = [
   {
     icon: Clock,
     label: "Availability",
-    value: "24/7 shift coverage",
+    value: "Aligned to PST / MST / EST / CST",
     href: null,
   },
 ];
@@ -101,15 +107,16 @@ Role:    ${formData.role}`;
         <div className="section-container">
           <span className="eyebrow mb-4">Contact</span>
           <h1 className="page-title mt-4">
-            Let's talk about your
+            Bring on a calm, discreet
             <br />
             <span className="text-muted-foreground font-normal">
-              support queue.
+              second brain.
             </span>
           </h1>
           <p className="page-subtitle mt-4">
-            Send a brief — channels, volume, tools — and I'll respond within
-            the same business day with a clear plan and availability.
+            Send a brief — calendar load, inbox volume, current tooling — and
+            I'll come back the same business day with a clear support plan
+            and availability.
           </p>
         </div>
       </section>
@@ -168,17 +175,17 @@ Role:    ${formData.role}`;
                         className="w-full px-3 py-2.5 rounded-md bg-card border border-border focus:border-foreground/40 focus:outline-none focus:ring-2 focus:ring-foreground/10 transition-all text-sm text-foreground"
                       >
                         <option value="">Select role</option>
-                        <option value="Customer Experience Specialist">
-                          Customer Experience Specialist
+                        <option value="Virtual Executive Assistant">
+                          Virtual Executive Assistant
                         </option>
-                        <option value="Customer Success">
-                          Customer Success
+                        <option value="Executive Assistant to CEO">
+                          Executive Assistant to CEO
                         </option>
-                        <option value="Support Operations">
-                          Support Operations
+                        <option value="Virtual Project Manager">
+                          Virtual Project Manager
                         </option>
-                        <option value="Contract / Shift">
-                          Contract / Shift Coverage
+                        <option value="Operations & Client Support">
+                          Operations & Client Support
                         </option>
                         <option value="Other">Other</option>
                       </select>
@@ -195,7 +202,7 @@ Role:    ${formData.role}`;
                       onChange={handleChange}
                       required
                       rows={5}
-                      placeholder="Channels, daily volume, current tooling, time zone, timeline…"
+                      placeholder="Calendar load, inbox volume, current tooling, time zone, timeline…"
                       className="w-full px-3 py-2.5 rounded-md bg-card border border-border focus:border-foreground/40 focus:outline-none focus:ring-2 focus:ring-foreground/10 transition-all text-sm text-foreground placeholder:text-muted-foreground/60 resize-none"
                     />
                   </div>
@@ -278,13 +285,14 @@ Role:    ${formData.role}`;
                   Engagement
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                  Open to full-time, contract and shift-based work. Comfortable
-                  across global time zones with 24/7 coverage capability.
+                  Open to full-time, part-time and project-based engagements.
+                  Aligned to PST / MST / EST / CST business hours for
+                  international executives and remote teams.
                 </p>
                 <div className="flex flex-wrap gap-1.5">
                   <span className="badge-accent">Full-time</span>
-                  <span className="badge-accent">Contract</span>
-                  <span className="badge-accent">Shift coverage</span>
+                  <span className="badge-accent">Part-time</span>
+                  <span className="badge-accent">Project-based</span>
                   <span className="badge-success">
                     <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse-dot" />
                     Available now

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, MapPin, ArrowUp, Linkedin, Send } from "lucide-react";
+import profileImage from "@/assets/conquest-profile.jpg";
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -14,22 +15,24 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-5 space-y-4">
             <Link to="/" className="flex items-center gap-2">
-              <span className="w-7 h-7 rounded-md bg-foreground text-background flex items-center justify-center font-mono text-xs font-bold">
-                CQ
-              </span>
+              <img
+                src={profileImage}
+                alt="Aisiri Conquest"
+                className="w-7 h-7 rounded-full object-cover border border-border ring-1 ring-foreground/5"
+              />
               <span className="text-sm font-heading font-semibold text-foreground">
                 Aisiri Conquest Samuel
               </span>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-sm">
-              Customer Experience Specialist focused on resolution-first support,
-              QA-grade documentation, and reducing escalations across high-volume
-              omnichannel operations.
+              Virtual Executive Assistant · Lagos → Remote-first. Calendar &amp;
+              inbox triage, call-note synthesis, action-item tracking and clean
+              documentation for busy founders and remote ops teams.
             </p>
             <div className="flex items-center gap-2">
               <span className="badge-success">
                 <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse-dot" />
-                Available 24/7 shifts
+                Available · PST / MST / EST / CST
               </span>
             </div>
           </div>

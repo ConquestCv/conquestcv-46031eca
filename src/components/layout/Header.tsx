@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Moon, Sun, Mail } from "lucide-react";
 import { useTheme } from "@/hooks/use-theme";
+import profileImage from "@/assets/conquest-profile.jpg";
 
 const navItems = [
   { name: "About", path: "/about" },
@@ -43,9 +44,11 @@ const Header = () => {
             className="flex items-center gap-2 group"
             aria-label="Home"
           >
-            <span className="w-7 h-7 rounded-md bg-foreground text-background flex items-center justify-center font-mono text-xs font-bold">
-              CQ
-            </span>
+            <img
+              src={profileImage}
+              alt="Aisiri Conquest"
+              className="w-7 h-7 rounded-full object-cover border border-border ring-1 ring-foreground/5"
+            />
             <span className="text-sm font-heading font-semibold text-foreground hidden sm:inline">
               Aisiri Conquest
             </span>
