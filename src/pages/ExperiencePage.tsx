@@ -4,45 +4,47 @@ import { ArrowRight, MapPin, Calendar } from "lucide-react";
 const experiences = [
   {
     company: "Outsource Global",
-    role: "Customer Success Specialist",
-    period: "Nov 2024 – Oct 2025",
+    role: "Virtual Assistant & Remote Operations Support",
+    period: "Nov 2024 – Mar 2026",
     type: "Remote",
     summary:
-      "Owned end-to-end resolution for a high-volume support queue, with structured Zendesk documentation and 95%+ QA throughout the engagement.",
+      "Executive-facing virtual assistant supporting calendar, inbox, documentation and reporting workflows for senior operators across distributed teams.",
     achievements: [
-      "Managed 50–70+ daily customer interactions across chat, voice and email — resolving complex platform and payment issues to closure.",
-      "Reduced escalation rates by 20% through accurate first-touch diagnosis and proactive resolution paths.",
-      "Maintained 95%+ QA performance with structured Zendesk documentation, macros and SOP adherence.",
-      "Trained two junior agents on de-escalation tonality and ticket hygiene during ramp-up.",
+      "Provided executive calendar and inbox support — meeting prep, document handling, spreadsheet updates and ongoing task tracking.",
+      "Synthesised messages, calls and notes into action items and pending priorities for managers, ensuring nothing slipped between weeks.",
+      "Handled 60–80+ daily records across CRM and shared workspaces with strong data accuracy and audit-ready hygiene.",
+      "Built reports, trackers, meeting notes and workflow summaries in Sheets and Excel for cross-team visibility.",
+      "Coordinated reminders and follow-ups so deadlines, client requests and recurring commitments stayed on time.",
     ],
-    tags: ["Zendesk", "Voice + Chat", "Payments", "QA Lead"],
+    tags: ["Calendar & Inbox", "Action Items", "Sheets / Excel", "CRM"],
   },
   {
     company: "Turing",
-    role: "Support Operations Associate",
-    period: "Sept 2023 – Aug 2024",
+    role: "Customer Service Rep · Account Documentation Support",
+    period: "Sept 2023 – Jul 2024",
     type: "Remote",
     summary:
-      "Marketplace support across a global customer base — focused on workflow optimisation, data accuracy in Salesforce, and shrinking AHT without sacrificing CSAT.",
+      "Documentation-led customer support for a global marketplace — focused on CRM hygiene, accurate interaction histories and clean escalations.",
     achievements: [
-      "Handled 60–80+ daily global support interactions in a marketplace environment with multi-region context-switching.",
-      "Reduced Average Handle Time (AHT) by 12% by optimising conversation flows, response templates and triage routing.",
-      "Improved Salesforce data accuracy by 95%+, reducing follow-up gaps and re-contact rates by 20%.",
-      "Authored internal SOPs for common edge cases — adopted across the wider support pod.",
+      "Documented client interactions and maintained accurate, structured records inside the CRM.",
+      "Verified customer details across accounts and kept interaction histories clean for downstream teams.",
+      "Built response templates and resolution notes that improved consistency across the support pod.",
+      "Escalated cleanly with full context so engineering and ops teams could move faster.",
     ],
-    tags: ["Salesforce", "Marketplace", "AHT", "SOPs"],
+    tags: ["CRM Hygiene", "Documentation", "Templates"],
   },
   {
     company: "Flutterwave",
-    role: "Digital Operations Intern",
-    period: "Jan 2023 – Jun 2023",
+    role: "Operations & Administrative Support Intern (Paid)",
+    period: "Jan 2023 – Jul 2023",
     type: "Remote · Internship",
     summary:
-      "Operations support for distributed teams — focused on visibility, documentation and lightweight workflow automation.",
+      "Operations support for distributed teams — focused on data hygiene, online research, file organisation, task tracking and lightweight reporting.",
     achievements: [
-      "Built Google Sheets dashboards that improved task visibility by 25% across the operations pod.",
-      "Streamlined internal documentation and workflow consistency across remote teams.",
-      "Supported cross-departmental coordination and meeting hygiene for senior operations leads.",
+      "Handled daily data entry, online research, digital file organisation, task tracking and basic reporting.",
+      "Built Google Sheets trackers for clients, workflow progress and ongoing follow-ups.",
+      "Prepared meeting notes and internal summaries to keep cross-team visibility tight.",
+      "Supported coordination for senior operations leads across recurring workstreams.",
     ],
     tags: ["Operations", "Sheets", "Documentation"],
   },
@@ -55,15 +57,16 @@ const ExperiencePage = () => {
         <div className="section-container">
           <span className="eyebrow mb-4">Experience</span>
           <h1 className="page-title mt-4">
-            Two years of high-volume,
+            Two-plus years supporting
             <br />
             <span className="text-muted-foreground font-normal">
-              high-quality support work.
+              executives and remote ops.
             </span>
           </h1>
           <p className="page-subtitle mt-4">
             Roles at Outsource Global, Turing and Flutterwave — focused on
-            resolution rates, QA performance, and clean operational handovers.
+            executive support, documentation discipline and operational
+            visibility across distributed teams.
           </p>
         </div>
       </section>

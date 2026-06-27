@@ -3,48 +3,66 @@ import { ArrowRight } from "lucide-react";
 
 const skillGroups = [
   {
-    label: "Support Platforms",
+    label: "Executive Support",
     items: [
-      { name: "Zendesk", note: "Macros · SOPs · Triggers · QA reporting" },
-      { name: "Salesforce CRM", note: "Cases · pipeline notes · 95%+ data accuracy" },
-      { name: "Intercom", note: "Inbox routing · saved replies" },
-      { name: "Marketplace tools", note: "Multi-region context handling" },
+      { name: "Calendar Management", note: "Scheduling · conflicts · meeting prep" },
+      { name: "Inbox Prioritisation", note: "Triage · templates · zero-state hygiene" },
+      { name: "Action-Item Tracking", note: "Owners · deadlines · weekly visibility" },
+      { name: "Reminders & Follow-ups", note: "Recurring checks · gentle nudges" },
     ],
   },
   {
-    label: "Communication",
+    label: "CEO Operations",
     items: [
-      { name: "Live Chat", note: "Concurrent ticket handling" },
-      { name: "Voice", note: "De-escalation · clear US/UK tone" },
-      { name: "Email", note: "Structured · QA-graded responses" },
-      { name: "Slack", note: "Cross-team escalations · shift handovers" },
+      { name: "Call & Transcript Review", note: "Synthesis into next steps" },
+      { name: "Note Synthesis", note: "Coaching calls · webinars · meetings" },
+      { name: "Deadline Tracking", note: "100% visibility across workstreams" },
+      { name: "Strategic Task Visibility", note: "Single source of truth for the week" },
     ],
   },
   {
-    label: "Productivity",
+    label: "Client & Coaching Support",
     items: [
-      { name: "Google Workspace", note: "Sheets dashboards · Docs SOPs" },
-      { name: "Notion", note: "Knowledge base ownership" },
-      { name: "Trello", note: "Sprint visibility · ticket tracking" },
-      { name: "Microsoft Excel", note: "Reporting · pivot logic" },
+      { name: "Coaching-Call Notes", note: "Action items + client updates" },
+      { name: "Webinar & Masterclass Follow-ups", note: "Attendee comms · recap emails" },
+      { name: "Lead Nurturing", note: "Warm follow-ups · pipeline notes" },
+      { name: "Professional Correspondence", note: "Executive tone · ghost-writing-ready" },
     ],
   },
   {
-    label: "CX Practices",
+    label: "Digital Organisation",
     items: [
-      { name: "FCR Optimisation", note: "Reducing repeat contacts" },
-      { name: "AHT Reduction", note: "−12% achieved at Turing" },
-      { name: "CSAT / NPS", note: "Survey-conscious phrasing" },
-      { name: "De-escalation", note: "Structured empathy frameworks" },
+      { name: "Google Drive", note: "Folder structure · document control" },
+      { name: "CRM Updates", note: "Salesforce · HubSpot · Zendesk" },
+      { name: "Spreadsheet Trackers", note: "Sheets / Excel reporting" },
+      { name: "SOP Compliance & Reporting", note: "Audit-ready records" },
+    ],
+  },
+  {
+    label: "Tools & Platforms",
+    items: [
+      { name: "Google Workspace", note: "Gmail · Calendar · Drive · Docs · Sheets" },
+      { name: "Microsoft Excel", note: "Trackers · pivots · reporting" },
+      { name: "Zoom · Slack · Trello · Notion", note: "Remote collaboration stack" },
+      { name: "Salesforce · HubSpot · Zendesk", note: "CRM & client systems" },
+    ],
+  },
+  {
+    label: "Productivity Edge",
+    items: [
+      { name: "AI Productivity Tools", note: "Drafting · summarisation · structure" },
+      { name: "Workflow Documentation", note: "SOPs · templates · playbooks" },
+      { name: "Time-Zone Coordination", note: "PST · MST · EST · CST aligned" },
+      { name: "Discretion & Confidentiality", note: "Executive-grade handling" },
     ],
   },
 ];
 
 const metrics = [
-  { value: "95%+", label: "QA score" },
-  { value: "−20%", label: "Escalations" },
-  { value: "−12%", label: "AHT" },
-  { value: "+25%", label: "Task visibility" },
+  { value: "60–80+", label: "Daily records" },
+  { value: "95%", label: "Data accuracy" },
+  { value: "100%", label: "Deadline visibility" },
+  { value: "4 TZ", label: "PST/MST/EST/CST" },
 ];
 
 const SkillsPage = () => {
@@ -54,15 +72,16 @@ const SkillsPage = () => {
         <div className="section-container">
           <span className="eyebrow mb-4">Capabilities</span>
           <h1 className="page-title mt-4">
-            The toolkit behind the
+            The toolkit behind a
             <br />
             <span className="text-muted-foreground font-normal">
-              QA scores.
+              calmer executive week.
             </span>
           </h1>
           <p className="page-subtitle mt-4">
-            Platforms, channels and CX practices used daily across Outsource
-            Global, Turing and Flutterwave engagements.
+            Executive support, CEO operations and digital organisation —
+            grounded in Google Workspace, CRM discipline and tracked
+            follow-through across Outsource Global, Turing and Flutterwave.
           </p>
         </div>
       </section>
@@ -130,10 +149,11 @@ const SkillsPage = () => {
       <section className="py-16 border-t border-border">
         <div className="section-container text-center max-w-2xl">
           <h2 className="text-2xl font-bold mb-3">
-            Looking for a steady operator?
+            Looking for a steady second brain?
           </h2>
           <p className="text-muted-foreground text-sm mb-6">
-            Available for immediate placement — full-time, contract or shift-based.
+            Available for full-time, part-time or project-based executive
+            support across PST, MST, EST and CST business hours.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <Link to="/contact" className="btn-primary">

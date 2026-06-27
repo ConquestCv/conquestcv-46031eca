@@ -4,44 +4,44 @@ import profileImage from "@/assets/conquest-profile.jpg";
 
 const competencies = [
   {
-    title: "Omnichannel support",
-    body: "Live chat, voice and email handled without dropping context — managing 50–80+ daily interactions with consistent tone.",
+    title: "Calendar & inbox ownership",
+    body: "Triaging meetings, requests and messages so the executive's day stays focused on decisions, not logistics.",
   },
   {
-    title: "De-escalation",
-    body: "Diffusing high-emotion tickets through structured empathy, accurate diagnosis and clear next-step communication.",
+    title: "Notes → action items",
+    body: "Synthesising calls, coaching sessions and webinars into clear next steps, owners and deadlines.",
   },
   {
-    title: "Technical troubleshooting",
-    body: "Root-causing payment, account and platform issues end-to-end — not just escalating them upward.",
+    title: "CEO operations support",
+    body: "Tracking strategic tasks, escalating what matters, and giving the CEO a single source of truth for the week.",
   },
   {
-    title: "Zendesk fluency",
-    body: "Macros, SOPs, ticket hygiene and reporting workflows that keep the queue clean and the QA team happy.",
+    title: "Client & coaching follow-ups",
+    body: "Professional correspondence, gentle nudges and lead nurturing — kept warm, organised and on time.",
   },
   {
-    title: "Salesforce CRM",
-    body: "Real-time data entry, pipeline notes and follow-up tracking with 95%+ accuracy across global accounts.",
+    title: "CRM & spreadsheet discipline",
+    body: "60–80+ daily records across CRM and shared workspaces, kept accurate and audit-ready.",
   },
   {
-    title: "FCR & AHT optimisation",
-    body: "Reduced AHT by 12% at Turing while protecting quality — through workflow tuning and conversation design.",
+    title: "Google Workspace fluency",
+    body: "Drive, Docs, Sheets and Calendar wielded as an operational system — not just office tools.",
   },
   {
-    title: "CSAT / NPS sensitivity",
-    body: "Every interaction tuned for the survey that follows it — clear language, ownership, follow-through.",
+    title: "Discretion & confidentiality",
+    body: "Calm handling of sensitive context, executive communication and private workflows.",
   },
   {
-    title: "Operational discipline",
-    body: "100% log-in adherence, structured shift handovers, calm under high-volume pressure.",
+    title: "Deadline-driven follow-through",
+    body: "Reminders, recurring checks and structured trackers so nothing slips between people or weeks.",
   },
 ];
 
 const principles = [
-  "Close the ticket — don't just touch it.",
-  "Documentation is a deliverable, not a chore.",
-  "Calm voice, sharp diagnosis, clean handoff.",
-  "Volume is no excuse to drop quality.",
+  "Protect the executive's time first — everything else flows from that.",
+  "If it isn't tracked, it didn't happen.",
+  "Discretion is a deliverable, not a default.",
+  "Calm, organised, deadline-driven — every week.",
 ];
 
 const AboutPage = () => {
@@ -51,16 +51,17 @@ const AboutPage = () => {
         <div className="section-container">
           <span className="eyebrow mb-4">About</span>
           <h1 className="page-title mt-4">
-            I keep customer queues calm,
+            I keep executive weeks
             <br />
             <span className="text-muted-foreground font-normal">
-              clean and resolved.
+              calm, organised and on time.
             </span>
           </h1>
           <p className="page-subtitle mt-4">
-            Customer Experience Specialist with 2+ years in high-volume,
-            remote-first support environments. Strong ownership mindset, QA-grade
-            documentation, and a track record of cutting escalations and AHT.
+            Virtual Executive Assistant with 2+ years supporting CEOs and
+            remote ops — calendar &amp; inbox triage, call-note synthesis,
+            action-item tracking, and clean documentation across CRM and
+            Google Workspace.
           </p>
         </div>
       </section>
@@ -85,9 +86,9 @@ const AboutPage = () => {
                   </div>
                   {[
                     ["Based", "Lagos, Nigeria"],
-                    ["Mode", "Remote · 24/7 shifts"],
-                    ["Tools", "Zendesk · Salesforce"],
-                    ["QA", "95%+ sustained"],
+                    ["Mode", "Remote · Full / Part-time"],
+                    ["Stack", "Google Workspace · CRM"],
+                    ["Time zones", "PST · MST · EST · CST"],
                   ].map(([k, v]) => (
                     <div key={k} className="flex justify-between text-sm">
                       <span className="text-muted-foreground">{k}</span>
@@ -108,21 +109,20 @@ const AboutPage = () => {
                     <span className="text-foreground font-medium">
                       Aisiri Conquest Samuel
                     </span>
-                    , a Customer Experience Specialist with 2+ years handling
-                    high-volume omnichannel support across chat, voice and
-                    email in fast-paced remote environments.
+                    , a Virtual Executive Assistant supporting founders and
+                    operations leaders across calendar management, inbox
+                    triage, executive correspondence and project follow-through.
                   </p>
                   <p>
-                    My focus is resolution-first outcomes: improving First
-                    Contact Resolution (FCR), reducing escalations, and
-                    maintaining 95%+ QA performance through disciplined
-                    documentation in Zendesk, Salesforce and marketplace
-                    support systems.
+                    My focus is structure: turning calls, coaching sessions
+                    and webinars into tracked action items, keeping CRM and
+                    Drive clean, and making sure deadlines and client requests
+                    are visible to the people who need them.
                   </p>
                   <p>
-                    I bring a strong ownership mindset and operational
-                    discipline — calm under pressure, structured under volume,
-                    and dependable across 24/7 shift coverage.
+                    Discreet, organised and deadline-driven — comfortable
+                    holding sensitive context and aligning to PST, MST, EST or
+                    CST business hours for international engagements.
                   </p>
                 </div>
               </div>
