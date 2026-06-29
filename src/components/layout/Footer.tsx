@@ -89,7 +89,7 @@ const Footer = () => {
                   <Send className="w-3.5 h-3.5" />
                 </a>
                 <a
-                  href="https://linkedin.com/in/aisiri-conquest"
+                  href="https://linkedin.com/in/aisiriconquest"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="theme-toggle"

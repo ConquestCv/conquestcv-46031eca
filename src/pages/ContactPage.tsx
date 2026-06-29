@@ -47,8 +47,8 @@ const socials = [
   {
     name: "LinkedIn",
     icon: Linkedin,
-    href: "https://linkedin.com/in/aisiri-conquest",
-    handle: "aisiri-conquest",
+    href: "https://linkedin.com/in/aisiriconquest",
+    handle: "aisiriconquest",
   },
   {
     name: "WhatsApp",
